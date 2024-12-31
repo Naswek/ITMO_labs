@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7d9bde71-a7ed-4ff0-b40d-6575ac1702bd" name="Changes" comment="lab3-4">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mythology/src/Mythology.java" beforeDir="false" afterPath="$PROJECT_DIR$/Mythology/src/Mythology.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Exception" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Naswek&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Naswek/lab3-4.git&quot;,
+    &quot;accountId&quot;: &quot;3346c5b2-994e-482f-b0c8-68059b24a48b&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2oypWElsAjKN2yBe3ZLtXbr4z2g" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Client (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Mythology.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Downloads/apache-log4j-2.24.2-bin&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/user/IdeaProjects/lab3-4/Client/Mythology/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\lab3-4\Client\Mythology\src" />
+      <recent name="C:\Users\user\IdeaProjects\lab3-4\Client\Mythology" />
+      <recent name="C:\Users\user\IdeaProjects\lab3-4\Client" />
+      <recent name="C:\Users\user\IdeaProjects\lab3-4\src" />
+      <recent name="C:\Users\user\IdeaProjects\lab3-4\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Mythology">
+    <configuration name="Client (1)" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <module name="Client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <module name="Client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Mythology" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Mythology" />
+      <module name="Mythology" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="Server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Client (1)" />
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Mythology" />
+      <item itemvalue="Application.Server" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Mythology" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d9bde71-a7ed-4ff0-b40d-6575ac1702bd" name="Changes" comment="" />
+      <created>1731851703280</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731851703280</updated>
+      <workItem from="1731851704477" duration="121000" />
+      <workItem from="1731851832830" duration="385000" />
+      <workItem from="1732115719452" duration="17000" />
+      <workItem from="1732198498613" duration="40674000" />
+      <workItem from="1732282792570" duration="1001000" />
+      <workItem from="1732284176690" duration="2139000" />
+      <workItem from="1732288161840" duration="14457000" />
+      <workItem from="1732397321228" duration="2000" />
+      <workItem from="1732471366321" duration="98000" />
+      <workItem from="1732727655587" duration="879000" />
+      <workItem from="1732740300278" duration="170000" />
+      <workItem from="1732809649096" duration="1135000" />
+      <workItem from="1732826188841" duration="2582000" />
+      <workItem from="1732883729908" duration="4351000" />
+      <workItem from="1733077647783" duration="3000" />
+      <workItem from="1733077770683" duration="4000" />
+      <workItem from="1733158724724" duration="2222000" />
+      <workItem from="1733161532803" duration="11986000" />
+      <workItem from="1733203948012" duration="3791000" />
+      <workItem from="1733209139890" duration="3330000" />
+      <workItem from="1733234737377" duration="8659000" />
+      <workItem from="1733427073335" duration="14496000" />
+      <workItem from="1733469116332" duration="31292000" />
+      <workItem from="1733583474573" duration="463000" />
+      <workItem from="1733584150580" duration="180000" />
+      <workItem from="1733894573172" duration="38000" />
+      <workItem from="1733895066296" duration="8000" />
+      <workItem from="1734518522193" duration="153000" />
+      <workItem from="1734518763446" duration="549000" />
+      <workItem from="1734704894036" duration="1067000" />
+      <workItem from="1734709564471" duration="375000" />
+    </task>
+    <task id="LOCAL-00001" summary="lab3-4">
+      <option name="closed" value="true" />
+      <created>1731851759710</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731851759710</updated>
+    </task>
+    <task id="LOCAL-00002" summary="lab3-4">
+      <option name="closed" value="true" />
+      <created>1731851871117</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731851871117</updated>
+    </task>
+    <task id="LOCAL-00003" summary="lab3-4">
+      <option name="closed" value="true" />
+      <created>1732295364232</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732295364232</updated>
+    </task>
+    <task id="LOCAL-00004" summary="lab3-4">
+      <option name="closed" value="true" />
+      <created>1732296342865</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732296342865</updated>
+    </task>
+    <task id="LOCAL-00005" summary="lab3-4">
+      <option name="closed" value="true" />
+      <created>1732386391091</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732386391091</updated>
+    </task>
+    <task id="LOCAL-00006" summary="lab3-4">
+      <option name="closed" value="true" />
+      <created>1732727873829</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732727873829</updated>
+    </task>
+    <task id="LOCAL-00007" summary="lab3-4">
+      <option name="closed" value="true" />
+      <created>1733491994381</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733491994381</updated>
+    </task>
+    <task id="LOCAL-00008" summary="lab3-4">
+      <option name="closed" value="true" />
+      <created>1733492133582</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733492133582</updated>
+    </task>
+    <task id="LOCAL-00009" summary="lab3-4">
+      <option name="closed" value="true" />
+      <created>1733492466723</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733492466723</updated>
+    </task>
+    <task id="LOCAL-00010" summary="lab3-4">
+      <option name="closed" value="true" />
+      <created>1733584319325</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733584319325</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="lab3-4" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab3-4" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.net.SocketException" package="java.net" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/maven/src/main/java/org/example/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/untitled/src/main/java/org/example/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/Mythology/src/main/java/org/example/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/Mythology/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/lab3_4$Client.ic" NAME="Client Coverage Results" MODIFIED="1733477102811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+  </component>
+</project>
