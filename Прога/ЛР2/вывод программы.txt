@@ -1,0 +1,154 @@
+C:\Users\user\.jdks\corretto-17.0.13\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.2.4\lib\idea_rt.jar=62994:C:\Program Files\JetBrains\IntelliJ IDEA 2024.2.4\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\user\IdeaProjects\test\out\production\test;C:\Users\user\Downloads\Pokemon.jar Main
+marshadow Сугуру from the team White enters the battle!
+pichu Сёко from the team Striped enters the battle!
+marshadow Сугуру uses Iron Head!. 
+pichu Сёко loses 4 hit points.
+
+pichu Сёко uses Tail Whip!. 
+
+marshadow Сугуру uses Iron Head!. 
+pichu Сёко loses 3 hit points.
+
+pichu Сёко uses Tail Whip!. 
+
+marshadow Сугуру uses Thunderbolt!. 
+pichu Сёко loses 3 hit points.
+
+pichu Сёко uses Tail Whip!. 
+
+marshadow Сугуру uses Iron Head!. 
+Critical hit!
+pichu Сёко loses 6 hit points.
+
+pichu Сёко uses Thunderbolt!. 
+marshadow Сугуру loses 3 hit points.
+
+marshadow Сугуру uses Ice Beam!. 
+pichu Сёко loses 4 hit points.
+pichu Сёко faints.
+raichu Сатору from the team Striped enters the battle!
+marshadow Сугуру uses Thunderbolt!. 
+raichu Сатору loses 3 hit points.
+
+raichu Сатору uses Rest!. 
+raichu Сатору is sleeping
+
+raichu Сатору loses 21 hit points.
+ekans Нобара from the team Striped enters the battle!
+marshadow Сугуру uses Thunder Wave. 
+ekans Нобара is paralyzed
+
+ekans Нобара uses Leer!. 
+
+marshadow Сугуру uses Thunder Wave. 
+
+ekans Нобара uses Leer!. 
+
+marshadow Сугуру uses Ice Beam!. 
+ekans Нобара loses 3 hit points.
+
+
+marshadow Сугуру uses Thunderbolt!. 
+ekans Нобара loses 4 hit points.
+
+ekans Нобара uses Mud Bomb!. 
+Critical hit!
+marshadow Сугуру loses 4 hit points.
+
+marshadow Сугуру uses Thunderbolt!. 
+Critical hit!
+ekans Нобара loses 8 hit points.
+
+
+marshadow Сугуру uses Thunderbolt!. 
+Critical hit!
+ekans Нобара loses 6 hit points.
+ekans Нобара faints.
+pikachu Мегуми from the team Striped enters the battle!
+marshadow Сугуру uses Iron Head!. 
+Critical hit!
+pikachu Мегуми loses 6 hit points.
+
+pikachu Мегуми uses Thunderbolt!. 
+marshadow Сугуру loses 3 hit points.
+
+marshadow Сугуру uses Ice Beam!. 
+pikachu Мегуми loses 3 hit points.
+
+pikachu Мегуми uses Slam!. 
+marshadow Сугуру loses 3 hit points.
+
+marshadow Сугуру uses Thunder Wave. 
+pikachu Мегуми is paralyzed
+
+pikachu Мегуми uses Tail Whip!. 
+
+marshadow Сугуру uses Iron Head!. 
+pikachu Мегуми loses 3 hit points.
+
+
+marshadow Сугуру uses Thunderbolt!. 
+pikachu Мегуми loses 3 hit points.
+
+
+marshadow Сугуру uses Thunder Wave. 
+
+
+marshadow Сугуру uses Iron Head!. 
+pikachu Мегуми loses 2 hit points.
+
+
+marshadow Сугуру uses Thunderbolt!. 
+pikachu Мегуми loses 3 hit points.
+pikachu Мегуми faints.
+arbok Итадори from the team Striped enters the battle!
+marshadow Сугуру uses Thunderbolt!. 
+arbok Итадори loses 3 hit points.
+
+arbok Итадори uses Thunder Fang!. 
+marshadow Сугуру loses 2 hit points.
+
+marshadow Сугуру uses Ice Beam!. 
+arbok Итадори loses 3 hit points.
+
+arbok Итадори uses Thunder Fang!. 
+marshadow Сугуру loses 4 hit points.
+
+marshadow Сугуру uses Thunderbolt!. 
+arbok Итадори loses 2 hit points.
+
+arbok Итадори uses Mud Bomb!. 
+marshadow Сугуру loses 3 hit points.
+
+marshadow Сугуру uses Ice Beam!. 
+arbok Итадори loses 3 hit points.
+
+arbok Итадори uses Mud Bomb!. 
+marshadow Сугуру loses 4 hit points.
+
+marshadow Сугуру uses Thunderbolt!. 
+arbok Итадори loses 4 hit points.
+
+arbok Итадори uses Mud Bomb!. 
+marshadow Сугуру loses 4 hit points.
+
+marshadow Сугуру uses Ice Beam!. 
+arbok Итадори loses 3 hit points.
+
+arbok Итадори uses Mud Bomb!. 
+marshadow Сугуру loses 2 hit points.
+
+marshadow Сугуру uses Thunder Wave. 
+arbok Итадори is paralyzed
+
+arbok Итадори uses Bulldoze!. 
+marshadow Сугуру loses 3 hit points.
+
+marshadow Сугуру uses Iron Head!. 
+Critical hit!
+arbok Итадори loses 6 hit points.
+arbok Итадори faints.
+Team Striped loses its last Pokemon.
+The team White wins the battle!
+
+Process finished with exit code 0
