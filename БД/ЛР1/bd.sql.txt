@@ -1,0 +1,163 @@
+DROP TABLE IF EXIST GALAXY;
+DROP TABLE IF EXIST SYSTEM;
+DROP TABLE IF EXIST STAR;
+DROP TABLE IF EXIST PLANET;
+DROP TABLE IF EXIST TRAVELER;
+DROP TABLE IF EXIST TRIP;
+DROP TABLE IF EXIST CREW;
+DROP TABLE IF EXIST PILOT;
+DROP TABLE IF EXIST GALAXY_SHIP;
+
+#create enums, tables
+CREATE TYPE experience_enum AS ENUM ('advanced', 'intermediate', 'beginner', 'expert');
+CREATE TYPE ship_type_enum AS ENUM ('passenger', 'freight', 'military');
+CREATE TYPE galaxy_type_enum AS ENUM ('elliptical', 'spiral', 'lenticular', 'incorrect');
+
+CREATE TABLE IF NOT EXIST galaxy (
+    galaxy_id SERIAL PRIMARY KEY,
+    constellation TEXT NOT NULL,
+    name TEXT NOT NULL UNIQUE,
+    galaxy_type galaxy_type_enum NOT NULL,
+    rotation_speed REAL NOT NULL;
+)
+
+CREATE TABLE IF NOT EXIST system (
+    system_id SERIAL PRIMARY KEY,
+    size REAL NOT NULL,
+    consist TEXT NOT NULL,
+    name TEXT NOT NULL UNIQUE,
+    (galaxy_id) REFERENCES galaxy(galaxy_is),
+    (star_id) REFERENCES STAR(star_id);
+)
+
+CREATE TABLE IF NOT EXIST STAR (
+    star_id SERIAL PRIMARY KEY,
+    weight REAL,
+    age REAL,
+    luminosity REAL,
+    brightness REAL,
+    (system_id) REFERENCES system(system_id) NOT NULL;
+)
+
+CREATE TABLE IF NOT EXIST PLANET (
+    planet_id SERIAL PRIMARY KEY,
+    weight REAL,
+    size INTEGER,
+    presence_of_life BOOLEAN NOT NULL,
+    density REAL,
+    (system_id) REFERENCES system(system_id) NOT NULL;
+)
+
+CREATE TABLE IF NOT EXIST GALAXY_SHIP (
+    galaxy_ship_id SERIAL PRIMARY KEY,
+    capacity INTEGER NOT NULL,
+    speed INTEGER NOT NULL,
+    max_duration_flight REAL NOT NULL,
+    name TEXT NOT NULL UNIQUE,
+    ship_type ship_type_enum NOT NULL
+    (galaxy_id) REFERENCES galaxy(galaxy_id) NOT NULL;
+)
+
+CREATE TABLE IF NOT EXIST CREW (
+    crew_id SERIAL PRIMARY KEY,
+    member_count SMALLINT NOT NULL,
+    (pilot_id) REFERENCES PILOT(pilot_id) NOT NULL;
+)
+
+CREATE TABLE IF NOT EXIST PILOT (
+    pilot_id SERIAL PRIMARY KEY,
+    have_permission BOOLEAN NOT NULL,
+    experience experience_enum NOT NULL,
+    (crew_id) REFERENCES CREW(crew_id) NOT NULL;
+ )
+
+CREATE TABLE IF NOT EXIST TRIP (
+    trip_id SERIAL PRIMARY KEY,
+    cost INTEGER NOT NULL,
+    duration INTERVAL NOT NULL,
+    (galaxy_ship_id) REFERENCES GALAXY_SHIP(galaxy_ship_id) NOT NULL,
+    (traveler_id) REFERENCES TRAVELER(traveler_id) NOT NULL;
+)
+
+CREATE TABLE IF NOT EXIST TRAVELER (
+    traveler_id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL UNIQUE ,
+    age SMALLINT NOT NULL,
+    permission_to_travel BOOLEAN NOT NULL,
+    (planet_id) REFERENCES PLANET(planet_id) NOT NULL;
+);
+
+
+
+
+INSERT INTO galaxy (constellation, name, galaxy_type, rotation_speed)
+VALUES
+    ('Andromeda', 'Messier 31', 'spiral', 250.0),
+    ('Virgo', 'Messier 87', 'elliptical', 300.0),
+    ('Canis Major', 'Large Magellanic Cloud', 'irregular', 150.0),
+    ('Taurus', 'Pinwheel Galaxy', 'spiral', 220.0),
+    ('Ursa Major', 'Messier 81', 'spiral', 200.5);
+
+INSERT INTO system (size, consist, name, galaxy_id)
+VALUES
+    (15.3, 'Single star system', 'Solar System', 1),
+    (20.1, 'Binary star system', 'Alpha Centauri System', 2),
+    (12.5, 'Single star system', 'Betelgeuse System', 3),
+    (18.7, 'Multiple star system', 'Sirius System', 4),
+    (14.9, 'Single star system', 'Polaris System', 5);
+
+INSERT INTO star (weight, age, luminosity, brightness, system_id) 
+VALUES 
+    (1.0, 4.6, 1.0, 4.8, 1),
+    (1.1, 6.0, 1.5, 5.2, 2),
+    (20.0, 8.5, 90.0, 7.0, 3), 
+    (2.0, 5.5, 25.0, 6.5, 4),
+    (6.0, 7.0, 2500.0, 8.0, 5); 
+
+INSERT INTO planet (weight, size, presence_of_life, density, system_id)
+VALUES
+    (0.055, 4879, false, 5.43, 1),
+    (0.815, 12104, false, 5.24, 1),
+    (1.0, 12742, true, 5.51, 1),
+    (0.107, 6792, false, 3.93, 2),
+    (317.8, 139820, false, 1.33, 4);
+
+INSERT INTO galaxy_ship (capacity, speed, max_duration_flight, name, ship_type, galaxy_id)
+VALUES
+    (50, 1000, 5.0, 'Explorer I', 'exploration', 1),
+    (100, 1500, 7.5, 'Navigator II', 'transport', 2),
+    (30, 800, 3.0, 'Scout III', 'reconnaissance', 3),
+    (75, 1200, 6.0, 'Cargo IV', 'freight', 4),
+    (40, 1100, 4.5, 'Observer V', 'research', 5);
+
+INSERT INTO crew (member_count, pilot_id)
+VALUES
+    (5, 1),
+    (3, 2),
+    (4, 3),
+    (6, 4),
+    (2, 5);
+
+INSERT INTO pilot (have_permission, experience, crew_id)
+VALUES
+    (true, 'expert', 1),
+    (true, 'intermediate', 2),
+    (false, 'beginner', 3),
+    (true, 'advanced', 4),
+    (true, 'expert', 5);
+
+INSERT INTO traveler (name, age, permission_to_travel, planet_id)
+VALUES
+    ('Alexandra Nova', 35, true, 1),
+    ('Victor Orion', 28, true, 2),
+    ('Elena Sirius', 42, false, 4),
+    ('Mark Andromeda', 31, true, 5),
+    ('Sofia Nebula', 25, true, 1);
+
+INSERT INTO trip (cost, duration, galaxy_ship_id, traveler_id)
+VALUES
+    (1200000, INTERVAL '6 days', 1, 1),
+    (900000, INTERVAL '4 days', 2, 2),
+    (800000, INTERVAL '3 days', 3, 3),
+    (1500000, INTERVAL '7 days', 4, 4),
+    (1100000, INTERVAL '5 days', 5, 5);
