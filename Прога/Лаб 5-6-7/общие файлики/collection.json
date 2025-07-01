@@ -1,0 +1,73 @@
+[ {
+  "id" : 2,
+  "name" : "Satoru Gojo",
+  "coordinates" : {
+    "firstElement" : 345,
+    "secondElement" : 234.0
+  },
+  "creationDate" : [ 2025, 6, 12, 18, 6, 20, 914410600 ],
+  "realHero" : true,
+  "hasToothpick" : true,
+  "impactSpeed" : 345345.0,
+  "weaponType" : "HAMMER",
+  "mood" : "FRENZY",
+  "car" : {
+    "name" : "tesla",
+    "cool" : true
+  },
+  "soundtrackName" : "another love"
+}, {
+  "id" : 3,
+  "name" : "Kaneki Ken",
+  "coordinates" : {
+    "firstElement" : 4,
+    "secondElement" : 23.0
+  },
+  "creationDate" : [ 2025, 6, 12, 18, 7, 4, 696725500 ],
+  "realHero" : true,
+  "hasToothpick" : true,
+  "impactSpeed" : 34534.0,
+  "weaponType" : "RIFLE",
+  "mood" : "LONGING",
+  "car" : {
+    "name" : "mers",
+    "cool" : true
+  },
+  "soundtrackName" : "unravel"
+}, {
+  "id" : 4,
+  "name" : "Naruto Uzumaki",
+  "coordinates" : {
+    "firstElement" : 57,
+    "secondElement" : 3.0
+  },
+  "creationDate" : [ 2025, 6, 12, 18, 7, 48, 201494000 ],
+  "realHero" : true,
+  "hasToothpick" : true,
+  "impactSpeed" : 25.0,
+  "weaponType" : "RIFLE",
+  "mood" : "GLOOM",
+  "car" : {
+    "name" : "bmw",
+    "cool" : true
+  },
+  "soundtrackName" : "still standing"
+}, {
+  "id" : 5,
+  "name" : "Bunny Tsukino",
+  "coordinates" : {
+    "firstElement" : 456,
+    "secondElement" : 1.0
+  },
+  "creationDate" : [ 2025, 6, 12, 18, 9, 24, 529651000 ],
+  "realHero" : true,
+  "hasToothpick" : true,
+  "impactSpeed" : 3453.0,
+  "weaponType" : "AXE",
+  "mood" : "SORROW",
+  "car" : {
+    "name" : "fors",
+    "cool" : true
+  },
+  "soundtrackName" : "music box"
+} ]
