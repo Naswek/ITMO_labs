@@ -52,15 +52,16 @@ public class Server {
     /**
      * Start.
      */
+    //этот кусок не полностью мой и он плохой
     public void start() {
         while (true) {
             try {
-                semaphore.acquire(); // Ограничиваем количество задач
+                semaphore.acquire();
                 requestExecutor.submit(() -> {
                     try {
                         objectTransport.receiveAndSend(requestExecutor, responseExecutor);
                     } finally {
-                        semaphore.release(); // Освобождаем место после завершения задачи
+                        semaphore.release(); 
                     }
                 });
             } catch (InterruptedException e) {
@@ -113,3 +114,4 @@ public class Server {
         }
     }
 }
+
