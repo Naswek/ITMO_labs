@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ровкова Анастасия, P3216, 407893</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header> Ровкова Анастасия, P3216, 407893 <header>
+    <h2>Выбор параметров</h2>
+
+    <label>
+        X:
+        <input type="number" id="xInput" step="0.1" placeholder="Введите X">
+    </label>
+
+    <label>
+        Y:
+        <select id="ySelect"></select>
+    </label>
+
+    <div>
+        <h3>R:</h3>
+        <label><input type="checkbox" class="multiR" value="1"> 1 </label>
+        <label><input type="checkbox" class="multiR" value="1.5"> 1.5 </label>
+        <label><input type="checkbox" class="multiR" value="2"> 2 </label>
+        <label><input type="checkbox" class="multiR" value="2.5"> 2.5 </label>
+        <label><input type="checkbox" class="multiR" value="3"> 3 </label>
+    </div>
+
+    <button id="sendBtn">Отправить</button>
+</div>
+
+<canvas id="axisCanvas"></canvas>
+
+    <div style="max-height: 500px; overflow-y: auto;">
+        <table id="coordTable" border="1">
+            <thead>
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>R</th>
+                    <th>Попадание</th>
+                    <th>Время</th>
+                    <th>Время работы (мс)</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+
+<img src="pictures/cat1.gif" alt="Гифка" class="corner-gif">
+</body>
+</html>
