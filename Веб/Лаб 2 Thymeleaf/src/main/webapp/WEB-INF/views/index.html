@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Веб, лаб 2 — Ввод данных</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <header>Ровкова Анастасия, P3216, 407893</header>
+    <h2>Выбор параметров</h2>
+
+    <div>
+        <h3>X:</h3>
+        <div id="xContainer">
+            <label><input type="checkbox" name="x" value="-2"><span>-2</span></label>
+            <label><input type="checkbox" name="x" value="-1.5"><span>-1.5</span></label>
+            <label><input type="checkbox" name="x" value="-1"><span>-1</span></label>
+            <label><input type="checkbox" name="x" value="-0.5"><span>-0.5</span></label>
+            <label><input type="checkbox" name="x" value="0"><span>0</span></label>
+            <label><input type="checkbox" name="x" value="0.5"><span>0.5</span></label>
+            <label><input type="checkbox" name="x" value="1"><span>1</span></label>
+            <label><input type="checkbox" name="x" value="1.5"><span>1.5</span></label>
+            <label><input type="checkbox" name="x" value="2"><span>2</span></label>
+        </div>
+    </div>
+
+    <div>
+        <h3>Y:</h3>
+        <input type="text" id="yInput" placeholder="Введите Y">
+    </div>
+
+    <div>
+        <h3>R:</h3>
+        <div id="rContainer">
+            <button type="button" class="rBtn btn" data-value="1">1</button>
+            <button type="button" class="rBtn btn" data-value="1.5">1.5</button>
+            <button type="button" class="rBtn btn" data-value="2">2</button>
+            <button type="button" class="rBtn btn" data-value="2.5">2.5</button>
+            <button type="button" class="rBtn btn" data-value="3">3</button>
+        </div>
+    </div>
+
+    <div class="actions">
+        <button id="sendBtn" class="btn">Отправить</button>
+        <a th:href="@{/result}" class="btn">Перейти к результатам</a>
+    </div>
+</div>
+
+<canvas id="axisCanvas"></canvas>
+<img th:src="@{/pictures/cat1.gif}" alt="Гифка" class="corner-gif">
+<script type="module" th:src="@{/js/canvas.js}"></script>
+
+</body>
+</html>

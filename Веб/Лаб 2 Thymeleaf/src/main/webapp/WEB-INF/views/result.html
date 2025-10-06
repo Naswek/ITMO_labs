@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Веб, лаб 2 — Результаты</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <header>Ровкова Анастасия, P3216, 407893</header>
+    <h2>Таблица результатов</h2>
+
+    <div style="max-height: 500px; overflow-y: auto;">
+        <table id="coordTable" border="1">
+            <thead>
+            <tr>
+                <th>X</th>
+                <th>Y</th>
+                <th>R</th>
+                <th>Попадание</th>
+                <th>Время</th>
+                <th>Время работы (мс)</th>
+            </tr>
+            </thead>
+
+            <tbody id="tableBody">
+            <tr th:each="point : ${results}">
+                <td th:text="${point.x}">X</td>
+                <td th:text="${point.y}">Y</td>
+                <td th:text="${point.r}">R</td>
+                <td th:text="${point.hit}">Попадание</td>
+                <td th:text="${point.time}">Время</td>
+                <td th:text="${point.execTime}">Время работы</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a th:href="@{/index}" class="btn">Вернуться к вводу данных</a>
+    <button id="clearHistoryBtn" class="btn">Очистить историю</button>
+</div>
+
+<script th:src="@{/js/result.js}"></script>
+
+</body>
+</html>
