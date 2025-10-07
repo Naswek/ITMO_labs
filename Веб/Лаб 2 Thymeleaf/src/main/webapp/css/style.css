@@ -48,7 +48,7 @@ select, input {
     margin-bottom: 1%;
 }
 
-/* Общий стиль для всех кнопок и ссылок */
+
 .btn {
     font-size: 1.2em;
     padding: 10px 20px;
@@ -199,3 +199,4 @@ button:hover {
 .input-error {
     border-color: #e74c3c;
 }
+
