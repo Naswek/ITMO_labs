@@ -1,0 +1,15 @@
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\bin\Debug\net8.0\CSConsoleApp.exe
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\bin\Debug\net8.0\CSConsoleApp.deps.json
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\bin\Debug\net8.0\CSConsoleApp.runtimeconfig.json
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\bin\Debug\net8.0\CSConsoleApp.dll
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\bin\Debug\net8.0\CSConsoleApp.pdb
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\obj\Debug\net8.0\CSConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\obj\Debug\net8.0\CSConsoleApp.AssemblyInfoInputs.cache
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\obj\Debug\net8.0\CSConsoleApp.AssemblyInfo.cs
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\obj\Debug\net8.0\CSConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\obj\Debug\net8.0\CSConsoleApp.sourcelink.json
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\obj\Debug\net8.0\CSConsoleApp.dll
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\obj\Debug\net8.0\refint\CSConsoleApp.dll
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\obj\Debug\net8.0\CSConsoleApp.pdb
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\obj\Debug\net8.0\CSConsoleApp.genruntimeconfig.cache
+C:\Users\user\Documents\ИТМО\ЯПЫ_dir\CSDemo01\CSConsoleApp\obj\Debug\net8.0\ref\CSConsoleApp.dll

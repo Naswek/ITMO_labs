@@ -1,0 +1,715 @@
+teststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststeststestsFairy №5 - HP: 150, Attack: 30, Defense: 10
+Wizard №9 - HP: 100, Attack: 40, Defense: 5
+Fairy №2 - HP: 150, Attack: 30, Defense: 10
+Wizard №0 - HP: 100, Attack: 40, Defense: 5
+Fairy №7 - HP: 150, Attack: 30, Defense: 10
+Wizard №4 - HP: 100, Attack: 40, Defense: 5
+Fairy №7 takes 30 damage! Remaining HP: 120
+Wizard №4 attacks Fairy №7 for 30 damage!
+Wizard №2 takes 35 damage! Remaining HP: 65
+Wizard №4 attacks Wizard №2 for 35 damage!
+Wizard №4 is ignoring resistance and add + 14 AttackPower. Current AttackPower: 54
+Fairy №4 takes 20 damage! Remaining HP: 130
+Fairy №3 attacks Fairy №4 for 20 damage!
+Wizard №4 takes 25 damage! Remaining HP: 75
+Fairy №7 attacks Wizard №4 for 25 damage!
+Fairy №4 takes 20 damage! Remaining HP: 110
+Fairy №3 attacks Fairy №4 for 20 damage!
+Fairy №3 takes heal.
+Wizard №3 takes 25 damage! Remaining HP: 75
+Fairy №7 attacks Wizard №3 for 25 damage!
+Fairy №7 takes 54 damage! Remaining HP: 66
+Wizard №4 attacks Fairy №7 for 54 damage!
+Wizard №3 takes 59 damage! Remaining HP: 16
+Wizard №4 attacks Wizard №3 for 59 damage!
+Wizard №4 is ignoring resistance and add + 14 AttackPower. Current AttackPower: 78
+Wizard №4 takes 25 damage! Remaining HP: 50
+Fairy №3 attacks Wizard №4 for 25 damage!
+Wizard №3 takes 35 damage! Remaining HP: 0
+Wizard №9 attacks Wizard №3 for 35 damage!
+Fairy №4 takes 20 damage! Remaining HP: 130
+Fairy №3 attacks Fairy №4 for 20 damage!
+Fairy №3 takes heal.
+Fairy №7 takes 20 damage! Remaining HP: 46
+Fairy №3 attacks Fairy №7 for 20 damage!
+Wizard №9 takes 35 damage! Remaining HP: 65
+Wizard №2 attacks Wizard №9 for 35 damage!
+Fairy №4 takes 20 damage! Remaining HP: 90
+Fairy №7 attacks Fairy №4 for 20 damage!
+Fairy №7 takes heal.
+Wizard №4 takes 25 damage! Remaining HP: 25
+Fairy №7 attacks Wizard №4 for 25 damage!
+Fairy №3 takes 20 damage! Remaining HP: 152
+Fairy №4 attacks Fairy №3 for 20 damage!
+Fairy №7 takes 20 damage! Remaining HP: 37
+Fairy №4 attacks Fairy №7 for 20 damage!
+Fairy №4 takes heal.
+Fairy №4 takes 20 damage! Remaining HP: 122
+Fairy №3 attacks Fairy №4 for 20 damage!
+Fairy №4 takes 20 damage! Remaining HP: 80
+Fairy №4 attacks Fairy №4 for 20 damage!
+Fairy №7 takes 30 damage! Remaining HP: 7
+Wizard №2 attacks Fairy №7 for 30 damage!
+Wizard №2 is ignoring resistance and add + 11 AttackPower. Current AttackPower: 51
+Fairy №7 takes 41 damage! Remaining HP: 0
+Wizard №2 attacks Fairy №7 for 41 damage!
+Wizard №4 takes 25 damage! Remaining HP: 0
+Fairy №3 attacks Wizard №4 for 25 damage!
+Wizard №3 takes 25 damage! Remaining HP: 75
+Fairy №4 attacks Wizard №3 for 25 damage!
+Fairy №4 takes heal.
+Fairy №4 takes 30 damage! Remaining HP: 60
+Wizard №9 attacks Fairy №4 for 30 damage!
+Fairy №4 takes 20 damage! Remaining HP: 116
+Fairy №9 attacks Fairy №4 for 20 damage!
+Wizard №3 takes 46 damage! Remaining HP: 29
+Wizard №2 attacks Wizard №3 for 46 damage!
+Wizard №2 is ignoring resistance and add + 10 AttackPower. Current AttackPower: 61
+Wizard №2 takes 25 damage! Remaining HP: 40
+Fairy №9 attacks Wizard №2 for 25 damage!
+Fairy №4 takes 20 damage! Remaining HP: 50
+Fairy №9 attacks Fairy №4 for 20 damage!
+Fairy №4 takes 20 damage! Remaining HP: 30
+Fairy №9 attacks Fairy №4 for 20 damage!
+Fairy №9 takes heal.
+Wizard №9 takes 25 damage! Remaining HP: 40
+Fairy №4 attacks Wizard №9 for 25 damage!
+Wizard №3 takes 25 damage! Remaining HP: 4
+Fairy №3 attacks Wizard №3 for 25 damage!
+Fairy №3 takes 20 damage! Remaining HP: 132
+Fairy №9 attacks Fairy №3 for 20 damage!
+Fairy №9 takes heal.
+Wizard №2 takes 25 damage! Remaining HP: 15
+Fairy №4 attacks Wizard №2 for 25 damage!
+Wizard №3 takes 35 damage! Remaining HP: 0
+Wizard №9 attacks Wizard №3 for 35 damage!
+Fairy №9 takes 20 damage! Remaining HP: 155
+Fairy №4 attacks Fairy №9 for 20 damage!
+Fairy №4 takes heal.
+Fairy №4 takes 20 damage! Remaining HP: 20
+Fairy №9 attacks Fairy №4 for 20 damage!
+Fairy №4 takes 20 damage! Remaining HP: 109
+Fairy №9 attacks Fairy №4 for 20 damage!
+Wizard №2 takes 25 damage! Remaining HP: 0
+Fairy №9 attacks Wizard №2 for 25 damage!
+Fairy №9 takes heal.
+Fairy №4 takes 20 damage! Remaining HP: 89
+Fairy №4 attacks Fairy №4 for 20 damage!
+Fairy №4 takes 20 damage! Remaining HP: 0
+Fairy №3 attacks Fairy №4 for 20 damage!
+Fairy №3 takes 20 damage! Remaining HP: 112
+Fairy №9 attacks Fairy №3 for 20 damage!
+Fairy №9 takes heal.
+Fairy №9 takes 20 damage! Remaining HP: 159
+Fairy №3 attacks Fairy №9 for 20 damage!
+Wizard №9 takes 25 damage! Remaining HP: 15
+Fairy №9 attacks Wizard №9 for 25 damage!
+Wizard №9 takes 25 damage! Remaining HP: 0
+Fairy №9 attacks Wizard №9 for 25 damage!
+Fairy №9 takes heal.
+Fairy №9 takes 20 damage! Remaining HP: 152
+Fairy №3 attacks Fairy №9 for 20 damage!
+Fairy №9 takes 20 damage! Remaining HP: 132
+Fairy №4 attacks Fairy №9 for 20 damage!
+Fairy №3 takes 20 damage! Remaining HP: 92
+Fairy №9 attacks Fairy №3 for 20 damage!
+Fairy №9 takes heal.
+Fairy №4 takes 20 damage! Remaining HP: 79
+Fairy №3 attacks Fairy №4 for 20 damage!
+Fairy №9 takes 20 damage! Remaining HP: 124
+Fairy №3 attacks Fairy №9 for 20 damage!
+Fairy №4 takes 20 damage! Remaining HP: 59
+Fairy №3 attacks Fairy №4 for 20 damage!
+Fairy №3 takes heal.
+Fairy №3 takes 20 damage! Remaining HP: 85
+Fairy №9 attacks Fairy №3 for 20 damage!
+Fairy №3 takes 20 damage! Remaining HP: 65
+Fairy №9 attacks Fairy №3 for 20 damage!
+Fairy №4 takes 20 damage! Remaining HP: 39
+Fairy №9 attacks Fairy №4 for 20 damage!
+Fairy №9 takes heal.
+Fairy №4 takes 20 damage! Remaining HP: 19
+Fairy №9 attacks Fairy №4 for 20 damage!
+Fairy №9 takes 20 damage! Remaining HP: 127
+Fairy №4 attacks Fairy №9 for 20 damage!
+Fairy №9 takes 20 damage! Remaining HP: 107
+Fairy №4 attacks Fairy №9 for 20 damage!
+Fairy №4 takes heal.
+Fairy №4 takes 20 damage! Remaining HP: 20
+Fairy №9 attacks Fairy №4 for 20 damage!
+Fairy №3 takes 20 damage! Remaining HP: 45
+Fairy №4 attacks Fairy №3 for 20 damage!
+Fairy №9 takes 20 damage! Remaining HP: 87
+Fairy №3 attacks Fairy №9 for 20 damage!
+Fairy №3 takes heal.
+Fairy №3 takes 20 damage! Remaining HP: 36
+Fairy №4 attacks Fairy №3 for 20 damage!
+Fairy №4 takes 20 damage! Remaining HP: 0
+Fairy №9 attacks Fairy №4 for 20 damage!
+Fairy №3 takes 20 damage! Remaining HP: 16
+Fairy №9 attacks Fairy №3 for 20 damage!
+Fairy №9 takes heal.
+Fairy №9 takes 20 damage! Remaining HP: 88
+Fairy №3 attacks Fairy №9 for 20 damage!
+Fairy №9 takes 20 damage! Remaining HP: 68
+Fairy №3 attacks Fairy №9 for 20 damage!
+Fairy №9 takes 20 damage! Remaining HP: 58
+Fairy №3 attacks Fairy №9 for 20 damage!
+Fairy №3 takes heal.
+Fairy №9 takes 20 damage! Remaining HP: 38
+Fairy №3 attacks Fairy №9 for 20 damage!
+Fairy №3 takes 20 damage! Remaining HP: 8
+Fairy №9 attacks Fairy №3 for 20 damage!
+Fairy №9 takes 20 damage! Remaining HP: 18
+Fairy №3 attacks Fairy №9 for 20 damage!
+Fairy №3 takes heal.
+Fairy №3 takes 20 damage! Remaining HP: 0
+Fairy №9 attacks Fairy №3 for 20 damage!
+Fairy №3 takes 20 damage! Remaining HP: 0
+Fairy №9 attacks Fairy №3 for 20 damage!
+Fairy №9 is the last hero standing with 18 HP left!
+Fairy №1 - HP: 150, Attack: 30, Defense: 10
+Wizard №5 - HP: 100, Attack: 40, Defense: 5
+Fairy №2 - HP: 150, Attack: 30, Defense: 10
+Wizard №9 - HP: 100, Attack: 40, Defense: 5
+Fairy №0 - HP: 150, Attack: 30, Defense: 10
+Wizard №3 - HP: 100, Attack: 40, Defense: 5
+Fairy №2 takes 20 damage! Remaining HP: 130
+Fairy №0 attacks Fairy №2 for 20 damage!
+Wizard №7 takes 25 damage! Remaining HP: 75
+Fairy №0 attacks Wizard №7 for 25 damage!
+Fairy №0 takes heal.
+Wizard №7 takes 25 damage! Remaining HP: 50
+Fairy №6 attacks Wizard №7 for 25 damage!
+Wizard №7 takes 25 damage! Remaining HP: 25
+Fairy №4 attacks Wizard №7 for 25 damage!
+Wizard №7 takes 35 damage! Remaining HP: 0
+Wizard №5 attacks Wizard №7 for 35 damage!
+Wizard №5 is ignoring resistance and add + 10 AttackPower. Current AttackPower: 50
+Wizard №0 takes 25 damage! Remaining HP: 75
+Fairy №2 attacks Wizard №0 for 25 damage!
+Wizard №3 takes 25 damage! Remaining HP: 75
+Fairy №0 attacks Wizard №3 for 25 damage!
+Fairy №0 takes 30 damage! Remaining HP: 120
+Wizard №1 attacks Fairy №0 for 30 damage!
+Wizard №1 is ignoring resistance and add + 12 AttackPower. Current AttackPower: 52
+Fairy №0 takes 20 damage! Remaining HP: 143
+Fairy №2 attacks Fairy №0 for 20 damage!
+Fairy №6 takes 20 damage! Remaining HP: 130
+Fairy №0 attacks Fairy №6 for 20 damage!
+Fairy №0 takes 20 damage! Remaining HP: 100
+Fairy №6 attacks Fairy №0 for 20 damage!
+Fairy №6 takes heal.
+Wizard №3 takes 25 damage! Remaining HP: 50
+Fairy №6 attacks Wizard №3 for 25 damage!
+Fairy №2 takes 40 damage! Remaining HP: 90
+Wizard №5 attacks Fairy №2 for 40 damage!
+Wizard №0 takes 47 damage! Remaining HP: 28
+Wizard №1 attacks Wizard №0 for 47 damage!
+Wizard №1 is ignoring resistance and add + 12 AttackPower. Current AttackPower: 64
+Fairy №0 takes 20 damage! Remaining HP: 133
+Fairy №2 attacks Fairy №0 for 20 damage!
+Wizard №5 takes 25 damage! Remaining HP: 75
+Fairy №0 attacks Wizard №5 for 25 damage!
+Wizard №1 takes 25 damage! Remaining HP: 75
+Fairy №6 attacks Wizard №1 for 25 damage!
+Fairy №6 takes heal.
+Fairy №0 takes 40 damage! Remaining HP: 93
+Wizard №0 attacks Fairy №0 for 40 damage!
+Fairy №4 takes 20 damage! Remaining HP: 130
+Fairy №2 attacks Fairy №4 for 20 damage!
+Fairy №2 takes 20 damage! Remaining HP: 70
+Fairy №0 attacks Fairy №2 for 20 damage!
+Fairy №0 takes heal.
+Wizard №1 takes 45 damage! Remaining HP: 30
+Wizard №0 attacks Wizard №1 for 45 damage!
+Fairy №0 takes 40 damage! Remaining HP: 71
+Wizard №5 attacks Fairy №0 for 40 damage!
+Wizard №3 takes 45 damage! Remaining HP: 5
+Wizard №0 attacks Wizard №3 for 45 damage!
+Wizard №0 is ignoring resistance and add + 13 AttackPower. Current AttackPower: 63
+Fairy №4 takes 20 damage! Remaining HP: 120
+Fairy №6 attacks Fairy №4 for 20 damage!
+Wizard №0 takes 25 damage! Remaining HP: 3
+Fairy №2 attacks Wizard №0 for 25 damage!
+Wizard №3 takes 25 damage! Remaining HP: 0
+Fairy №0 attacks Wizard №3 for 25 damage!
+Fairy №0 takes heal.
+Fairy №0 takes 53 damage! Remaining HP: 54
+Wizard №0 attacks Fairy №0 for 53 damage!
+Fairy №2 takes 53 damage! Remaining HP: 17
+Wizard №0 attacks Fairy №2 for 53 damage!
+Fairy №6 takes 20 damage! Remaining HP: 131
+Fairy №0 attacks Fairy №6 for 20 damage!
+Fairy №0 takes heal.
+Fairy №4 takes 53 damage! Remaining HP: 77
+Wizard №0 attacks Fairy №4 for 53 damage!
+Wizard №5 takes 25 damage! Remaining HP: 50
+Fairy №0 attacks Wizard №5 for 25 damage!
+Fairy №0 takes 20 damage! Remaining HP: 51
+Fairy №2 attacks Fairy №0 for 20 damage!
+Fairy №2 takes heal.
+Fairy №4 takes 20 damage! Remaining HP: 57
+Fairy №0 attacks Fairy №4 for 20 damage!
+Fairy №2 takes 20 damage! Remaining HP: 11
+Fairy №0 attacks Fairy №2 for 20 damage!
+Fairy №4 takes 20 damage! Remaining HP: 37
+Fairy №2 attacks Fairy №4 for 20 damage!
+Fairy №2 takes heal.
+Fairy №0 takes 20 damage! Remaining HP: 31
+Fairy №0 attacks Fairy №0 for 20 damage!
+Fairy №0 takes 20 damage! Remaining HP: 44
+Fairy №4 attacks Fairy №0 for 20 damage!
+Fairy №0 takes 20 damage! Remaining HP: 11
+Fairy №0 attacks Fairy №0 for 20 damage!
+Fairy №0 takes heal.
+Fairy №6 takes 20 damage! Remaining HP: 121
+Fairy №0 attacks Fairy №6 for 20 damage!
+Fairy №6 takes 20 damage! Remaining HP: 111
+Fairy №2 attacks Fairy №6 for 20 damage!
+Fairy №0 takes 53 damage! Remaining HP: 5
+Wizard №0 attacks Fairy №0 for 53 damage!
+Wizard №0 is ignoring resistance and add + 10 AttackPower. Current AttackPower: 73
+Fairy №0 takes 20 damage! Remaining HP: 0
+Fairy №0 attacks Fairy №0 for 20 damage!
+Fairy №6 takes 54 damage! Remaining HP: 57
+Wizard №1 attacks Fairy №6 for 54 damage!
+Wizard №1 takes 25 damage! Remaining HP: 5
+Fairy №0 attacks Wizard №1 for 25 damage!
+Fairy №0 takes heal.
+Wizard №0 takes 25 damage! Remaining HP: 0
+Fairy №2 attacks Wizard №0 for 25 damage!
+Fairy №0 takes 20 damage! Remaining HP: 1
+Fairy №6 attacks Fairy №0 for 20 damage!
+Fairy №4 takes 64 damage! Remaining HP: 0
+Wizard №1 attacks Fairy №4 for 64 damage!
+Wizard №1 is ignoring resistance and add + 12 AttackPower. Current AttackPower: 86
+Wizard №5 takes 81 damage! Remaining HP: 0
+Wizard №1 attacks Wizard №5 for 81 damage!
+Fairy №2 takes 76 damage! Remaining HP: 0
+Wizard №1 attacks Fairy №2 for 76 damage!
+Fairy №0 takes 20 damage! Remaining HP: 0
+Fairy №2 attacks Fairy №0 for 20 damage!
+Fairy №2 takes heal.
+Fairy №2 takes 20 damage! Remaining HP: 0
+Fairy №6 attacks Fairy №2 for 20 damage!
+Wizard №1 takes 25 damage! Remaining HP: 0
+Fairy №6 attacks Wizard №1 for 25 damage!
+Fairy №6 is the last hero standing with 57 HP left!
+Fairy №6 - HP: 150, Attack: 30, Defense: 10
+Wizard №2 - HP: 100, Attack: 40, Defense: 5
+Fairy №2 - HP: 150, Attack: 30, Defense: 10
+Wizard №0 - HP: 100, Attack: 40, Defense: 5
+Fairy №0 - HP: 150, Attack: 30, Defense: 10
+Wizard №1 - HP: 100, Attack: 40, Defense: 5
+Wizard №7 takes 25 damage! Remaining HP: 75
+Fairy №8 attacks Wizard №7 for 25 damage!
+Wizard №7 takes 25 damage! Remaining HP: 50
+Fairy №8 attacks Wizard №7 for 25 damage!
+Fairy №8 takes heal.
+Wizard №4 takes 35 damage! Remaining HP: 65
+Wizard №7 attacks Wizard №4 for 35 damage!
+Fairy №8 takes 20 damage! Remaining HP: 130
+Fairy №8 attacks Fairy №8 for 20 damage!
+Fairy №0 takes 20 damage! Remaining HP: 130
+Fairy №7 attacks Fairy №0 for 20 damage!
+Fairy №7 takes heal.
+Fairy №8 takes 30 damage! Remaining HP: 130
+Wizard №4 attacks Fairy №8 for 30 damage!
+Fairy №8 takes 20 damage! Remaining HP: 120
+Fairy №7 attacks Fairy №8 for 20 damage!
+Wizard №2 takes 35 damage! Remaining HP: 65
+Wizard №2 attacks Wizard №2 for 35 damage!
+Wizard №2 is ignoring resistance and add + 10 AttackPower. Current AttackPower: 50
+Fairy №0 takes 20 damage! Remaining HP: 110
+Fairy №7 attacks Fairy №0 for 20 damage!
+Fairy №9 takes 30 damage! Remaining HP: 120
+Wizard №7 attacks Fairy №9 for 30 damage!
+Wizard №2 takes 25 damage! Remaining HP: 75
+Fairy №8 attacks Wizard №2 for 25 damage!
+Fairy №8 takes heal.
+Fairy №7 takes 20 damage! Remaining HP: 143
+Fairy №8 attacks Fairy №7 for 20 damage!
+Fairy №9 takes 20 damage! Remaining HP: 100
+Fairy №0 attacks Fairy №9 for 20 damage!
+Fairy №7 takes 20 damage! Remaining HP: 123
+Fairy №9 attacks Fairy №7 for 20 damage!
+Fairy №9 takes heal.
+Fairy №7 takes 20 damage! Remaining HP: 113
+Fairy №9 attacks Fairy №7 for 20 damage!
+Wizard №4 takes 45 damage! Remaining HP: 20
+Wizard №2 attacks Wizard №4 for 45 damage!
+Fairy №7 takes 20 damage! Remaining HP: 93
+Fairy №0 attacks Fairy №7 for 20 damage!
+Fairy №0 takes heal.
+Wizard №2 takes 25 damage! Remaining HP: 75
+Fairy №0 attacks Wizard №2 for 25 damage!
+Fairy №9 takes 20 damage! Remaining HP: 94
+Fairy №7 attacks Fairy №9 for 20 damage!
+Fairy №0 takes 30 damage! Remaining HP: 103
+Wizard №7 attacks Fairy №0 for 30 damage!
+Wizard №7 is ignoring resistance and add + 14 AttackPower. Current AttackPower: 54
+Fairy №0 takes 20 damage! Remaining HP: 83
+Fairy №8 attacks Fairy №0 for 20 damage!
+Fairy №7 takes 20 damage! Remaining HP: 73
+Fairy №8 attacks Fairy №7 for 20 damage!
+Wizard №7 takes 25 damage! Remaining HP: 25
+Fairy №9 attacks Wizard №7 for 25 damage!
+Fairy №9 takes heal.
+Fairy №8 takes 20 damage! Remaining HP: 121
+Fairy №8 attacks Fairy №8 for 20 damage!
+Fairy №9 takes 30 damage! Remaining HP: 88
+Wizard №4 attacks Fairy №9 for 30 damage!
+Wizard №2 takes 35 damage! Remaining HP: 30
+Wizard №4 attacks Wizard №2 for 35 damage!
+Wizard №4 is ignoring resistance and add + 14 AttackPower. Current AttackPower: 54
+Fairy №7 takes 30 damage! Remaining HP: 43
+Wizard №2 attacks Fairy №7 for 30 damage!
+Fairy №0 takes 20 damage! Remaining HP: 63
+Fairy №7 attacks Fairy №0 for 20 damage!
+Fairy №8 takes 30 damage! Remaining HP: 101
+Wizard №2 attacks Fairy №8 for 30 damage!
+Wizard №2 is ignoring resistance and add + 13 AttackPower. Current AttackPower: 53
+Wizard №2 takes 25 damage! Remaining HP: 5
+Fairy №8 attacks Wizard №2 for 25 damage!
+Wizard №7 takes 25 damage! Remaining HP: 0
+Fairy №0 attacks Wizard №7 for 25 damage!
+Fairy №8 takes 20 damage! Remaining HP: 100
+Fairy №8 attacks Fairy №8 for 20 damage!
+Fairy №8 takes heal.
+Fairy №8 takes 20 damage! Remaining HP: 80
+Fairy №0 attacks Fairy №8 for 20 damage!
+Wizard №2 takes 48 damage! Remaining HP: 27
+Wizard №2 attacks Wizard №2 for 48 damage!
+Wizard №2 takes 25 damage! Remaining HP: 2
+Fairy №7 attacks Wizard №2 for 25 damage!
+Fairy №7 takes heal.
+Wizard №4 takes 55 damage! Remaining HP: 0
+Wizard №2 attacks Wizard №4 for 55 damage!
+Fairy №8 takes 20 damage! Remaining HP: 60
+Fairy №8 attacks Fairy №8 for 20 damage!
+Wizard №2 takes 25 damage! Remaining HP: 50
+Fairy №9 attacks Wizard №2 for 25 damage!
+Fairy №9 takes heal.
+Fairy №9 takes 50 damage! Remaining HP: 48
+Wizard №2 attacks Fairy №9 for 50 damage!
+Wizard №2 takes 25 damage! Remaining HP: 0
+Fairy №8 attacks Wizard №2 for 25 damage!
+Wizard №2 takes 25 damage! Remaining HP: 0
+Fairy №8 attacks Wizard №2 for 25 damage!
+Fairy №8 takes heal.
+Fairy №8 takes 20 damage! Remaining HP: 50
+Fairy №8 attacks Fairy №8 for 20 damage!
+Wizard №2 takes 25 damage! Remaining HP: 25
+Fairy №8 attacks Wizard №2 for 25 damage!
+Fairy №8 takes 20 damage! Remaining HP: 105
+Fairy №9 attacks Fairy №8 for 20 damage!
+Fairy №9 takes heal.
+Fairy №7 takes 30 damage! Remaining HP: 23
+Wizard №2 attacks Fairy №7 for 30 damage!
+Fairy №0 takes 20 damage! Remaining HP: 43
+Fairy №9 attacks Fairy №0 for 20 damage!
+Fairy №0 takes 20 damage! Remaining HP: 23
+Fairy №7 attacks Fairy №0 for 20 damage!
+Fairy №7 takes heal.
+Fairy №8 takes 20 damage! Remaining HP: 30
+Fairy №7 attacks Fairy №8 for 20 damage!
+Fairy №8 takes 20 damage! Remaining HP: 10
+Fairy №7 attacks Fairy №8 for 20 damage!
+Fairy №8 takes 20 damage! Remaining HP: 95
+Fairy №7 attacks Fairy №8 for 20 damage!
+Fairy №7 takes heal.
+Fairy №8 takes 20 damage! Remaining HP: 75
+Fairy №7 attacks Fairy №8 for 20 damage!
+Fairy №7 takes 20 damage! Remaining HP: 31
+Fairy №8 attacks Fairy №7 for 20 damage!
+Fairy №8 takes 20 damage! Remaining HP: 55
+Fairy №8 attacks Fairy №8 for 20 damage!
+Fairy №8 takes heal.
+Fairy №8 takes 20 damage! Remaining HP: 35
+Fairy №8 attacks Fairy №8 for 20 damage!
+Fairy №9 takes 20 damage! Remaining HP: 48
+Fairy №8 attacks Fairy №9 for 20 damage!
+Fairy №8 takes 30 damage! Remaining HP: 15
+Wizard №2 attacks Fairy №8 for 30 damage!
+Wizard №2 is ignoring resistance and add + 10 AttackPower. Current AttackPower: 50
+Fairy №8 takes 20 damage! Remaining HP: 11
+Fairy №7 attacks Fairy №8 for 20 damage!
+Fairy №8 takes 20 damage! Remaining HP: 0
+Fairy №9 attacks Fairy №8 for 20 damage!
+Fairy №7 takes 20 damage! Remaining HP: 11
+Fairy №8 attacks Fairy №7 for 20 damage!
+Fairy №8 takes heal.
+Fairy №9 takes 20 damage! Remaining HP: 28
+Fairy №8 attacks Fairy №9 for 20 damage!
+Wizard №2 takes 25 damage! Remaining HP: 0
+Fairy №8 attacks Wizard №2 for 25 damage!
+Fairy №0 takes 20 damage! Remaining HP: 3
+Fairy №8 attacks Fairy №0 for 20 damage!
+Fairy №8 takes heal.
+Fairy №0 takes 20 damage! Remaining HP: 0
+Fairy №8 attacks Fairy №0 for 20 damage!
+Fairy №9 takes 20 damage! Remaining HP: 8
+Fairy №8 attacks Fairy №9 for 20 damage!
+Fairy №7 takes 20 damage! Remaining HP: 1
+Fairy №8 attacks Fairy №7 for 20 damage!
+Fairy №8 takes heal.
+Fairy №9 takes 20 damage! Remaining HP: 0
+Fairy №8 attacks Fairy №9 for 20 damage!
+Fairy №7 takes 20 damage! Remaining HP: 0
+Fairy №8 attacks Fairy №7 for 20 damage!
+Fairy №8 is the last hero standing with 50 HP left!
+Wizard №1 takes 25 damage! Remaining HP: 75
+Fairy №8 attacks Wizard №1 for 25 damage!
+Wizard №2 takes 35 damage! Remaining HP: 65
+Wizard №3 attacks Wizard №2 for 35 damage!
+Wizard №3 is ignoring resistance and add + 14 AttackPower. Current AttackPower: 54
+Wizard №0 takes 35 damage! Remaining HP: 65
+Wizard №1 attacks Wizard №0 for 35 damage!
+Fairy №6 takes 20 damage! Remaining HP: 130
+Fairy №7 attacks Fairy №6 for 20 damage!
+Wizard №3 takes 25 damage! Remaining HP: 75
+Fairy №1 attacks Wizard №3 for 25 damage!
+Fairy №1 takes heal.
+Fairy №4 takes 20 damage! Remaining HP: 130
+Fairy №7 attacks Fairy №4 for 20 damage!
+Fairy №6 takes 30 damage! Remaining HP: 110
+Wizard №3 attacks Fairy №6 for 30 damage!
+Fairy №4 takes 30 damage! Remaining HP: 100
+Wizard №0 attacks Fairy №4 for 30 damage!
+Wizard №0 is ignoring resistance and add + 11 AttackPower. Current AttackPower: 51
+Wizard №0 takes 49 damage! Remaining HP: 16
+Wizard №3 attacks Wizard №0 for 49 damage!
+Wizard №3 takes 25 damage! Remaining HP: 75
+Fairy №4 attacks Wizard №3 for 25 damage!
+Wizard №2 takes 35 damage! Remaining HP: 30
+Wizard №3 attacks Wizard №2 for 35 damage!
+Wizard №3 is ignoring resistance and add + 14 AttackPower. Current AttackPower: 54
+Wizard №1 takes 25 damage! Remaining HP: 50
+Fairy №7 attacks Wizard №1 for 25 damage!
+Fairy №8 takes 20 damage! Remaining HP: 130
+Fairy №1 attacks Fairy №8 for 20 damage!
+Wizard №1 takes 25 damage! Remaining HP: 25
+Fairy №8 attacks Wizard №1 for 25 damage!
+Fairy №8 takes heal.
+Wizard №1 takes 25 damage! Remaining HP: 0
+Fairy №7 attacks Wizard №1 for 25 damage!
+Fairy №7 takes 44 damage! Remaining HP: 106
+Wizard №3 attacks Fairy №7 for 44 damage!
+Fairy №7 takes 44 damage! Remaining HP: 62
+Wizard №3 attacks Fairy №7 for 44 damage!
+Wizard №3 is ignoring resistance and add + 10 AttackPower. Current AttackPower: 64
+Fairy №1 takes 54 damage! Remaining HP: 108
+Wizard №3 attacks Fairy №1 for 54 damage!
+Wizard №0 takes 25 damage! Remaining HP: 0
+Fairy №4 attacks Wizard №0 for 25 damage!
+Fairy №1 takes 20 damage! Remaining HP: 88
+Fairy №7 attacks Fairy №1 for 20 damage!
+Fairy №7 takes heal.
+Wizard №3 takes 25 damage! Remaining HP: 50
+Fairy №8 attacks Wizard №3 for 25 damage!
+Fairy №1 takes 20 damage! Remaining HP: 68
+Fairy №7 attacks Fairy №1 for 20 damage!
+Wizard №2 takes 49 damage! Remaining HP: 0
+Wizard №3 attacks Wizard №2 for 49 damage!
+Wizard №3 is ignoring resistance and add + 12 AttackPower. Current AttackPower: 66
+Wizard №3 takes 25 damage! Remaining HP: 25
+Fairy №7 attacks Wizard №3 for 25 damage!
+Fairy №8 takes 66 damage! Remaining HP: 76
+Wizard №3 attacks Fairy №8 for 66 damage!
+Fairy №6 takes 20 damage! Remaining HP: 90
+Fairy №1 attacks Fairy №6 for 20 damage!
+Fairy №1 takes heal.
+Fairy №8 takes 20 damage! Remaining HP: 56
+Fairy №1 attacks Fairy №8 for 20 damage!
+Fairy №7 takes 20 damage! Remaining HP: 53
+Fairy №6 attacks Fairy №7 for 20 damage!
+Fairy №4 takes 20 damage! Remaining HP: 80
+Fairy №8 attacks Fairy №4 for 20 damage!
+Fairy №8 takes heal.
+Fairy №7 takes 20 damage! Remaining HP: 33
+Fairy №6 attacks Fairy №7 for 20 damage!
+Wizard №3 takes 59 damage! Remaining HP: 0
+Wizard №3 attacks Wizard №3 for 59 damage!
+Wizard №3 takes 25 damage! Remaining HP: 50
+Fairy №4 attacks Wizard №3 for 25 damage!
+Fairy №4 takes heal.
+Fairy №1 takes 20 damage! Remaining HP: 58
+Fairy №4 attacks Fairy №1 for 20 damage!
+Fairy №8 takes 20 damage! Remaining HP: 50
+Fairy №6 attacks Fairy №8 for 20 damage!
+Fairy №7 takes 20 damage! Remaining HP: 13
+Fairy №6 attacks Fairy №7 for 20 damage!
+Fairy №6 takes heal.
+Fairy №8 takes 20 damage! Remaining HP: 40
+Fairy №6 attacks Fairy №8 for 20 damage!
+Fairy №1 takes 20 damage! Remaining HP: 38
+Fairy №7 attacks Fairy №1 for 20 damage!
+Fairy №1 takes 20 damage! Remaining HP: 18
+Fairy №7 attacks Fairy №1 for 20 damage!
+Fairy №7 takes heal.
+Fairy №1 takes 20 damage! Remaining HP: 0
+Fairy №8 attacks Fairy №1 for 20 damage!
+Fairy №6 takes 20 damage! Remaining HP: 84
+Fairy №4 attacks Fairy №6 for 20 damage!
+Fairy №8 takes 20 damage! Remaining HP: 20
+Fairy №7 attacks Fairy №8 for 20 damage!
+Fairy №7 takes heal.
+Wizard №3 takes 25 damage! Remaining HP: 25
+Fairy №7 attacks Wizard №3 for 25 damage!
+Fairy №8 takes 20 damage! Remaining HP: 0
+Fairy №6 attacks Fairy №8 for 20 damage!
+Wizard №3 takes 25 damage! Remaining HP: 0
+Fairy №1 attacks Wizard №3 for 25 damage!
+Fairy №1 takes heal.
+Fairy №6 takes 20 damage! Remaining HP: 64
+Fairy №4 attacks Fairy №6 for 20 damage!
+Fairy №7 takes 20 damage! Remaining HP: 17
+Fairy №4 attacks Fairy №7 for 20 damage!
+Fairy №7 takes 20 damage! Remaining HP: 0
+Fairy №6 attacks Fairy №7 for 20 damage!
+Fairy №6 takes heal.
+Fairy №4 takes 20 damage! Remaining HP: 84
+Fairy №1 attacks Fairy №4 for 20 damage!
+Fairy №4 takes 20 damage! Remaining HP: 64
+Fairy №6 attacks Fairy №4 for 20 damage!
+Fairy №6 takes 20 damage! Remaining HP: 54
+Fairy №1 attacks Fairy №6 for 20 damage!
+Fairy №1 takes heal.
+Fairy №1 takes 20 damage! Remaining HP: 13
+Fairy №6 attacks Fairy №1 for 20 damage!
+Fairy №6 takes 20 damage! Remaining HP: 34
+Fairy №4 attacks Fairy №6 for 20 damage!
+Fairy №4 takes 20 damage! Remaining HP: 54
+Fairy №1 attacks Fairy №4 for 20 damage!
+Fairy №1 takes heal.
+Fairy №6 takes 20 damage! Remaining HP: 14
+Fairy №1 attacks Fairy №6 for 20 damage!
+Fairy №6 takes 20 damage! Remaining HP: 4
+Fairy №1 attacks Fairy №6 for 20 damage!
+Fairy №1 takes 20 damage! Remaining HP: 7
+Fairy №6 attacks Fairy №1 for 20 damage!
+Fairy №6 takes heal.
+Fairy №6 takes 20 damage! Remaining HP: 0
+Fairy №1 attacks Fairy №6 for 20 damage!
+Fairy №1 takes 20 damage! Remaining HP: 0
+Fairy №4 attacks Fairy №1 for 20 damage!
+Fairy №4 is the last hero standing with 54 HP left!
+Wizard №3 takes 35 damage! Remaining HP: 65
+Wizard №1 attacks Wizard №3 for 35 damage!
+Wizard №7 takes 35 damage! Remaining HP: 65
+Wizard №2 attacks Wizard №7 for 35 damage!
+Wizard №2 is ignoring resistance and add + 11 AttackPower. Current AttackPower: 51
+Wizard №3 takes 25 damage! Remaining HP: 75
+Fairy №6 attacks Wizard №3 for 25 damage!
+Fairy №6 takes 30 damage! Remaining HP: 120
+Wizard №1 attacks Fairy №6 for 30 damage!
+Wizard №1 takes 35 damage! Remaining HP: 65
+Wizard №7 attacks Wizard №1 for 35 damage!
+Wizard №7 is ignoring resistance and add + 13 AttackPower. Current AttackPower: 53
+Wizard №7 takes 35 damage! Remaining HP: 30
+Wizard №1 attacks Wizard №7 for 35 damage!
+Fairy №6 takes 30 damage! Remaining HP: 100
+Wizard №3 attacks Fairy №6 for 30 damage!
+Wizard №2 takes 25 damage! Remaining HP: 75
+Fairy №5 attacks Wizard №2 for 25 damage!
+Fairy №5 takes heal.
+Fairy №6 takes 43 damage! Remaining HP: 57
+Wizard №7 attacks Fairy №6 for 43 damage!
+Fairy №9 takes 20 damage! Remaining HP: 130
+Fairy №6 attacks Fairy №9 for 20 damage!
+Wizard №7 takes 25 damage! Remaining HP: 5
+Fairy №9 attacks Wizard №7 for 25 damage!
+Fairy №9 takes heal.
+Fairy №5 takes 20 damage! Remaining HP: 144
+Fairy №9 attacks Fairy №5 for 20 damage!
+Wizard №7 takes 25 damage! Remaining HP: 0
+Fairy №6 attacks Wizard №7 for 25 damage!
+Fairy №1 takes 20 damage! Remaining HP: 130
+Fairy №5 attacks Fairy №1 for 20 damage!
+Fairy №5 takes heal.
+Wizard №1 takes 35 damage! Remaining HP: 30
+Wizard №3 attacks Wizard №1 for 35 damage!
+Fairy №6 takes 20 damage! Remaining HP: 47
+Fairy №9 attacks Fairy №6 for 20 damage!
+Fairy №5 takes 20 damage! Remaining HP: 137
+Fairy №0 attacks Fairy №5 for 20 damage!
+Fairy №0 takes heal.
+Fairy №5 takes 30 damage! Remaining HP: 107
+Wizard №3 attacks Fairy №5 for 30 damage!
+Fairy №9 takes 30 damage! Remaining HP: 111
+Wizard №1 attacks Fairy №9 for 30 damage!
+Wizard №1 takes 35 damage! Remaining HP: 0
+Wizard №3 attacks Wizard №1 for 35 damage!
+Wizard №3 is ignoring resistance and add + 10 AttackPower. Current AttackPower: 50
+Fairy №1 takes 20 damage! Remaining HP: 120
+Fairy №9 attacks Fairy №1 for 20 damage!
+Fairy №9 takes 30 damage! Remaining HP: 91
+Wizard №3 attacks Fairy №9 for 30 damage!
+Fairy №0 takes 30 damage! Remaining HP: 133
+Wizard №3 attacks Fairy №0 for 30 damage!
+Wizard №3 is ignoring resistance and add + 13 AttackPower. Current AttackPower: 53
+Fairy №6 takes 40 damage! Remaining HP: 7
+Wizard №3 attacks Fairy №6 for 40 damage!
+Wizard №3 takes 25 damage! Remaining HP: 50
+Fairy №9 attacks Wizard №3 for 25 damage!
+Fairy №1 takes 41 damage! Remaining HP: 79
+Wizard №2 attacks Fairy №1 for 41 damage!
+Wizard №2 is ignoring resistance and add + 10 AttackPower. Current AttackPower: 61
+Wizard №3 takes 25 damage! Remaining HP: 25
+Fairy №6 attacks Wizard №3 for 25 damage!
+Wizard №3 takes 25 damage! Remaining HP: 40
+Fairy №9 attacks Wizard №3 for 25 damage!
+Wizard №2 takes 25 damage! Remaining HP: 50
+Fairy №6 attacks Wizard №2 for 25 damage!
+Fairy №6 takes heal.
+Wizard №2 takes 25 damage! Remaining HP: 25
+Fairy №1 attacks Wizard №2 for 25 damage!
+Wizard №3 takes 25 damage! Remaining HP: 0
+Fairy №5 attacks Wizard №3 for 25 damage!
+Fairy №9 takes 61 damage! Remaining HP: 30
+Wizard №2 attacks Fairy №9 for 61 damage!
+Wizard №2 is ignoring resistance and add + 11 AttackPower. Current AttackPower: 82
+Fairy №5 takes 43 damage! Remaining HP: 64
+Wizard №3 attacks Fairy №5 for 43 damage!
+Wizard №3 takes 25 damage! Remaining HP: 15
+Fairy №9 attacks Wizard №3 for 25 damage!
+Fairy №6 takes 72 damage! Remaining HP: 0
+Wizard №2 attacks Fairy №6 for 72 damage!
+Wizard №2 is ignoring resistance and add + 13 AttackPower. Current AttackPower: 95
+Fairy №0 takes 53 damage! Remaining HP: 80
+Wizard №3 attacks Fairy №0 for 53 damage!
+Fairy №5 takes 53 damage! Remaining HP: 11
+Wizard №3 attacks Fairy №5 for 53 damage!
+Fairy №1 takes 20 damage! Remaining HP: 59
+Fairy №0 attacks Fairy №1 for 20 damage!
+Fairy №0 takes heal.
+Fairy №0 takes 20 damage! Remaining HP: 74
+Fairy №5 attacks Fairy №0 for 20 damage!
+Fairy №5 takes 20 damage! Remaining HP: 0
+Fairy №0 attacks Fairy №5 for 20 damage!
+Wizard №3 takes 25 damage! Remaining HP: 0
+Fairy №0 attacks Wizard №3 for 25 damage!
+Fairy №0 takes heal.
+Fairy №0 takes 20 damage! Remaining HP: 76
+Fairy №9 attacks Fairy №0 for 20 damage!
+Fairy №0 takes 20 damage! Remaining HP: 56
+Fairy №1 attacks Fairy №0 for 20 damage!
+Fairy №9 takes 85 damage! Remaining HP: 0
+Wizard №2 attacks Fairy №9 for 85 damage!
+Wizard №2 is ignoring resistance and add + 14 AttackPower. Current AttackPower: 109
+Wizard №2 takes 25 damage! Remaining HP: 0
+Fairy №1 attacks Wizard №2 for 25 damage!
+Fairy №1 takes 20 damage! Remaining HP: 39
+Fairy №0 attacks Fairy №1 for 20 damage!
+Fairy №9 takes 20 damage! Remaining HP: 0
+Fairy №0 attacks Fairy №9 for 20 damage!
+Fairy №0 takes heal.
+Fairy №1 takes 20 damage! Remaining HP: 19
+Fairy №0 attacks Fairy №1 for 20 damage!
+Fairy №0 takes 20 damage! Remaining HP: 49
+Fairy №1 attacks Fairy №0 for 20 damage!
+Fairy №1 takes 20 damage! Remaining HP: 0
+Fairy №0 attacks Fairy №1 for 20 damage!
+Fairy №0 takes heal.
+Fairy №0 is the last hero standing with 73 HP left!
