@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Ровкова Анастасия, P3216, 407893</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+    <h:outputScript library="js" name="canvas.js"/>
+</h:head>
+<h:body>
+    <div class="main-container">
+        <div class="container form-container">
+            <header>Ровкова Анастасия, P3216, 407893</header>
+            <h1>Проверка</h1>
+
+            <h:form id="inputForm">
+                <div id="xContainer">
+                    <label>Выберите X:</label>
+                    <h:selectOneRadio id="xRadio" value="#{inputBean.XValue}">
+                        <f:selectItems value="#{inputBean.validXValues}" var="x"
+                                       itemLabel="#{x}" itemValue="#{x}" />
+                    </h:selectOneRadio>
+                    <h:inputHidden id="hiddenX" value="#{inputBean.XValue}" />
+                </div>
+
+                <label for="yInput">Введите Y:</label>
+                <h:inputText id="yInput" value="#{inputBean.YValue}">
+                    <f:validateDoubleRange minimum="-5" maximum="3"/>
+                </h:inputText>
+
+                <div id="rContainer">
+                    <h3>R:</h3>
+                    <div id="rCheckboxContainer">
+                        <h:selectManyCheckbox value="#{inputBean.selectedRValues}" id="rCheckbox">
+                            <f:selectItems value="#{inputBean.validRValues}"
+                                           var="r" itemValue="#{r}" itemLabel="#{r}"/>
+                        </h:selectManyCheckbox>
+                    </div>
+                </div>
+
+                <h:commandButton id="sendBtn" value="Проверить" styleClass="btn" action="#{inputBean.submit}">
+                    <f:ajax execute="@form" render="resultTable"/>
+                </h:commandButton>
+
+                <h:commandButton value="Очистить историю" styleClass="btn" action="#{inputBean.clearHistory()}">
+                    <f:ajax execute="@form" render="resultTable"/>
+                </h:commandButton>
+            </h:form>
+
+            <h:form>
+                <h:link outcome="start" value="Вернуться на главный экран" styleClass="btn"/>
+            </h:form>
+        </div>
+
+        <div class="container canvas-container">
+            <canvas id="axisCanvas" width="600" height="600"></canvas>
+        </div>
+
+        <div class="container table-container">
+            <h2>История результатов</h2>
+            <h:dataTable id="resultTable" value="#{inputBean.results}" var="res"
+                         styleClass="result-table" headerClass="table-header">
+                <h:column>
+                    <f:facet name="header">X</f:facet>
+                    #{res.x}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Y</f:facet>
+                    #{res.y}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">R</f:facet>
+                    #{res.r}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Попадание</f:facet>
+                    <h:outputText value="#{res.hit ? 'Попадание' : 'Промах'}"
+                                  styleClass="#{res.hit ? 'hit-yes' : 'hit-no'}"/>
+                </h:column>
+            </h:dataTable>
+        </div>
+    </div>
+</h:body>
+</html>
