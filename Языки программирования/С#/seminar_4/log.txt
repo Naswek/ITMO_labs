@@ -1,0 +1,102 @@
+from itertools import cycle
+
+import matplotlib.colors as clr
+import matplotlib.pyplot as plt
+import numpy as np
+from numba import njit
+
+#наши параметры
+re_min, re_max, im_min, im_max = -0.75, -0.74, 0.10, 0.11
+re_points, im_points = 20000, 20000
+max_iterations = 5000
+infinity_border = 10
+degree = 2
+
+# функция для просто красивых картинок
+def mandelbrot_smooth(re_min, re_max, re_points,
+                      im_min, im_max, im_points,
+                      max_iterations, infinity_border, degree):
+
+    x, y = np.mgrid[re_min:re_max:(re_points*1j), im_min:im_max:(im_points*1j)] # создаем двумерную сетку координат
+                                                                                # (2 двумерных массива для x и y)
+    c = x + 1j*y # создаем комплексное число
+    z = np.zeros_like(c, dtype=np.complex128) # создаем массив комплексных чисел, состоящее из нулей, те для каждого с z0 = 0
+    smooth = np.zeros(c.shape, dtype=float) # массив для результата (плавное число итераций, сначала все = 0), то есть
+                                            # в каждой ячейке будет храниться число, описывающее, что именно произошло с точкой
+
+    for k in range(max_iterations): #основной цикл итераций
+        z = z**degree + c # формула множества Мандельброта
+        mask = (np.abs(z) > infinity_border) & (smooth == 0) # находим, какие точки "вырвались" из множества,
+                                                             # mask - булев массив, где мы смотрим, какие точки
+                                                             # вырвались из итерации, проверяем так: возводим в модуль и
+                                                             # смотрим на параметр infinity_border, если |z| > in_bor, то точка "ушла в бесконечность"
+        smooth[mask] = k + 1 - np.log(np.log(np.abs(z[mask]))) / np.log(2) # красим фрактал, чтобы он был красивенький,
+                                                                           # мы берем дробное значение, насколько далеко
+                                                                           # точка улетел в беск, отсюда плавный перех между цветами
+        z[mask] = np.nan # кикаем вылетевшие точки
+    return -smooth.T # возвращаем картинку!
+
+# функция для более детальных картинок (кушает много ОЗУ)
+# почему это быстрее? штука сверху КОМПИЛИРУЕТ функцию в машинный код, отсюда питончик будет быстрее считать циклы
+# parallel=True -- позволяет юзать несколько ядер cpu, fastmath=True -- чуть подрезает точность значений с плавающей точкой,
+# но позволяет производить вычисления быстрее
+@njit(parallel=True, fastmath=True)
+def mandelbrot_fast(re_min, re_max, re_points,
+                    im_min, im_max, im_points,
+                    max_iterations, infinity_border, degree):
+    image = np.zeros((re_points, im_points)) # создаем матрицу
+    for i in range(re_points): # цикл по re
+        for j in range(im_points): # цикл по im
+            c = complex(re_min + (re_max - re_min) * i / re_points,
+                        im_min + (im_max - im_min) * j / im_points) # вычисляем комплексное число лдя каждого пикселя
+            z = 0.0j # начальное значение = 0
+            k = 0 # счетчик итераций
+            while (abs(z) <= infinity_border and k < max_iterations): # цикл итераций для одной точки c (условия те же,
+                                                                      # что и в предыдущей функции + не достигнут лимит итераций)
+                z = z**degree + c # формула
+                k += 1 # прибаляем к счетчику итерации + 1 и завершаем текущую итерацию
+            image[i, j] = k # сохраняем результат
+    return image
+
+plt.figure(figsize=(10, 10)) # создаем область рисунка, чисто для показа в среде разработки
+color_points = [(1 - (1 - q) ** 4, c) for q, c in zip(np.linspace(0, 1, 20),
+                                                     cycle(['#00bfff', '#000000',
+                                                            '#8b00ff', ]))] # генерация цветовой палитры, включающая
+                                                                            # коррекцию яркости, массив с цветами
+                                                                            # (черный, голубой и фиолетовый), + мэтч с (координата, цвет)
+cmap = clr.LinearSegmentedColormap.from_list('mycmap',
+                                             color_points, N=2048) # создание объекта-карты для координат, чтобы потом
+                                                                   # покрасить определенные координаты в свои цвета (палитра короч)
+plt.xticks([]) # отключаем подпись оси x
+plt.yticks([]) # отключаем подпись оси н
+
+
+image = mandelbrot_smooth(re_min, re_max, 1000,
+                          im_min, im_max, 1000,
+                          max_iterations, infinity_border, degree) # вызов функции
+'''''
+image = mandelbrot_fast(re_min, re_max, re_points,
+                          im_min, im_max, im_points,
+                          max_iterations, infinity_border, degree)
+'''''
+
+plt.show() # показываем нашу картинку (только для первой фукнции)
+#plt.imsave("mandelbrot_hd.png", image, cmap='inferno', dpi=600)  сохраняем картинку в директорию (для точных и глубоких картинок)
+
+
+#спираль (-0.75, -0.74, 0.1, 0.11) degree = 2, в зависимости от количества итераций, меняется цвета (они будто отражаются)
+#лепестки (-1.5, 1.5, -1.5, 1.5) degree = [3, 4, 5...], но мне не особо нрав
+#чисто линии с градиентом красивые (-0.75, -0.73, 0.10, 0.12) degree = 3(4, 5...), при degree = 2 что-то похожее на спираль будет
+#классический рисунок (-2.5, 1.5, -2, 2), при увеличении степени -- увеличение кол-ва лепестков, очень прикольно на 15 степени
+#очень красивая линия (-0.80, -0.70, 0.05, 0.15) degree = 2
+
+'''''
+re_min, re_max, im_min, im_max = -2.5, 1.5, -2, 2
+re_points, im_points = 4000, 4000
+max_iterations = 650
+infinity_border = 5
+degree = 2
+
+
+
+
