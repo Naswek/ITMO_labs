@@ -1,0 +1,31 @@
+<div class="container auth-narrow">
+
+  <h2>Вход</h2>
+
+  <form [formGroup]="loginForm">
+    <label>
+      Email/Логин:
+      <input formControlName="identifier" type="text" required />
+    </label>
+
+    <label>
+      Пароль:
+      <input formControlName="password" type="password" required />
+    </label>
+
+    <button class="btn" type="button" (click)="login()">Войти</button>
+
+    <button
+      class="btn"
+      type="button"
+      (click)="requestPasswordHint()"
+      [disabled]="!identifier">
+      Забыли пароль?
+    </button>
+  </form>
+
+  <p *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</p>
+  <p *ngIf="hintMessage" class="notification-msg">{{ hintMessage }}</p>
+
+  <p><a routerLink="/register">Еще нет аккаунта? Зарегистрироваться</a></p>
+</div>

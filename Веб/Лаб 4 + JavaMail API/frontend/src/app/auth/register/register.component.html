@@ -1,0 +1,42 @@
+<div class="container auth-narrow">
+
+<h2>Регистрация</h2>
+
+  <form [formGroup]="registerForm">
+
+  <label>
+    Логин:
+    <input formControlName="login" type="text" required />
+  </label>
+
+  <label>
+    Email:
+    <input formControlName="email" type="email" required />
+  </label>
+
+  <label>
+    Пароль:
+    <input formControlName="password" type="password" required minlength="6" />
+  </label>
+
+  <label>
+    Повторите пароль:
+    <input formControlName="passwordConfirm" type="password" required />
+  </label>
+
+  <label>
+    Подсказка для пароля:
+    <input formControlName="passwordHint" type="text" placeholder="Например: кличка питомца" maxlength="100" required/>
+  </label>
+  <small class="hint-explanation">
+    Эта подсказка поможет вам вспомнить пароль, если вы его забудете.
+    Не указывайте сам пароль!
+  </small>
+  </form>
+  <button class="btn" (click)="register()" [disabled]="!isFormValid()">Зарегистрироваться</button>
+
+  <p *ngIf="formError" class="error-msg">{{ formError }}</p>
+  <p *ngIf="successMessage" class="notification-msg">{{ successMessage }}</p>
+
+  <p><a routerLink="/login">Уже есть аккаунт? Войти</a></p>
+</div>

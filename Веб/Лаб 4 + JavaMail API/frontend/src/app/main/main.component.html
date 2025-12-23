@@ -1,0 +1,112 @@
+<div class="main-container">
+  <div class="container settings-container">
+    <h3>Параметры</h3>
+
+    <form [formGroup]="plotForm">
+      <label>
+        X:
+        <select formControlName="x">
+          <option [ngValue]="null" disabled>Выберите X</option>
+          <option *ngFor="let x of xValues" [ngValue]="x">
+            {{ x }}
+          </option>
+        </select>
+      </label>
+
+      <label>
+        Y:
+        <input formControlName="y" type="number" step="0.01" />
+      </label>
+      <div class="range-hint">(-5; 3)</div>
+
+      <label>
+        R:
+        <select formControlName="r" (change)="onRChange()">
+          <option [ngValue]="null" disabled>Выберите R</option>
+          <option *ngFor="let r of rValues" [ngValue]="r">
+            {{ r }}
+          </option>
+        </select>
+      </label>
+
+      <div class="btn-row">
+        <button type="button" class="btn" (click)="submit()">Отправить</button>
+        <button type="button" class="btn" (click)="clear()">Очистить</button>
+        <button type="button" class="btn" (click)="logout()">Выйти</button>
+      </div>
+
+      <span *ngIf="formError" class="error-msg">{{ formError }}</span>
+    </form>
+  </div>
+
+  <div class="container canvas-container">
+    <canvas #plot (click)="onCanvasClick($event)"></canvas>
+  </div>
+
+  <div class="container table-container">
+    <table class="result-table">
+      <thead>
+      <tr>
+        <th>
+          <button type="button" class="sort-btn" (click)="sortBy('x')">
+            X <span class="sort-icon">{{ getSortIcon('x') }}</span>
+          </button>
+        </th>
+
+        <th>
+          <button type="button" class="sort-btn" (click)="sortBy('y')">
+            Y <span class="sort-icon">{{ getSortIcon('y') }}</span>
+          </button>
+        </th>
+
+        <th>
+          <button type="button" class="sort-btn" (click)="sortBy('r')">
+            R <span class="sort-icon">{{ getSortIcon('r') }}</span>
+          </button>
+        </th>
+
+        <th>
+          <button type="button" class="sort-btn" (click)="sortBy('hit')">
+            Результат <span class="sort-icon">{{ getSortIcon('hit') }}</span>
+          </button>
+        </th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let res of pagedResults">
+        <td>{{ res.x }}</td>
+        <td>{{ res.y }}</td>
+        <td>{{ res.r }}</td>
+        <td [class.hit-yes]="res.hit" [class.hit-no]="!res.hit">
+          {{ res.hit ? 'Попадание' : 'Промах' }}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      <button
+        class="page-btn"
+        (click)="prevWindow()"
+        [disabled]="currentPage <= pagesWindowSize">
+        ‹
+      </button>
+
+      <button
+        *ngFor="let p of visiblePages"
+        class="page-btn"
+        [class.active]="p === currentPage"
+        (click)="goToPage(p)">
+        {{ p }}
+      </button>
+
+      <button
+        class="page-btn"
+        (click)="nextWindow()"
+        [disabled]="visiblePages[visiblePages.length - 1] === totalPages">
+        ›
+      </button>
+    </div>
+  </div>
+</div>
