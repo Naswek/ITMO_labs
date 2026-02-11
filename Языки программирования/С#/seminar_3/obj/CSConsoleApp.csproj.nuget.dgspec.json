@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Documents\\ИТМО\\ЯПЫ_dir\\CSDemo01\\CSConsoleApp\\CSConsoleApp.csproj": {}
+    "C:\\itmo\\ITMO_labs\\Языки программирования\\С#\\seminar_3\\CSConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Documents\\ИТМО\\ЯПЫ_dir\\CSDemo01\\CSConsoleApp\\CSConsoleApp.csproj": {
+    "C:\\itmo\\ITMO_labs\\Языки программирования\\С#\\seminar_3\\CSConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\ИТМО\\ЯПЫ_dir\\CSDemo01\\CSConsoleApp\\CSConsoleApp.csproj",
+        "projectUniqueName": "C:\\itmo\\ITMO_labs\\Языки программирования\\С#\\seminar_3\\CSConsoleApp.csproj",
         "projectName": "CSConsoleApp",
-        "projectPath": "C:\\Users\\user\\Documents\\ИТМО\\ЯПЫ_dir\\CSDemo01\\CSConsoleApp\\CSConsoleApp.csproj",
+        "projectPath": "C:\\itmo\\ITMO_labs\\Языки программирования\\С#\\seminar_3\\CSConsoleApp.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\ИТМО\\ЯПЫ_dir\\CSDemo01\\CSConsoleApp\\obj\\",
+        "outputPath": "C:\\itmo\\ITMO_labs\\Языки программирования\\С#\\seminar_3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
