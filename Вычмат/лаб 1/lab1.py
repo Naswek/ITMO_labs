@@ -1,4 +1,6 @@
-import os, sys
+import os, sys, random
+
+#питон не фулл дописанный, ну, точнее он дописанный, просто тут баги есть
 
 RED = "\033[31m"
 GREEN = "\033[32m"
@@ -12,6 +14,22 @@ def is_number(s):
     except ValueError:
         return False
     
+def is_numbers_in_row(row):
+    try:
+        for i in row:
+            float(i)
+
+        return True
+    except ValueError:
+        return False
+
+def require_input(to_float):
+    selection = input()
+    if (is_number(selection)):
+        if to_float:
+            return float(selection)
+        return int(selection)
+    return None
 
 def input_numbers(expected_length=None):
 
@@ -26,41 +44,57 @@ def input_numbers(expected_length=None):
         except ValueError:
             print(f"{RED}введите только числа через пробел.{RESET}")
 
-def require_input(to_float):
-    selection = input()
-    if (is_number(selection)):
-        if to_float:
-            return float(selection)
-        return int(selection)
-    return None
-
 
 def from_file():
-    file_name  = input("Введите название файла: ")
+    file_name  = input("Введите название файла: ").strip()
     if not (os.path.exists(file_name) and os.path.isfile(file_name)):
         print(f"{RED}Такого файла нет{RESET}")
         return None
     
     
     with open(file_name, 'r') as f:
-        dimension = int(f.readline())
+        dimension =(f.readline())
+        if (not is_number(dimension)):
+            print("Некорректные данные в файле")
+            return
+        dimension = int(dimension)
         matrix = []
     
         for _ in range(dimension):
+            num = f.readline().split()
+            if not (is_numbers_in_row(num)):
+                matrix == None
+                break
             row= list(map(float, f.readline().split()))
             if len(row) != dimension + 1:
                 print(f"{RED}Неверное количество элементов в строке{RESET}")
                 return None
             matrix.append(row)
+    if (matrix == None):
+        return None
     print(f"{GREEN}Полученная матрица из файла: ")
     for i in matrix:
         print(*i)
     print(f"{RESET}")
     return matrix
 
-
-
 def from_keyboard():
+    demension = input_demension()
+    return read_matrix(demension)
+
+def from_generation():
+    matrix = []
+    dimension = input_demension()
+    for i in range(dimension):
+        row = [random.randint(0, 100) for i in range(dimension+1)]
+        matrix.append(row)
+    print(f"{GREEN}Полученная матрица: ")
+    for i in matrix:
+        print(*i)
+    print(f"{RESET}")
+    return matrix
+
+def input_demension():
     while (True):
         dimension = (input("Введите размерность матрицы до 20 включительно: "))
         if (is_number(dimension)):
@@ -69,11 +103,10 @@ def from_keyboard():
             print(f"{RED}введите число{RESET}")
             continue
         if (dimension <= 20):
-            break
+            return dimension
         else:
             print(f"{RED}введите число меньше или равное 20{RESET}")
             continue
-    return read_matrix(dimension)
 
 def read_matrix(dimension):
     matrix = []
@@ -84,7 +117,7 @@ def read_matrix(dimension):
     return matrix
 
 def check_convergence(matrix):
-    n = len(matrix) - 1
+    n = len(matrix)
     for i, row in enumerate(matrix):
         diag = abs(row[i])
         others = sum(abs(row[j]) for j in range(n) if j != i)
@@ -105,12 +138,17 @@ def beginning():
     actions = {
         1: from_keyboard,
         2: from_file,
-        3: lambda: None
+        3: from_generation,
+        4: lambda: None
     }
     while True:
         selection = None
         while selection not in actions:
-            print("варианты ввода, напишите цифру: \n" + "1. клава \n" + "2. файл \n" + "3. выйти из программы")
+            print("варианты ввода, напишите цифру: \n" 
+                  + "1. клава \n" 
+                  + "2. файл \n"
+                  + "3. случайная генерация \n" 
+                  + "4. выйти из программы")
             selection = require_input(False)
         matrix = actions[selection]()
         if(matrix is None):

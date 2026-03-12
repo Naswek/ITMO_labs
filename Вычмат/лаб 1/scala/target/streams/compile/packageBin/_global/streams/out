@@ -1,0 +1,103 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/lab1_2.11-0.1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IOHelper$$anonfun$readMatrixFromKeyboard$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/IOHelper$$anonfun$readMatrixFromKeyboard$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$toJacobiForm$1$$anonfun$apply$mcVI$sp$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$toJacobiForm$1$$anonfun$apply$mcVI$sp$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$checkConvergence$1$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$checkConvergence$1$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$toJacobiForm$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$toJacobiForm$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$runJacobiIterationsWithFormula$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$runJacobiIterationsWithFormula$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IOHelper$$anonfun$readMatrixFromFile$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/IOHelper$$anonfun$readMatrixFromFile$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IOHelper$$anonfun$readMatrixFromGeneration$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/IOHelper$$anonfun$readMatrixFromGeneration$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$isDiagonallyDominant$1$$anonfun$9.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$isDiagonallyDominant$1$$anonfun$9.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/Main$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$isDiagonallyDominant$1$$anonfun$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$isDiagonallyDominant$1$$anonfun$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$isDiagonallyDominant$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$isDiagonallyDominant$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$iteration$1$$anonfun$apply$mcDI$sp$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$iteration$1$$anonfun$apply$mcDI$sp$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IOHelper$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/IOHelper$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$toJacobiForm$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$toJacobiForm$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$runJacobiIterationsWithFormula$1$$anonfun$14.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$runJacobiIterationsWithFormula$1$$anonfun$14.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$makeDiagonallyDominant$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$makeDiagonallyDominant$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$makeDiagonallyDominant$1$$anonfun$3$$anonfun$apply$mcDI$sp$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$makeDiagonallyDominant$1$$anonfun$3$$anonfun$apply$mcDI$sp$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IOHelper$$anonfun$readMatrixFromGeneration$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/IOHelper$$anonfun$readMatrixFromGeneration$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$runJacobiIterationsWithFormula$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$runJacobiIterationsWithFormula$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$checkConvergence$1$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$checkConvergence$1$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$MatrixSolver$$idx$1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$MatrixSolver$$idx$1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$15.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$15.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/Main$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$12$$anonfun$apply$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$12$$anonfun$apply$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$13$$anonfun$apply$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$13$$anonfun$apply$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IOHelper$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/IOHelper$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$12.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$12.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$makeDiagonallyDominant$1$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$makeDiagonallyDominant$1$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IOHelper$$anonfun$readMatrixFromFile$1$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/IOHelper$$anonfun$readMatrixFromFile$1$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$checkConvergence$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$checkConvergence$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$11.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$11.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$iteration$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$iteration$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IOHelper.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/IOHelper.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Colors.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/Colors.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$13.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$13.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IOHelper$$anonfun$readMatrixFromFile$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/IOHelper$$anonfun$readMatrixFromFile$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$makeDiagonallyDominant$1$$anonfun$3$$anonfun$apply$mcDI$sp$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$makeDiagonallyDominant$1$$anonfun$3$$anonfun$apply$mcDI$sp$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IOHelper$$anonfun$readMatrixFromGeneration$1$$anonfun$apply$mcVI$sp$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/IOHelper$$anonfun$readMatrixFromGeneration$1$$anonfun$apply$mcVI$sp$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$10.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$10.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Colors$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/Colors$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MatrixSolver$$anonfun$10$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/naswek/ITMO_labs/Вычмат/лаб 1/scala/target/scala-2.11/classes/MatrixSolver$$anonfun$10$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

@@ -1,0 +1,4 @@
+[debug] [lab1] Classpath dependencies List()
+[debug] [lab1] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'lab1' to '/home/naswek/scala_projects/lab1/.bloop/lab1.json'
+[success] Generated .bloop/lab1.json
