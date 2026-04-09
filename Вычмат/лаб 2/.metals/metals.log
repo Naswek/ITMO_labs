@@ -1,0 +1,109 @@
+2026.03.26 15:47:47 INFO  Started: Metals version 1.6.6 in folders '/home/naswek/scala_projects/lab2' for client Visual Studio Code 1.108.2.
+2026.03.26 15:47:47 INFO  Memory monitor started
+2026.03.26 15:47:47 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.03.26 15:47:48 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:48:24 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:48:24 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:48:24 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:48:24 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:48:26 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:48:26 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:48:26 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:48:27 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:48:27 WARN  no build target for: /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala
+2026.03.26 15:48:27 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:51:47 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:51:47 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:51:49 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:51:49 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:51:49 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:21 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:26 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:26 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:26 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:26 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:28 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:28 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:28 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:28 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:28 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:28 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:29 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:29 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:29 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:29 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:29 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:29 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:29 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:30 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:30 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:30 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:30 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:30 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:30 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:30 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:31 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:30 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:32 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:33 WARN  no build target for: /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala
+2026.03.26 15:52:33 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:52:33 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:06 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:08 WARN  no build target for: /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala
+2026.03.26 15:53:08 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:08 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:08 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:11 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:11 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:12 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:13 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:13 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:21 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:21 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:21 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:21 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:21 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:22 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:21 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:22 INFO  Created report: Optional[file:///home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala]
+2026.03.26 15:53:22 INFO  empty definition using pc, found symbol in pc:  (full report at: "/home/naswek/scala_projects/lab2/.metals/.reports/metals-full/2026-03-26/r_empty-definition_15-53-22-322.md")
+2026.03.26 15:53:22 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.26 15:53:23 WARN  no build target for: /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala
+2026.03.26 15:53:23 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.27 08:43:50 INFO  Started: Metals version 1.6.6 in folders '/home/naswek/scala_projects/lab2' for client Visual Studio Code 1.108.2.
+2026.03.27 08:43:50 INFO  Memory monitor started
+2026.03.27 08:43:50 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.03.27 08:43:50 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.27 08:43:52 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.27 08:44:29 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.27 08:44:30 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.27 08:44:29 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+мар. 27, 2026 8:44:30 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9
+2026.03.27 08:44:49 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.27 08:45:01 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.27 08:45:01 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.27 09:09:31 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.27 09:16:36 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.28 20:45:02 INFO  Started: Metals version 1.6.6 in folders '/home/naswek/scala_projects/lab2' for client Visual Studio Code 1.108.2.
+2026.03.28 20:45:02 INFO  Memory monitor started
+2026.03.28 20:45:06 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.03.28 20:45:06 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.28 20:45:08 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+мар. 28, 2026 8:45:38 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+мар. 28, 2026 8:45:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+мар. 28, 2026 8:45:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+мар. 28, 2026 8:45:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+мар. 28, 2026 8:45:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+мар. 28, 2026 8:45:40 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2026.03.28 20:45:40 INFO  no build target found for /home/naswek/scala_projects/lab2/backend/src/main/scala/routes/SolverRoutes.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.03.28 21:05:30 INFO  Shutting down server
+2026.03.28 21:05:30 INFO  Memory monitor stopped
+2026.03.28 21:05:30 INFO  shutting down Metals
+2026.03.28 21:05:30 INFO  Exiting server

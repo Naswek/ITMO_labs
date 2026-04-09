@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    container_name: lab2-backend
+
+  frontend:
+    init: true
+    build: ./frontend
+    ports:
+      - "5173:80"
+    container_name: lab2-frontend
+    depends_on:
+      - backend

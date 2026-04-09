@@ -1,0 +1,7 @@
+[0m[[0m[33mwarn[0m] [0m[0m/home/naswek/scala_projects/lab2/backend/src/main/scala/routes/NonLinearRoutes.scala:16:14: Implicit definition should have explicit type (inferred spray.json.RootJsonFormat[models.FunctionRequest]) [quickfixable][0m
+[0m[[0m[33mwarn[0m] [0m[0mimplicit val functionRequestFormat = jsonFormat5(FunctionRequest)[0m
+[0m[[0m[33mwarn[0m] [0m[0m             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/naswek/scala_projects/lab2/backend/src/main/scala/routes/NonLinearRoutes.scala:17:14: Implicit definition should have explicit type (inferred spray.json.RootJsonFormat[models.SystemRequest]) [quickfixable][0m
+[0m[[0m[33mwarn[0m] [0m[0mimplicit val systemRequestFormat = jsonFormat4(SystemRequest)[0m
+[0m[[0m[33mwarn[0m] [0m[0m             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m

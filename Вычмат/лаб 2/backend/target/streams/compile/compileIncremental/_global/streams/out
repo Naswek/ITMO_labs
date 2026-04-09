@@ -1,0 +1,41 @@
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 54 products, 24 sources, 8 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/solver/library/systems/Utils.scala, ${BASE}/src/main/scala/solver/methods/ChordMethod.scala, ${BASE}/src/main/scala/models/Request.scala, ${BASE}/src/main/scala/Colors.scala, ${BASE}/src/main/scala/solver/library/functions/FirstDerivative.scala, ${BASE}/src/main/scala/solver/library/functions/Functions.scala, ${BASE}/src/main/scala/Main.scala, ${BASE}/src/main/scala/solver/library/functions/FunctionResult.scala, ${BASE}/src/main/scala/models/ApiResponse.scala, ${BASE}/src/main/scala/solver/methods/SystemNewton.scala, ${BASE}/src/main/scala/solver/methods/SecantMethod.scala, ${BASE}/src/main/scala/solver/library/Library.scala, ${BASE}/src/main/scala/routes/NonLinearRoutes.scala, ${BASE}/src/main/scala/routes/AppRoutes.scala, ${BASE}/src/main/scala/solver/library/samples/SystemSample.scala, ${BASE}/src/main/scala/solver/methods/SimpleIterationMethod.scala, ${BASE}/src/main/scala/solver/library/systems/SystemMethod.scala, ${BASE}/src/main/scala/solver/library/systems/SystemResult.scala, ${BASE}/src/main/scala/solver/library/samples/Samples.scala, ${BASE}/src/main/scala/solver/library/systems/Systems.scala, ${BASE}/src/main/scala/models/Response.scala, ${BASE}/src/main/scala/solver/library/functions/FunctionPack.scala, ${BASE}/src/main/scala/solver/library/functions/Method1D.scala, ${BASE}/src/main/scala/solver/library/systems/SystemPack.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/src/main/scala/solver/library/samples/Samples.scala), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial source changes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	removed: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(${BASE}/src/main/scala/solver/library/samples/Samples.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(solver.library.samples.Samples)[0m
+[0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(solver.library.samples.Samples)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(${BASE}/src/main/scala/solver/library/samples/Samples.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: solver.library.samples.Samples[0m
+[0m[[0m[0mdebug[0m] [0m[0mcompilation cycle 1[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /home/naswek/scala_projects/lab2/backend/target/scala-2.13/classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mReturning already retrieved and compiled bridge: /home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala2-sbt-bridge/2.13.12/scala2-sbt-bridge-2.13.12.jar.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 45f36715 for Scala compiler version 2.13.12[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/home/naswek/scala_projects/lab2/backend/target/scala-2.13/classes:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.12/scala-library-2.13.12.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-actor-typed_2.13/2.8.5/akka-actor-typed_2.13-2.8.5.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-stream_2.13/2.8.5/akka-stream_2.13-2.8.5.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http_2.13/10.5.3/akka-http_2.13-10.5.3.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-spray-json_2.13/10.5.3/akka-http-spray-json_2.13-10.5.3.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/megard/akka-http-cors_2.13/1.2.0/akka-http-cors_2.13-1.2.0.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.13/2.8.5/akka-actor_2.13-2.8.5.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-slf4j_2.13/2.8.5/akka-slf4j_2.13-2.8.5.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-protobuf-v3_2.13/2.8.5/akka-protobuf-v3_2.13-2.8.5.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/ssl-config-core_2.13/0.6.1/ssl-config-core_2.13-0.6.1.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_2.13/10.5.3/akka-http-core_2.13-10.5.3.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/io/spray/spray-json_2.13/1.3.6/spray-json_2.13-1.3.6.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/config/1.4.2/config-1.4.2.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-java8-compat_2.13/1.0.0/scala-java8-compat_2.13-1.0.0.jar:/home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_2.13/10.5.3/akka-parsing_2.13-10.5.3.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 1.647127575 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mdone compiling[0m
+[0m[[0m[0mdebug[0m] [0m[0mNew invalidations:[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: [0m
+[0m[[0m[0mdebug[0m] [0m[0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0m[0mdebug[0m] [0m[0mFinal step, transitive dependencies:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: solver.library.samples.Samples[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding routes.NonLinearRoutes by solver.library.samples.Samples[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding routes.AppRoutes by routes.NonLinearRoutes[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding Main by routes.AppRoutes[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated macros due to upstream dependencies change: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mNo classes were invalidated.[0m
