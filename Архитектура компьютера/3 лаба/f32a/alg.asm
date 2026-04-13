@@ -1,14 +1,13 @@
     .data
 .org 0x90
 underscore:        		.word  0x5F
-buffer_size:     		.word  0x20
-input_addr:      		.word  0x80
 length_addr:			.word  0x0
-output_addr:     		.word  0x01
-diff:					.word  0x01
 inv_newline_symb:       .word  0xFFFFFFF6
-inv_before_lower_symb:	.word  0xFFFFFF9F  \символ полсе  в инверсии
-inv_diff:			    .word  0xFFFFFFE0  \разница между мелкими и большими буквами в аски инвентрованный
+inv_before_lower_symb:	.word  0xFFFFFF9F
+inv_diff:			    .word  0xFFFFFFE0
+error_code:             .word  0xCCCCCCCC
+overflow_check:         .word  -32
+stored_end:             .word  0x0
 
     .text
 
@@ -18,80 +17,83 @@ inv_diff:			    .word  0xFFFFFFE0  \разница между мелкими и 
 _start:
 
 init:
-	lit 0 				\обнулем 0-ую ячейку
-	!p 0x00				
+	lit 0
+	!p 0x00
 
-    lit 1				\загружаем в А регистр адрес первой ячейки
-    a!          
+    lit 1
+    a!
 
 main:
-	lit 0x80  			\загружаем адрес		
-	b!					\попаем в регистр Б
-	@b					\потом запушили как dataStack.push(mem[B])
+	lit 0x80  		    \загрузка символа
+	b!
+	@b
+
 
 	dup
-	is_space 	   		\тут должна быть проверка на перевод строки, если да, то идем заполнять буффер, нет - идем дальше
-	if fill_tail	  	   		
+	is_space 	   	    \проверка на символ переноса строки
+	if start_print 	  	\запуск подготовки к циклу печати
 
-    a 
-    lit 0xFFFFFFE0 +            \ A - 32
-    -if drop_char               \ Если A >= 32, не сохраняем в память
+    a
+    @p overflow_check + \проверка, что длина еще не достигнла границы
+    -if overflow        \вывод при оверфлоу
 
 	dup
-	is_lower 	   		\смотрим, является ли уже upper, если да, ты просто выводим, букву в а или б, 
-	-if to_upper		\верх датастека => 0, выводим и снова начинаем цикл
+	is_lower 	   		\проверка, маенькая ли буква
+	-if to_upper	    \заменить на большую
 
-out:
-    dup					\выводим на аутпут
-    lit 0x84
-    b!
-    !b
-
-	!+					\инкремент указателя ячейки
-	@p 0x00	
-	lit 1 + !p 0x00		\обновляем счетчик
-			  
-	main ;				\прыгаем на main и пробуем прочитать некст символ 
-
-
+out:                    \сохраняем в буфер символ
+	!+
+	@p 0x00
+	lit 1 + !p 0x00
+	main ;
 
 to_upper:
-	@p inv_diff
-	+
+	@p inv_diff	+
     out ;
 
 is_lower:
-	@p inv_before_lower_symb
-	+
-	;
-	
+	@p inv_before_lower_symb + ;
+
 is_space:
-	@p inv_newline_symb 	 	\кладет на вершину инвентированый код спейса
-	+    	   	            \складываем, если 0, то \n, в противном нет. 
-	;			   	        \возвращаемся
-	
-drop_char:
-	\ Если буфер полон, мы все равно должны вывести символ в 0x84 (по условию теста)
-	\ но НЕ записывать его в память
-	dup
-	lit 0x84 b! !b
-	drop
-	main ;
+	@p inv_newline_symb + ;
 
-fill_tail:
-    drop                \ Очищаем стек от символа \n (который остался после dup в main)
+start_print:
+    drop
+    a !p  stored_end
+    lit 1 a!
 
-fill_loop:
-    a                   \ Копируем текущий адрес из регистра A на стек
-    lit 0xFFFFFFE0      \ Кладем -32 (граница буфера 0..31, 32 — это уже адрес порта 0x80)
-    +                   \ Складываем: A + (-32)
-    -if stop            \ Если результат >= 0 (т.е. A >= 32), выходим из цикла
+print_loop:             \начинаем вывод символов
+    a @p stored_end
+    inv lit 1 + +
+    if fill_loop
 
-    @p underscore       \ Загружаем ASCII код '_' из памяти данных
-    !+                  \ Сохраняем в mem[A] и инкрементируем A (A = A + 1)
-    
-    fill_loop ;         \ Переходим в начало цикла заполнения
+    @+
+    lit 255 and         \маска для выводов байтов
+    lit 132
+    b! !b
+    print_loop ;
 
+fill_loop:              \заполняем оставшиеся ячейки буфера _
+    a
+    lit 0xFFFFFFE0
+    +
+    -if stop
+
+    @p underscore
+    !+
+
+    fill_loop ;
+
+overflow:               \выводим ошибку
+    drop
+    @p error_code
+    lit 0x84 b! !b
 
 stop:
 	halt
+
+
+
+
+
+https://wrench.edu.swampbuds.me/report/753f873d-11ab-4685-9956-e28c0537eb50
