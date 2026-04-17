@@ -1,18 +1,18 @@
 def rle_compress_bytes(*input_words):
-    """Сжатие методом RLE (Run-Length Encoding) для байтов, упакованных в 32-битные слова.
+    """сжатие методом rle (run-length encoding) для байтов, упакованных в 32-битные слова.
 
-Формат входных данных:
-- Первое слово: длина данных в байтах
-- Последующие слова: байты данных, упакованные в слова (по 4 байта в каждом)
-- Если количество байт не кратно 4, дополняется нулями
+    формат входных данных:
+    - первое слово: длина данных в байтах
+    - последующие слова: байты данных, упакованные в слова (по 4 байта в каждом)
+    - если количество байт не кратно 4, дополняется нулями
 
-Формат выходных данных:
-- Первое слово: длина сжатых данных в байтах
-- Последующие слова: сжатые данные в виде пар (количество + байт)
+    формат выходных данных:
+    - первое слово: длина сжатых данных в байтах
+    - последующие слова: сжатые данные в виде пар (количество + байт)
 
-Пример:
-[4, 0x0A0A0A0A] -> [2, 0x040A0000]
-(4 байта со значением 0x0A → количество = 4, байт = 0x0A)
+    пример:
+    [4, 0x0a0a0a0a] -> [2, 0x040a0000]
+    (4 байта со значением 0x0a → количество = 4, байт = 0x0a)
     """
     if not input_words:
         return [-1]
@@ -25,9 +25,9 @@ def rle_compress_bytes(*input_words):
         return [0]
 
     try:
-        # Extract bytes from words
+        # extract bytes from words
         bytes_data = []
-        word_count = (length + 3) // 4  # Round up to nearest word
+        word_count = (length + 3) // 4  # round up to nearest word
 
         for i in range(1, min(len(input_words), word_count + 1)):
             word = input_words[i]
@@ -37,16 +37,16 @@ def rle_compress_bytes(*input_words):
                     bytes_data.append(byte_val)
 
         if len(bytes_data) < length:
-            return [-1]  # Not enough input data
+            return [-1]  # not enough input data
 
-        # Compress bytes
+        # compress bytes
         compressed = []
         i = 0
         while i < len(bytes_data):
             current_byte = bytes_data[i]
             count = 1
 
-            # Count consecutive identical bytes
+            # count consecutive identical bytes
             while (
                 i + count < len(bytes_data)
                 and bytes_data[i + count] == current_byte
@@ -58,8 +58,8 @@ def rle_compress_bytes(*input_words):
             compressed.append(current_byte)
             i += count
 
-        # Pack compressed data into words
-        result = [len(compressed)]  # Length in bytes
+        # pack compressed data into words
+        result = [len(compressed)]  # length in bytes
 
         for i in range(0, len(compressed), 4):
             word = 0
@@ -70,10 +70,14 @@ def rle_compress_bytes(*input_words):
 
         return result
 
-    except Exception:
+    except exception:
         return [-1]
 
 
 assert rle_compress_bytes([4, 168430090]) == [2, 67764224]
-assert rle_compress_bytes([12, 2863315899, 3435973836, 3722304989]) == [8, 44696251, 80479453]
+assert rle_compress_bytes([12, 2863315899, 3435973836, 3722304989]) == [
+    8,
+    44696251,
+    80479453,
+]
 assert rle_compress_bytes([1, 4278190080]) == [2, 33488896]
