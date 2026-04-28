@@ -1,3 +1,5 @@
+#!/bin/bash
+
 RED="RedUser <red@fanfic.com>"
 BLUE="BlueUser <blue@fanfic.com>"
 
@@ -153,7 +155,7 @@ git add fanfic.txt
 git commit --author="$BLUE" -m "r30"
 
 git checkout master
-git merge branch_8 --no-commit 
+git merge branch_8 --no-commit -X ours
 echo "Событие 31. Мерж" >> fanfic.txt
 git add fanfic.txt
 git commit --author="$RED" -m "r31"
@@ -184,25 +186,25 @@ git add fanfic.txt
 git commit --author="$RED" -m "r36"
 
 git checkout branch_5
-git merge branch_10 --no-commit
+git merge branch_10 --no-commit -X ours
 echo "Событие 37. Мерж" >> fanfic.txt
 git add fanfic.txt
 git commit --author="$BLUE" -m "r37"
 
 git checkout branch_3
-git merge branch_5 --no-commit
+git merge branch_5 --no-commit -X ours
 echo "Событие 38. Мерж" >> fanfic.txt
 git add fanfic.txt
 git commit --author="$BLUE" -m "r38"
 
 git checkout branch_11
-git merge branch_3 --no-commit
+git merge branch_3 --no-commit -X ours
 echo "Событие 39. Мерж" >> fanfic.txt
 git add fanfic.txt
 git commit --author="$BLUE" -m "r39"
 
 git checkout branch_9
-git merge branch_11 --no-commit
+git merge branch_11 --no-commit -X ours
 echo "Событие 40. Мерж" >> fanfic.txt
 git add fanfic.txt
 git commit --author="$BLUE" -m "r40"
@@ -242,13 +244,13 @@ git add fanfic.txt
 git commit --author="$BLUE" -m "r47"
 
 git checkout branch_6
-git merge branch_1 --no-commit
+git merge branch_1 --no-commit -X ours
 echo "Событие 48. Мерж" >> fanfic.txt
 git add fanfic.txt
 git commit --author="$RED" -m "r48"
 
 git checkout branch_7
-git merge branch_6 --no-commit
+git merge branch_6 --no-commit -X ours
 echo "Событие 49. Мерж" >> fanfic.txt
 git add fanfic.txt
 git commit --author="$RED" -m "r49"
@@ -263,19 +265,21 @@ git add fanfic.txt
 git commit --author="$BLUE" -m "r51"
 
 git checkout branch_7
-git merge branch_9 --no-commit
+git merge branch_9 --no-commit -X ours
 echo "Событие 52. Мерж" >> fanfic.txt
 git add fanfic.txt
 git commit --author="$RED" -m "r52"
 
 git checkout branch_4
-git merge branch_7 --no-commit
+git merge branch_7 --no-commit -X ours
 echo "Событие 53. Мерж" >> fanfic.txt
 git add fanfic.txt
 git commit --author="$RED" -m "r53"
 
 git checkout master
-git merge branch_4 --no-commit
+git merge branch_4 --no-commit -X ours
 echo "Событие 54. Мерж" >> fanfic.txt
 git add fanfic.txt
 git commit --author="$RED" -m "r54" 
+
+git --no-pager log --graph --oneline --all

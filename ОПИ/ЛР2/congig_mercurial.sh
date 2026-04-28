@@ -1,3 +1,5 @@
+#!/bin/bash
+
 RED="RedUser <red@fanfic.com>"
 BLUE="BlueUser <blue@fanfic.com>"
 
@@ -123,7 +125,7 @@ echo "Событие 30" >> fanfic.txt
 hg commit -u "$BLUE" -m "r30"
 
 hg update default
-hg merge branch_8
+hg merge branch_8 --tool internal:local
 echo "Событтие 31. Мерж" >> fanfic.txt
 hg commit -u "$RED" -m "r31"
 
@@ -148,22 +150,22 @@ echo "Событтие 36" >> fanfic.txt
 hg commit -u "$RED" -m "r36"
 
 hg update branch_5
-hg merge branch_10
+hg merge branch_10 --tool internal:local
 echo "Событтие 37. Мерж" >> fanfic.txt
 hg commit -u "$BLUE" -m "r37"
 
 hg update branch_3
-hg merge branch_5
+hg merge branch_5 --tool internal:local
 echo "Событтие 38. Мерж" >> fanfic.txt
 hg commit -u "$BLUE" -m "r38"
 
 hg update branch_11
-hg merge branch_3
+hg merge branch_3 --tool internal:local
 echo "Событтие 39. Мерж" >> fanfic.txt
 hg commit -u "$BLUE" -m "r39"
 
 hg update branch_9
-hg merge branch_11
+hg merge branch_11 --tool internal:local
 echo "Событтие 40. Мерж" >> fanfic.txt
 hg commit -u "$BLUE" -m "r40"
 
@@ -195,33 +197,35 @@ echo "Событтие 47" >> fanfic.txt
 hg commit -u "$BLUE" -m "r47"
 
 hg update branch_6
-hg merge branch_1
+hg merge branch_1 --tool internal:local
 echo "Событтие 48. Мерж" >> fanfic.txt
 hg commit -u "$RED" -m "r48"
 
 hg update branch_7
-hg merge branch_6
+hg merge branch_6 --tool internal:local
 echo "Событтие 49. Мерж" >> fanfic.txt
 hg commit -u "$RED" -m "r49"
 
 hg update branch_9
 echo "Событтие 50" >> fanfic.txt
-hg commit -u "$BLUE" -m "50"
+hg commit -u "$BLUE" -m "r50"
 
 echo "Событтие 51" >> fanfic.txt
-hg commit -u "$BLUE" -m "51"
+hg commit -u "$BLUE" -m "r51"
 
 hg update branch_7
-hg merge branch_9
+hg merge branch_9 --tool internal:local
 echo "Событтие 52" >> fanfic.txt
-hg commit -u "$RED" -m "52"
+hg commit -u "$RED" -m "r52"
 
 hg update branch_4
-hg merge branch_7
+hg merge branch_7 --tool internal:local
 echo "Событтие 53" >> fanfic.txt
-hg commit -u "$RED" -m "53"
+hg commit -u "$RED" -m "r53"
 
 hg update default
-hg merge branch_4
+hg merge branch_4 --tool internal:local
 echo "Событтие 54" >> fanfic.txt
-hg commit -u "$RED" -m "54"
+hg commit -u "$RED" -m "r54"
+
+hg log -G --template "{rev}:{desc} | {author} [{branch}]\n"
