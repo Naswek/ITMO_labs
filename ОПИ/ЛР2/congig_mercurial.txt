@@ -1,0 +1,227 @@
+RED="RedUser <red@fanfic.com>"
+BLUE="BlueUser <blue@fanfic.com>"
+
+hg init
+echo "фанфик. часть 1" > fanfic.txt
+hg add fanfic.txt
+hg commit -u "$RED" -m "r0"
+
+hg branch branch_1
+echo "Событие 1" >> fanfic.txt
+hg commit -u "$BLUE" -m "r1"
+
+hg branch branch_2
+echo "Событие 2" >> fanfic.txt
+hg commit -u "$BLUE" -m "r2"
+
+echo "Событие 3" >> fanfic.txt
+hg commit -u "$BLUE" -m "r3"
+
+hg update branch_1
+echo "Событие 4" >> fanfic.txt
+hg commit -u "$BLUE" -m "r4"
+
+hg branch branch_3
+echo "Событие 5" >> fanfic.txt
+hg commit -u "$BLUE" -m "r5"
+
+hg branch branch_4
+echo "Событие 6" >> fanfic.txt
+hg commit -u "$RED" -m "r6"
+
+hg update default
+echo "Событие 7" >> fanfic.txt
+hg commit -u "$RED" -m "r7"
+
+hg branch branch_5
+echo "Событие 8" >> fanfic.txt
+hg commit -u "$BLUE" -m "r8"
+
+hg update default
+echo "Событие 9" >> fanfic.txt
+hg commit -u "$RED" -m "r9"
+
+hg update branch_2
+echo "Событие 10" >> fanfic.txt
+hg commit -u "$BLUE" -m "r10"
+
+hg branch branch_6
+echo "Событие 11" >> fanfic.txt
+hg commit -u "$RED" -m "r11"
+
+hg branch branch_7
+echo "Событие 12" >> fanfic.txt
+hg commit -u "$RED" -m "r12"
+
+hg branch branch_8
+echo "Событие 13" >> fanfic.txt
+hg commit -u "$RED" -m "r13"
+
+hg update branch_3
+echo "Событие 14" >> fanfic.txt
+hg commit -u "$BLUE" -m "r14"
+
+hg branch branch_9
+echo "Событие 15" >> fanfic.txt
+hg commit -u "$BLUE" -m "r15"
+
+hg update branch_6
+echo "Событие 16" >> fanfic.txt
+hg commit -u "$RED" -m "r16"
+
+hg update branch_7
+echo "Событие 17" >> fanfic.txt
+hg commit -u "$RED" -m "r17"
+
+echo "Событие 18" >> fanfic.txt
+hg commit -u "$RED" -m "r18"
+
+hg update branch_1
+echo "Событие 19" >> fanfic.txt
+hg commit -u "$BLUE" -m "r19"
+
+hg update branch_7
+echo "Событие 20" >> fanfic.txt
+hg commit -u "$RED" -m "r20"
+
+hg update branch_5
+echo "Событие 21" >> fanfic.txt
+hg commit -u "$BLUE" -m "r21"
+
+hg update branch_8
+echo "Событие 22" >> fanfic.txt
+hg commit -u "$BLUE" -m "r22"
+
+hg branch branch_10
+echo "Событие 23" >> fanfic.txt
+hg commit -u "$RED" -m "r23"
+
+hg update branch_9
+echo "Событие 24" >> fanfic.txt
+hg commit -u "$BLUE" -m "r24"
+
+hg update branch_5
+echo "Событие 25" >> fanfic.txt
+hg commit -u "$BLUE" -m "r25"
+
+hg update branch_6
+echo "Событие 26" >> fanfic.txt
+hg commit -u "$RED" -m "r26"
+
+hg update default
+echo "Событие 27" >> fanfic.txt
+hg commit -u "$RED" -m "r27"
+
+echo "Событие 28" >> fanfic.txt
+hg commit -u "$RED" -m "r28"
+
+echo "Событие 29" >> fanfic.txt
+hg commit -u "$RED" -m "r29"
+
+hg update branch_8
+echo "Событие 30" >> fanfic.txt
+hg commit -u "$BLUE" -m "r30"
+
+hg update default
+hg merge branch_8
+echo "Событтие 31. Мерж" >> fanfic.txt
+hg commit -u "$RED" -m "r31"
+
+hg update branch_6
+echo "Событтие 32" >> fanfic.txt
+hg commit -u "$RED" -m "r32"
+
+hg branch branch_11
+echo "Событтие 33" >> fanfic.txt
+hg commit -u "$BLUE" -m "r33"
+
+hg update branch_3
+echo "Событтие 34" >> fanfic.txt
+hg commit -u "$BLUE" -m "r34"
+
+hg update branch_4
+echo "Событтие 35" >> fanfic.txt
+hg commit -u "$RED" -m "r35"
+
+hg update branch_10
+echo "Событтие 36" >> fanfic.txt
+hg commit -u "$RED" -m "r36"
+
+hg update branch_5
+hg merge branch_10
+echo "Событтие 37. Мерж" >> fanfic.txt
+hg commit -u "$BLUE" -m "r37"
+
+hg update branch_3
+hg merge branch_5
+echo "Событтие 38. Мерж" >> fanfic.txt
+hg commit -u "$BLUE" -m "r38"
+
+hg update branch_11
+hg merge branch_3
+echo "Событтие 39. Мерж" >> fanfic.txt
+hg commit -u "$BLUE" -m "r39"
+
+hg update branch_9
+hg merge branch_11
+echo "Событтие 40. Мерж" >> fanfic.txt
+hg commit -u "$BLUE" -m "r40"
+
+hg update branch_6
+echo "Событтие 41" >> fanfic.txt
+hg commit -u "$RED" -m "r41"
+
+hg update branch_4
+echo "Событтие 42" >> fanfic.txt
+hg commit -u "$RED" -m "r42"
+
+hg update branch_7
+echo "Событтие 43" >> fanfic.txt
+hg commit -u "$RED" -m "r43"
+
+hg update default
+echo "Событтие 44" >> fanfic.txt
+hg commit -u "$RED" -m "r44"
+
+hg update branch_9
+echo "Событтие 45" >> fanfic.txt
+hg commit -u "$BLUE" -m "r45"
+
+hg update branch_1
+echo "Событтие 46" >> fanfic.txt
+hg commit -u "$BLUE" -m "r46"
+
+echo "Событтие 47" >> fanfic.txt
+hg commit -u "$BLUE" -m "r47"
+
+hg update branch_6
+hg merge branch_1
+echo "Событтие 48. Мерж" >> fanfic.txt
+hg commit -u "$RED" -m "r48"
+
+hg update branch_7
+hg merge branch_6
+echo "Событтие 49. Мерж" >> fanfic.txt
+hg commit -u "$RED" -m "r49"
+
+hg update branch_9
+echo "Событтие 50" >> fanfic.txt
+hg commit -u "$BLUE" -m "50"
+
+echo "Событтие 51" >> fanfic.txt
+hg commit -u "$BLUE" -m "51"
+
+hg update branch_7
+hg merge branch_9
+echo "Событтие 52" >> fanfic.txt
+hg commit -u "$RED" -m "52"
+
+hg update branch_4
+hg merge branch_7
+echo "Событтие 53" >> fanfic.txt
+hg commit -u "$RED" -m "53"
+
+hg update default
+hg merge branch_4
+echo "Событтие 54" >> fanfic.txt
+hg commit -u "$RED" -m "54"
