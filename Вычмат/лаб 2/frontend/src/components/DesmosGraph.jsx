@@ -9,13 +9,12 @@ function toLatex(f) {
     .replace(/×/g, "*")      
     .replace(/sin/gi, "\\sin")
     .replace(/cos/gi, "\\cos")
-    .replace(/tan/gi, "\\tan") 
+    .replace(/tg/gi, "\\tan") 
     .replace(/³/g, "^3")      
     .replace(/²/g, "^2")       
     .replace(/xy/g, "x*y")     
     .replace(/х/g, "x")        
-    .replace(/у/g, "y")
-   // .replace(/(\d)([a-zA-Z])/g, "$1*$2");   
+    .replace(/у/g, "y")  
 }
 
 function formatForDesmos(num) {
@@ -27,10 +26,14 @@ function formatForDesmos(num) {
   return str;
 }
 
+
+function parseX(text) {
+  return Number(String(text).trim().replace(",", "."))
+}
+
 export default function DesmosGraph({ mode, formula, system, interval, result }) {
   const containerRef = useRef(null);
   const [calc, setCalc] = useState(null);
-
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -52,6 +55,7 @@ export default function DesmosGraph({ mode, formula, system, interval, result })
     if (!calc) return;
 
     calc.setBlank();
+
 
     if (mode === "function" && formula) {
       calc.setExpression({

@@ -51,14 +51,14 @@ export default function SolverForm({
         maxWidth: 520
       }}
     >
-      <h3 style={{ margin: 0 }}>Solver</h3>
+      <h3 style={{ margin: 0 }}>Настройки функции или системы</h3>
 
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
         <button type="button" onClick={() => setMode("function")} disabled={mode === "function"}>
-          Function
+          Фукнция
         </button>
         <button type="button" onClick={() => setMode("system")} disabled={mode === "system"}>
-          System
+          Система
         </button>
       </div>
 
@@ -91,12 +91,14 @@ export default function SolverForm({
       {mode === "function" ? (
         <>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+            <label style={{ fontSize: "12px", color: "gray" }}>Нижний граница (a)</label>
             <input
               value={a}
               onChange={handleChange(setA)}
               placeholder="a (start)"
               style={inputStyle(isValidNum(a))}
             />
+            <label style={{ fontSize: "12px", color: "gray" }}>Верхняя граница (b)</label>
             <input
               value={b}
               onChange={handleChange(setB)}
@@ -111,8 +113,10 @@ export default function SolverForm({
             </div>
           )}
         </>
-      ) : (
-        <input
+      ) :
+        
+        (
+          <input
           value={x0Text}
           onChange={handleChange(setX0Text)}
           placeholder="x0 (e.g. 1.5; 2.5)"
@@ -121,6 +125,7 @@ export default function SolverForm({
         />
       )}  
 
+      <label style={{ fontSize: "12px", color: "gray" }}>Точность (epsilon)</label>
       <input
         value={epsilon}
         onChange={handleChange(setEpsilon)}
@@ -130,7 +135,7 @@ export default function SolverForm({
       />
 
       <button type="submit" disabled={loading || !isFormValid}>
-        {loading ? "Solving..." : "Solve"}
+        {loading ? "Решаем..." : "Найти значение"}
       </button>
     </form>
   );

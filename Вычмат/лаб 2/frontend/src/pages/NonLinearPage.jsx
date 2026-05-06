@@ -62,6 +62,11 @@ export default function NonLinearPage() {
     .filter(Number.isFinite);
   }
 
+
+  function parseX(text) {
+    return Number(String(text).trim().replace(",", "."))
+  }
+
   async function handleSolve(e) {
     e.preventDefault();
     setLoading(true);
@@ -73,9 +78,9 @@ export default function NonLinearPage() {
           ? {
               functionId,
               methodId,
-              a: Number(a),
-              b: Number(b),
-              epsilon: Number(epsilon)
+              a: parseX(a),
+              b: parseX(b),
+              epsilon: parseX(epsilon)
             }
           : {
               systemId,
@@ -131,7 +136,7 @@ export default function NonLinearPage() {
         mode={mode}
         formula={selectedFunction}
         system={selectedSystem}
-        interval={{ a: Number(a), b: Number(b) }}
+        interval={{ a: parseX(a), b: parseX(b) }}
         result={result}
       />
 
