@@ -1,0 +1,150 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'war'
+}
+
+group = projectGroup
+version = projectVersion
+
+java {
+    sourceCompatibility = JavaVersion.toVersion(javaVersion)
+    targetCompatibility = JavaVersion.toVersion(javaVersion)
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = javaVersion.toInteger()
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url = uri("https://jitpack.io")
+    }
+}
+
+dependencies {
+    implementation platform("org.junit:junit-bom:$junitBomVersion")
+    implementation "org.junit.jupiter:junit-jupiter"
+
+    implementation "org.apache.logging.log4j:log4j-api:$log4jVersion"
+    implementation "org.apache.logging.log4j:log4j-core:$log4jVersion"
+
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "org.primefaces:primefaces:$primefacesVersion"
+
+    compileOnly "javax:javaee-web-api:$javaeeWebApiVersion"
+
+    implementation "org.hibernate:hibernate-core:$hibernateVersion"
+    implementation "org.postgresql:postgresql:$postgresqlVersion"
+    implementation "com.zaxxer:HikariCP:$hikariCpVersion"
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.debug = false
+    options.compilerArgs.remove("-Werror") 
+    options.compilerArgs.addAll(["-g:none", "-Xlint:all"])
+}
+
+application {
+    mainClass = mainClassName
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['java']
+        }
+    }
+}
+
+tasks.named('jar') {
+    manifest {
+        attributes(
+            'Main-Class': mainClassName,
+            'Implementation-Version': projectVersion
+        )
+    }
+}
+
+tasks.named('war') {
+    archiveFileName = warArchiveName
+    from 'src/main/webapp'
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tasks.register('compile') {
+
+}
+
+tasks.register('build') {
+
+}
+
+
+tasks.named('clean') {
+
+}
+
+tasks.named('test') {
+
+}
+
+tasks.named('native2ascii') {
+
+}
+
+tasks.named('music') {
+
+}
+
+tasks.named('doc') {
+
+}
+
+tasks.named('xml') {
+
+}
+
+tasks.named('scp') {
+
+}
+
+tasks.named('report') {
+
+}
+
+tasks.named('history') {
+
+}
+
+tasks.named('team') {
+
+}
+
+tasks.named('env') {
+
+}
+
+tasks.named('diff') {}
+
+tasks.named('alt') {}
