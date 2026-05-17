@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'application'
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'io.github.goooler.shadow' version '8.1.8'
     id 'war'
 }
 
@@ -9,13 +9,16 @@ group = projectGroup
 version = projectVersion
 
 java {
-    sourceCompatibility = JavaVersion.toVersion(javaVersion)
-    targetCompatibility = JavaVersion.toVersion(javaVersion)
+    toolchain {
+            languageVersion = JavaLanguageVersion.of(17) //захаркожено, потом с этим разберусб
+        }
 }
 
 tasks.withType(JavaCompile).configureEach {
-    options.release = javaVersion.toInteger()
+    options.release = project.property('javaVersion').toString().toInteger()
 }
+
+
 
 repositories {
     mavenCentral()
@@ -92,11 +95,15 @@ tasks.named('war') {
 
 
 
-tasks.register('compile') {
-
+tasks.register('compile') {         //ворк
+    description = 'Компиляция'
+    dependsOn 'compileJava'
+    doLast {
+        println "Компиляция успешно завершена"
+    }
 }
 
-tasks.register('build') {
+tasks.named('build') {
 
 }
 
@@ -109,42 +116,42 @@ tasks.named('test') {
 
 }
 
-tasks.named('native2ascii') {
+tasks.register('native2ascii') {
 
 }
 
-tasks.named('music') {
+tasks.register('music') {
 
 }
 
-tasks.named('doc') {
+tasks.register('doc') {
 
 }
 
-tasks.named('xml') {
+tasks.register('xml') {
 
 }
 
-tasks.named('scp') {
+tasks.register('scp') {
 
 }
 
-tasks.named('report') {
+tasks.register('report') {
 
 }
 
-tasks.named('history') {
+tasks.register('history') {
 
 }
 
-tasks.named('team') {
+tasks.register('team') {
 
 }
 
-tasks.named('env') {
+tasks.register('env') {
 
 }
 
-tasks.named('diff') {}
+tasks.register('diff') {}
 
-tasks.named('alt') {}
+tasks.register('alt') {}
