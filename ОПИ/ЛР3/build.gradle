@@ -1,7 +1,8 @@
+import javax.tools.JavaCompiler
 plugins {
     id 'java'
     id 'application'
-    id 'io.github.goooler.shadow' version '8.1.8'
+//    id 'io.github.goooler.shadow' version '8.1.8'
     id 'war'
 }
 
@@ -44,8 +45,14 @@ dependencies {
     implementation "com.zaxxer:HikariCP:$hikariCpVersion"
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
+
+
+tasks.named('clean') {
+    delete layout.buildDirectory
+    
+    doLast {
+        println "Директория сборки успешно удалена"
+    }
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -55,7 +62,7 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 application {
-    mainClass = mainClassName
+    mainClass.set(project.property('mainClassName').toString())
 }
 
 sourceSets {
@@ -66,50 +73,53 @@ sourceSets {
     }
 }
 
-tasks.named('jar') {
+
+
+
+
+
+tasks.register('createJar', Jar) {                     //для билда жарника
+    dependsOn 'compile'
+    from tasks.named('compile').map {it.destinationDirectory}
     manifest {
         attributes(
-            'Main-Class': mainClassName,
-            'Implementation-Version': projectVersion
+            'Main-Class': project.property('mainClassName').toString(),
+            'Implementation-Version': project.property('projectVersion').toString()
         )
     }
 }
 
-tasks.named('war') {
-    archiveFileName = warArchiveName
-    from 'src/main/webapp'
+tasks.named('distZip') {
+    dependsOn 'createJar'
+}
+
+tasks.named('distTar') {
+    dependsOn 'createJar'
+}
+
+tasks.named('startScripts') {
+    dependsOn 'createJar'
 }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-tasks.register('compile') {         //ворк
-    description = 'Компиляция'
-    dependsOn 'compileJava'
+tasks.register('compile', JavaCompile) {         //ворк
+    dependsOn 'clean'
+    source = file(project.property('javaSourceDir').toString())
+    destinationDirectory = file("${project.property('javaSourceDir')}")
+    classpath = sourceSets.main.compileClasspath
     doLast {
-        println "Компиляция успешно завершена"
+        println "Компиляция успешно завершена"          //блядская строка не высвечивается, пока не ебу почему
     }
 }
 
 tasks.named('build') {
-
-}
-
-
-tasks.named('clean') {
-
+    dependsOn 'createJar'
+    doLast {
+        println "Билд успешно завершен"
+    }
 }
 
 tasks.named('test') {
