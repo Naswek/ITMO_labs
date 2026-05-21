@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes, NavLink } from "react-router-dom";
 import NonLinearPage from "./pages/NonLinearPage";
 import IntegralsPage from "./pages/IntegralsPage";
+import ApproximationPage from "./pages/ApproximationPage";
 import React from 'react';
 
 export default function App() {
@@ -20,10 +21,12 @@ export default function App() {
       <nav style={{ display: "flex", gap: 10, marginBottom: 20, borderBottom: "2px solid #eee", paddingBottom: 15 }}>
         <NavLink to="/nonlinear" style={linkStyle}>Лаб 2 (Уравнения)</NavLink>
         <NavLink to="/integrals" style={linkStyle}>Лаб 3 (Интегралы)</NavLink>
+        <NavLink to="/approximation" style={linkStyle}>Лаб 4 (Аппроксимации)</NavLink>
       </nav>
       <Routes>
         <Route path="/nonlinear" element={<NonLinearPage />} />
         <Route path="/integrals" element={<IntegralsPage />} />
+        <Route path="/approximation" element={<ApproximationPage />} />
         <Route path="*" element={<Navigate to="/nonlinear" replace />} />
       </Routes>
     </BrowserRouter>

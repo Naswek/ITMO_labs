@@ -1,4 +1,4 @@
-import { adaptSamples, adaptFunctionResult, adaptSystemResult, adaptIntegralResult } from "./adapter";
+import { adaptSamples, adaptFunctionResult, adaptSystemResult, adaptIntegralResult, adaptApproximationResult } from "./adapter";
 
 const BASE_URL = "http://localhost:8080/api/v1"; 
 
@@ -44,4 +44,13 @@ export async function solveIntegral(payload) {
     body: JSON.stringify(payload)
   });
   return adaptIntegralResult(unwrapResponse(await readJson(res)));
+}
+
+export async function solveApproximation(payload) {
+  const res = await fetch(`${BASE_URL}/approximation/function`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+  return adaptApproximationResult(unwrapResponse(await readJson(res)));
 }

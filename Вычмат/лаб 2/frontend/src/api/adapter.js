@@ -59,8 +59,22 @@ export function adaptIntegralResult(raw) {
   };
 }
 
-export function adaptAppoximationResult(raw) { 
+export function adaptApproximationResult(raw) {
   return {
+    success: raw?.success ?? false,
+    bestMethod: raw?.bestMethod ?? "",
+    globalMessage: translateMessage(raw?.message),
+    sourcePoints: Array.isArray(raw?.sourcePoints) ? raw.sourcePoints : [],
     
-  }
+    results: Array.isArray(raw?.results) ? raw.results.map(res => ({
+      methodName: res.methodName,
+      equation: res.equation,
+      mse: typeof res.mse === 'number' ? res.mse.toFixed(4) : "—",
+      rSquared: typeof res.rSquared === 'number' ? res.rSquared.toFixed(4) : "—",
+      pearson: typeof res.pearson === 'number' ? res.pearson.toFixed(4) : "—",
+      message: translateMessage(res.message),
+      isSuccess: res.message === "Success",
+      coefficients: res.coefficients ?? [],
+    })) : []
+  };
 }
