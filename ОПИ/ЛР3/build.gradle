@@ -1,64 +1,29 @@
-import javax.tools.JavaCompiler
 plugins {
-    id 'java'
     id 'application'
-//    id 'io.github.goooler.shadow' version '8.1.8'
     id 'war'
+    id 'java'
 }
 
 group = projectGroup
 version = projectVersion
 
-java {
-    toolchain {
-            languageVersion = JavaLanguageVersion.of(17) //захаркожено, потом с этим разберусб
-        }
-}
-
-tasks.withType(JavaCompile).configureEach {
-    options.release = project.property('javaVersion').toString().toInteger()
-}
-
-
 
 repositories {
     mavenCentral()
-    maven {
-        url = uri("https://jitpack.io")
-    }
+    maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
     implementation platform("org.junit:junit-bom:$junitBomVersion")
     implementation "org.junit.jupiter:junit-jupiter"
-
     implementation "org.apache.logging.log4j:log4j-api:$log4jVersion"
     implementation "org.apache.logging.log4j:log4j-core:$log4jVersion"
-
     implementation "com.google.code.gson:gson:$gsonVersion"
     implementation "org.primefaces:primefaces:$primefacesVersion"
-
     compileOnly "javax:javaee-web-api:$javaeeWebApiVersion"
-
     implementation "org.hibernate:hibernate-core:$hibernateVersion"
     implementation "org.postgresql:postgresql:$postgresqlVersion"
     implementation "com.zaxxer:HikariCP:$hikariCpVersion"
-}
-
-
-
-tasks.named('clean') {
-    delete layout.buildDirectory
-    
-    doLast {
-        println "Директория сборки успешно удалена"
-    }
-}
-
-tasks.withType(JavaCompile).configureEach {
-    options.debug = false
-    options.compilerArgs.remove("-Werror") 
-    options.compilerArgs.addAll(["-g:none", "-Xlint:all"])
 }
 
 application {
@@ -67,101 +32,8 @@ application {
 
 sourceSets {
     main {
-        java {
-            srcDirs = ['java']
-        }
+        java { srcDirs = ['java'] }
     }
 }
 
-
-
-
-
-
-tasks.register('createJar', Jar) {                     //для билда жарника
-    dependsOn 'compile'
-    from tasks.named('compile').map {it.destinationDirectory}
-    manifest {
-        attributes(
-            'Main-Class': project.property('mainClassName').toString(),
-            'Implementation-Version': project.property('projectVersion').toString()
-        )
-    }
-}
-
-tasks.named('distZip') {
-    dependsOn 'createJar'
-}
-
-tasks.named('distTar') {
-    dependsOn 'createJar'
-}
-
-tasks.named('startScripts') {
-    dependsOn 'createJar'
-}
-
-
-
-
-
-tasks.register('compile', JavaCompile) {         //ворк
-    dependsOn 'clean'
-    source = file(project.property('javaSourceDir').toString())
-    destinationDirectory = file("${project.property('javaSourceDir')}")
-    classpath = sourceSets.main.compileClasspath
-    doLast {
-        println "Компиляция успешно завершена"          //блядская строка не высвечивается, пока не ебу почему
-    }
-}
-
-tasks.named('build') {
-    dependsOn 'createJar'
-    doLast {
-        println "Билд успешно завершен"
-    }
-}
-
-tasks.named('test') {
-
-}
-
-tasks.register('native2ascii') {
-
-}
-
-tasks.register('music') {
-
-}
-
-tasks.register('doc') {
-
-}
-
-tasks.register('xml') {
-
-}
-
-tasks.register('scp') {
-
-}
-
-tasks.register('report') {
-
-}
-
-tasks.register('history') {
-
-}
-
-tasks.register('team') {
-
-}
-
-tasks.register('env') {
-
-}
-
-tasks.register('diff') {}
-
-tasks.register('alt') {}
+apply from: 'custom-tasks.gradle'

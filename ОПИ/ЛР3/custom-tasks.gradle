@@ -1,0 +1,146 @@
+tasks.register('myCompile', Exec) {
+    doFirst { 
+        file('build/classes').mkdirs() 
+    }
+    
+    def srcDir = project.property('javaSourceDir')
+    def destDir = 'build/classes'
+    
+    def javaFiles = fileTree(dir: srcDir, include: '**/*.java').files.collect { it.absolutePath }
+    
+    def cmd = [project.property('javaCompilerPath'), '-d', destDir]
+    cmd.addAll(javaFiles)
+    
+    commandLine cmd
+    
+    doLast {
+        println "Компиляция через javac успешно завершена"
+    }
+}
+
+tasks.register('myBuild') {
+    dependsOn 'compile'  
+    doLast {
+        exec {
+            commandLine 'jar', 'cfe', "build/${project.property('jarName')}", 
+                        project.property('mainClassName'), '-C', 'build/classes', '.'
+        }
+        println "JAR-архив успешно создан."
+    }
+}
+
+tasks.register('myClean', Delete) {
+    delete 'build'
+}
+
+tasks.named('test') {
+    dependsOn 'build' 
+    doLast {
+        exec {
+            commandLine project.property('javaRuntimePath'), '-cp', 
+            "build/${project.property('jarName')}:libs/junit.jar", 
+            'org.junit.runner.JUnitCore', 'org.example.AllTests'
+        }
+    }
+}
+
+tasks.register('myMusic', Exec) {
+    dependsOn 'build'
+    commandLine 'mpg123', 'success.mp3' 
+}
+
+tasks.register('myScp', Exec) {
+    dependsOn 'build'
+    commandLine 'scp', "build/${project.property('jarName')}", "user@host:/deploy/"
+}
+
+
+tasks.register('myXml', Exec) {
+    commandLine 'xmllint', '--noout', 'src/main/resources/config.xml'
+}
+
+tasks.register('myHistory') {
+    doLast {
+        def success = false
+        def revision = 100 
+        while (!success && revision > 0) {
+            exec { commandLine 'svn', 'update', '-r', revision.toString() }
+            def result = exec { 
+                ignoreExitValue = true
+                commandLine 'javac', '-d', 'build/classes', 'src/main/java/*.java' 
+            }
+            if (result.exitValue == 0) success = true
+            else revision--
+        }
+    }
+}
+
+tasks.register('MyNative2ascii') {
+    doLast {
+        ant.native2ascii(src: 'src/main/resources', dest: 'build/resources', includes: '**/*.properties', encoding: 'UTF8')
+        println "Файлы локализации преобразованы."
+    }
+}
+
+tasks.register('MyDoc', Javadoc) {
+    source = fileTree(dir: 'src/main/java')
+    destinationDir = file('build/docs/javadoc')
+    
+    doLast {
+        def jarFile = file("build/${project.property('jarName')}")
+        def md5 = java.security.MessageDigest.getInstance("MD5").digest(jarFile.bytes).encodeHex()
+        def sha1 = java.security.MessageDigest.getInstance("SHA-1").digest(jarFile.bytes).encodeHex()
+        
+        ant.manifest(file: 'build/MANIFEST.MF') {
+            attribute(name: 'MD5-Digest', value: md5)
+            attribute(name: 'SHA-1-Digest', value: sha1)
+        }
+        println "Документация сгенерирована, хеши добавлены в манифест."
+    }
+}
+
+tasks.register('myReport', Exec) {
+    dependsOn 'test'
+    commandLine 'sh', '-c', 'git add build/test-results/*.xml && git commit -m "Report: Test success"'
+}
+
+tasks.register('myEnv', Exec) {
+    def javaBin = project.property('envJavaHome') + '/bin/java'
+    commandLine javaBin, project.property('envJvmArgs'), '-jar', "build/${project.property('jarName')}"
+}
+
+tasks.register('myTeam') {
+    doLast {
+        def hashes = "git log -n 4 --pretty=format:%H".execute().text.split('\n')
+        hashes.each { hash ->
+            exec { commandLine 'git', 'checkout', hash }
+            exec { commandLine './gradlew', 'build' }
+            copy {
+                from "build/${project.property('jarName')}"
+                into 'build/team_archives'
+                rename { "v_${hash}.jar" }
+            }
+        }
+        ant.zip(destfile: 'build/team_builds.zip', basedir: 'build/team_archives')
+    }
+}
+
+tasks.register('myDiff') {
+    doLast {
+        def status = "git status --porcelain".execute().text
+        if (!status.contains('.java')) {
+            exec { commandLine 'git', 'commit', '-m', 'Automatic commit: no class changes' }
+        } else {
+            println "Обнаружены изменения в классах, авто-коммит пропущен."
+        }
+    }
+}
+
+tasks.register('myAlt') {
+    doLast {
+        ant.replaceregexp(match: 'private String userName', replace: 'private String customName', flags: 'g') {
+            fileset(dir: 'src/main/java', includes: '**/*.java')
+        }
+        exec { commandLine './gradlew', 'build' }
+    }
+}
