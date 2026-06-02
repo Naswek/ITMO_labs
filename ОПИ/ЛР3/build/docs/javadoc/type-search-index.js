@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"org.example.beans","l":"InputBean"},{"p":"org.example.exceptions","l":"InvalidInputException"},{"p":"org.example.entity","l":"Result"},{"p":"org.example.beans","l":"ResultService"},{"p":"org.example.beans","l":"Validation"}];updateSearchResults();

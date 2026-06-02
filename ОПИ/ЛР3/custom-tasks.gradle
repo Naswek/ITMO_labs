@@ -43,20 +43,26 @@ tasks.register("myClean", Delete) {
 }
 
 
-tasks.register("myTest") {                  //НЕ ВОРККККК
-    dependsOn "myBuild", "testClasses"
-    
-    doLast {
-        project.exec {
-            commandLine(
-                    project.property("javaRuntimePath"),
-                    "-cp", sourceSets.test.runtimeClasspath.asPath,
-                    "org.junit.platform.console.ConsoleLauncher",
-                    "execute",
-                    "--scan-classpath",
-                    "--details", "tree"
-            )
-        }
+tasks.register("myTest", Exec) {
+    dependsOn("myCompile")
+
+    def testSrcDir = file("src/test/java")
+    def testOutDir = file("$buildDir/custom/classes/test")
+
+    onlyIf {
+        testSrcDir.exists() && !fileTree(testSrcDir).matching { include "**/*.java" }.files.isEmpty()
+    }
+
+    doFirst {
+        testOutDir.mkdirs()
+
+        commandLine(
+                project.property("javaCompilerPath"),
+                "-encoding", "UTF-8",
+                "-cp", sourceSets.test.runtimeClasspath.asPath + File.pathSeparator + "$buildDir/custom/classes/main",
+                "-d", testOutDir.absolutePath,
+                *fileTree(testSrcDir).matching { include "**/*.java" }.files*.absolutePath
+        )
     }
 }
 
@@ -69,8 +75,6 @@ tasks.register("music", Exec) {
 
 
 tasks.register("xml", Exec) {
-    group = "lab"
-
     commandLine(
             "sh",
             "-c",
@@ -89,21 +93,36 @@ tasks.register("env", Exec) {       //НЕ ВООООООООООООООООО�
     )
 }
 
-tasks.register("native2ascii") { //НЕ ВОООООООООООООООООООООРК
+tasks.register("native2ascii") {
     group = "lab"
 
     doLast {
-        def outDir = file("$buildDir/native2ascii")
-        outDir.mkdirs()
+        def inputDir = file("src/main/resources")
+        def outputDir = file("$buildDir/native2ascii")
 
-        fileTree("src/main/resources").matching {
+        outputDir.mkdirs()
+
+        def files = fileTree(inputDir).matching {
             include "**/*.properties"
-        }.files.each { f ->
+        }.files
+
+        if (files.isEmpty()) {
+            println "No localization files found, skipping native2ascii"
+            return
+        }
+
+        files.each { f ->
+            def relativePath = inputDir.toPath().relativize(f.toPath()).toString()
+            def outFile = file("$outputDir/$relativePath")
+
+            outFile.parentFile.mkdirs()
+
             project.exec {
                 commandLine(
                         "native2ascii",
+                        "-encoding", "UTF-8",
                         f.absolutePath,
-                        "${outDir}/${f.name}"
+                        outFile.absolutePath
                 )
             }
         }
@@ -131,11 +150,185 @@ tasks.register("doc", Exec) {
 tasks.register("scp", Exec) {
     dependsOn("myBuild")
 
-    commandLine(
-            "scp",
-            "$buildDir/libs/${project.property('jarName')}",
-            project.property("scpTarget")
+    commandLine( 
+        "scp", 
+        "-P", 
+        "2222", 
+        jarFile.absolutePath, 
+        "s407893@se.ifmo.ru"
     )
 
     ignoreExitValue = true
+}
+
+
+tasks.register("report") {
+    dependsOn("myTest")
+
+    group = "lab"
+
+    def execOps = services.get(ExecOperations)
+
+    doLast {
+        def reportDir = file("$buildDir/test-report")
+        reportDir.mkdirs()
+
+        execOps.exec {
+            commandLine("git", "add", reportDir.absolutePath)
+        }
+
+        execOps.exec {
+            commandLine("git", "commit", "-m", "Add junit report")
+            ignoreExitValue = true
+        }
+    }
+}
+
+
+tasks.register("diff") {
+    group = "lab"
+
+    def execOps = services.get(ExecOperations)
+
+    doLast {
+        def changedFiles = new ByteArrayOutputStream()
+
+        execOps.exec {
+            commandLine("git", "diff", "--name-only")
+            standardOutput = changedFiles
+        }
+
+        def changed = changedFiles.toString()
+
+
+        execOps.exec {
+            commandLine("git", "add", ".")
+        }
+
+        execOps.exec {
+            commandLine(
+                    "git",
+                    "commit",
+                    "-m",
+                    "Auto commit"
+            )
+            ignoreExitValue = true
+        }
+    }
+}
+
+tasks.register("alt", Exec) {
+    dependsOn("myBuild")
+
+    commandLine(
+            "sh",
+            "-c",
+            '''
+            rm -rf build/alt
+            mkdir -p build/alt
+
+            cp -r src build/alt/
+
+            find build/alt -name "*.java" \
+                -exec sed -i 's/InputBean/InputBeanAlt/g' {} \\;
+
+            echo "Alternative version created"
+            '''
+    )
+}
+
+
+tasks.register("team") {
+    group = "lab"
+
+    def execOps = services.get(ExecOperations)
+
+    doLast {
+        def teamDir = file("$buildDir/team")
+        teamDir.mkdirs()
+
+        ["HEAD~1", "HEAD~2", "HEAD~3", "HEAD~4"].each { rev ->
+            execOps.exec {
+                commandLine("git", "checkout", rev)
+                ignoreExitValue = true
+            }
+
+            execOps.exec {
+                commandLine("gradle", "myBuild")
+            }
+
+            copy {
+                from("$buildDir/libs")
+                into(teamDir)
+                include("*.jar")
+                rename { "${rev.replace('~', '_')}.jar" }
+            }
+        }
+
+        execOps.exec {
+            commandLine(
+                    "zip",
+                    "-j",
+                    "$teamDir/team-builds.zip",
+                    *fileTree(teamDir).matching { include "*.jar" }.files*.absolutePath
+            )
+            ignoreExitValue = true
+        }
+
+        execOps.exec {
+            commandLine("git", "checkout", "-")
+            ignoreExitValue = true
+        }
+    }
+}
+
+tasks.register("history") {
+    doLast {
+        def historyDir = file("$buildDir/history")
+        historyDir.mkdirs()
+
+        println("Trying current revision...")
+
+        def result = exec {
+            commandLine("gradle", "myCompile")
+            ignoreExitValue = true
+        }
+
+        if (result.exitValue == 0) {
+            println("Current revision compiles")
+            return
+        }
+
+        println("Searching working SVN revision...")
+
+        while (true) {
+            exec {
+                commandLine("svn", "update", "-r", "PREV")
+                ignoreExitValue = true
+            }
+
+            result = exec {
+                commandLine("gradle", "myCompile")
+                ignoreExitValue = true
+            }
+
+            if (result.exitValue == 0) {
+                println("Working revision found")
+
+                project.exec {
+                    commandLine(
+                            "svn",
+                            "diff"
+                    )
+
+                    standardOutput =
+                            new FileOutputStream(
+                                    file("$historyDir/history-diff.txt")
+                            )
+                }
+
+                break
+            }
+        }
+    }
 }
