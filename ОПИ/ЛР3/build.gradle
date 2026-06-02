@@ -24,6 +24,7 @@ dependencies {
     implementation "org.hibernate:hibernate-core:$hibernateVersion"
     implementation "org.postgresql:postgresql:$postgresqlVersion"
     implementation "com.zaxxer:HikariCP:$hikariCpVersion"
+    testImplementation "org.junit.platform:junit-platform-console-standalone:1.10.0"
 }
 
 application {
@@ -32,7 +33,12 @@ application {
 
 sourceSets {
     main {
-        java { srcDirs = ['java'] }
+        java {
+            srcDirs = [project.property('javaSourceDir')]
+        }
+        resources {
+            srcDirs = ['../Веб/Лаб 3 Javax + CriteriaAPI/src/main/resources']
+        }
     }
 }
 
