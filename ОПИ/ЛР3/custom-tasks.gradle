@@ -350,10 +350,10 @@ tasks.register("report") {
     }
 }
 
-tasks.register("diff") {
-    group = "lab"
+tasks.register("diff") {                                                            //НАДО ПУТЬ ПОФИИФКСИТЬ
 
     def execOps = services.get(ExecOperations)
+    def targetProject = file(project.property("projectDirToBuild"))
 
     doLast {
         println("${YELLOW}Проверяем изменения в рабочей копии...${RESET}")
@@ -367,7 +367,7 @@ tasks.register("diff") {
                     "diff",
                     "--name-only",
                     "--",
-                    project.projectDir.absolutePath
+                    targetProject.absolutePath
             )
             standardOutput = changedFiles
         }
