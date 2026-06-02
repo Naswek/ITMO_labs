@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      lang="ru">
+<h:head>
+    <meta charset="UTF-8"/>
+    <title>Веб, лаб 3 — Стартовая страница</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+
+<h:body>
+
+    <div class="container" style="text-align: center;">
+        <header>Ровкова Анастасия, P3216, 407893</header>
+
+        <h2>Добро пожаловать!</h2>
+        <p>Текущие дата и время:</p>
+
+        <h1 id="clock" style="margin: 20px 0; font-size: 2.5em;">--:--:--</h1>
+
+        <h:form>
+            <h:link outcome="index" value="Начать" styleClass="btn"/>
+        </h:form>
+    </div>
+
+    <h:outputScript target="body" library="js" name="clock.js"/>
+
+</h:body>
+</html>
