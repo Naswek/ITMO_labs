@@ -361,7 +361,13 @@ tasks.register("diff") {
         def changedFiles = new ByteArrayOutputStream()
 
         execOps.exec {
-            commandLine("git", "diff", "--name-only")
+            commandLine(
+                "git",
+                "-c",
+                "core.quotepath=false",
+                "diff",
+                "--name-only"
+            )
             standardOutput = changedFiles
         }
 
