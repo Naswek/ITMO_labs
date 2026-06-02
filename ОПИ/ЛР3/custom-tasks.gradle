@@ -350,7 +350,7 @@ tasks.register("report") {
     }
 }
 
-tasks.register("diff") {                                                            //НАДО ПУТЬ ПОФИИФКСИТЬ
+tasks.register("diff") {                                                            
 
     def execOps = services.get(ExecOperations)
     def targetProject = file(project.property("projectDirToBuild"))
@@ -384,7 +384,7 @@ tasks.register("diff") {                                                        
         println("${YELLOW}Добавляем файлы в индекс...${RESET}")
 
         execOps.exec {
-            commandLine("git", "add", project.projectDir.absolutePath)
+            commandLine("git", "add", targetProject.absolutePath)
         }
 
         println("${YELLOW}Создаём коммит...${RESET}")
@@ -406,10 +406,11 @@ tasks.register("diff") {                                                        
 tasks.register("alt") {
     dependsOn("myBuild")
 
-    group = "lab"
-
     doLast {
         def altDir = file("$buildDir/alt")
+
+        println("${YELLOW}Создаём альтернативную версию проекта...${RESET}")
+        println("${CYAN}Каталог: ${altDir.absolutePath}${RESET}")
 
         delete(altDir)
 
@@ -418,132 +419,228 @@ tasks.register("alt") {
             into(altDir)
         }
 
-        fileTree(altDir).matching {
+        def javaFiles = fileTree(altDir).matching {
             include("**/*.java")
-        }.each { file ->
+        }.files
 
+        println("${CYAN}Скопировано Java-файлов: ${javaFiles.size()}${RESET}")
+        println("${YELLOW}Выполняем замены имён классов и переменных...${RESET}")
+
+        javaFiles.each { file ->
             def text = file.text
 
-            text = text.replace(
-                    "InputBean",
-                    "InputBeanAlt"
-            )
-
-            text = text.replace(
-                    "PointBean",
-                    "PointBeanAlt"
-            )
+            text = text.replace("InputBean", "InputBeanAlt")
+            text = text.replace("PointBean", "PointBeanAlt")
 
             file.text = text
         }
 
-        println("Alternative version created")
+        println("${GREEN}Альтернативная версия создана!${RESET}")
     }
 }
 
 
-tasks.register("team") {
-    group = "lab"
-
-    def execOps = services.get(ExecOperations)
-
-    doLast {
-        def teamDir = file("$buildDir/team")
-        teamDir.mkdirs()
-
-        ["HEAD~1", "HEAD~2", "HEAD~3", "HEAD~4"].each { rev ->
-            execOps.exec {
-                commandLine("git", "checkout", rev)
-                ignoreExitValue = true
-            }
-
-            execOps.exec {
-                commandLine("gradle", "myBuild")
-            }
-
-            copy {
-                from("$buildDir/libs")
-                into(teamDir)
-                include("*.jar")
-                rename { "${rev.replace('~', '_')}.jar" }
-            }
-        }
-
-        execOps.exec {
-            commandLine(
-                    "zip",
-                    "-j",
-                    "$teamDir/team-builds.zip",
-                    *fileTree(teamDir).matching { include "*.jar" }.files*.absolutePath
-            )
-            ignoreExitValue = true
-        }
-
-        execOps.exec {
-            commandLine("git", "checkout", "-")
-            ignoreExitValue = true
-        }
-    }
-}
-
-import org.gradle.process.ExecOperations
 
 tasks.register("history") {
-    group = "lab"
-
     def execOps = services.get(ExecOperations)
 
     doLast {
         def historyDir = file("$buildDir/history")
         historyDir.mkdirs()
 
-        println("Trying current revision...")
+        println("${CYAN}Проверяем текущую ревизию...${RESET}")
 
-        def compileResult = execOps.exec {
-            commandLine("gradle", "myCompile")
-            ignoreExitValue = true
+        def brokenRevisionOut = new ByteArrayOutputStream()
+        execOps.exec {
+            commandLine("git", "rev-parse", "HEAD")
+            standardOutput = brokenRevisionOut
         }
 
-        if (compileResult.exitValue == 0) {
-            println("Current revision compiles successfully")
-            return
+        def brokenRevision = brokenRevisionOut.toString().trim()
+
+        def currentBranchOut = new ByteArrayOutputStream()
+        execOps.exec {
+            commandLine("git", "rev-parse", "--abbrev-ref", "HEAD")
+            standardOutput = currentBranchOut
         }
 
-        println("Searching for working SVN revision...")
+        def currentBranch = currentBranchOut.toString().trim()
 
-        while (true) {
+        println("${CYAN}Текущая ветка: ${currentBranch}${RESET}")
+        println("${CYAN}Текущая ревизия: ${brokenRevision.take(7)}${RESET}")
 
-            def svnResult = execOps.exec {
-                commandLine("svn", "update", "-r", "PREV")
-                ignoreExitValue = true
-            }
-
-            if (svnResult.exitValue != 0) {
-                println("SVN history exhausted")
-                break
-            }
-
-            compileResult = execOps.exec {
+        try {
+            def compileResult = execOps.exec {
                 commandLine("gradle", "myCompile")
                 ignoreExitValue = true
             }
 
             if (compileResult.exitValue == 0) {
+                println("${GREEN}Текущая ревизия успешно компилируется${RESET}")
+                return
+            }
 
-                println("Working revision found")
+            println("${YELLOW}Текущая ревизия не компилируется. Ищем предыдущую рабочую ревизию...${RESET}")
 
-                def diffFile = file("$historyDir/history-diff.txt")
+            def success = false
+            def depth = 1
+            def maxDepth = 20
 
-                diffFile.withOutputStream { os ->
-                    execOps.exec {
-                        commandLine("svn", "diff")
-                        standardOutput = os
-                    }
+            while (!success && depth <= maxDepth) {
+                def rev = "HEAD~${depth}"
+
+                println("${CYAN}Проверяем ревизию ${rev}...${RESET}")
+
+                def checkoutResult = execOps.exec {
+                    commandLine("git", "checkout", "-q", rev)
+                    ignoreExitValue = true
                 }
 
-                println("Diff saved to ${diffFile}")
+                if (checkoutResult.exitValue != 0) {
+                    println("${YELLOW}Не удалось перейти на ${rev}, пропускаем${RESET}")
+                    depth++
+                    continue
+                }
 
-                break
+                def shortRevOut = new ByteArrayOutputStream()
+                execOps.exec {
+                    commandLine("git", "rev-parse", "--short", "HEAD")
+                    standardOutput = shortRevOut
+                }
+
+                def shortRev = shortRevOut.toString().trim()
+                println("${CYAN}Компилируем ревизию ${shortRev}...${RESET}")
+
+                def oldCompileResult = execOps.exec {
+                    commandLine("gradle", "myCompile")
+                    ignoreExitValue = true
+                }
+
+                if (oldCompileResult.exitValue == 0) {
+                    success = true
+
+                    println("${GREEN}Найдена рабочая ревизия: ${shortRev}${RESET}")
+
+                    def diffFile = file("$historyDir/history-diff.txt")
+
+                    diffFile.withOutputStream { os ->
+                        execOps.exec {
+                            commandLine(
+                                    "git",
+                                    "-c", "core.quotepath=false",
+                                    "diff",
+                                    "HEAD",
+                                    brokenRevision
+                            )
+                            standardOutput = os
+                        }
+                    }
+
+                    println("${GREEN}Diff сохранён в: ${diffFile.absolutePath}${RESET}")
+                } else {
+                    println("${YELLOW}Ревизия ${shortRev} не компилируется${RESET}")
+                    depth++
+                }
+            }
+
+            if (!success) {
+                println("${YELLOW}Рабочая ревизия не найдена в пределах ${maxDepth} коммитов${RESET}")
+            }
+
+        } finally {
+            println("${CYAN}Возвращаемся обратно на ${currentBranch}...${RESET}")
+
+            execOps.exec {
+                commandLine("git", "checkout", "-q", currentBranch)
+                ignoreExitValue = true
+            }
+
+            println("${GREEN}Возврат завершён${RESET}")
+        }
+    }
+}
+
+tasks.register("team") {
+    def execOps = services.get(ExecOperations)
+
+    doLast {
+        def teamDir = file("$buildDir/team")
+        delete(teamDir)
+        teamDir.mkdirs()
+
+        def currentRefOut = new ByteArrayOutputStream()
+        execOps.exec {
+            commandLine("git", "rev-parse", "--abbrev-ref", "HEAD")
+            standardOutput = currentRefOut
+        }
+
+        def currentRef = currentRefOut.toString().trim()
+
+        println("${YELLOW}Собираем 4 предыдущие ревизии из git...${RESET}")
+        println("${CYAN}Текущая ветка: ${currentRef}${RESET}")
+
+        try {
+            ["HEAD~1", "HEAD~2", "HEAD~3", "HEAD~4"].each { rev ->
+                println("${CYAN}Переходим на ревизию: ${rev}${RESET}")
+
+                
+
+                def checkoutResult = execOps.exec {
+                    commandLine("git", "checkout", "-q", rev)
+                    ignoreExitValue = true
+                }
+
+                if (checkoutResult.exitValue != 0) {
+                    println("${YELLOW}Не удалось перейти на ${rev}, пропускаем${RESET}")
+                } else {
+                    println("${YELLOW}Собираем проект для ${rev}...${RESET}")
+
+                    def buildResult = execOps.exec {
+                        commandLine("gradle", "myBuild")
+                        ignoreExitValue = true
+                    }
+
+                    if (buildResult.exitValue != 0) {
+                        println("${YELLOW}Сборка ${rev} не удалась, пропускаем${RESET}")
+                    } else {
+                        copy {
+                            from("$buildDir/libs")
+                            into(teamDir)
+                            include("*.jar")
+                            rename { "${rev.replace('~', '_')}.jar" }
+                        }
+
+                        println("${GREEN}JAR для ${rev} сохранён${RESET}")
+                    }
+                }
+            }
+
+            def jars = fileTree(teamDir).matching {
+                include("*.jar")
+            }.files
+
+            if (jars.isEmpty()) {
+                println("${YELLOW}Не собралась ни одна ревизия, ZIP не создан${RESET}")
+            } else {
+                execOps.exec {
+                    commandLine(
+                            "zip",
+                            "-j",
+                            "$teamDir/team-builds.zip",
+                            *jars*.absolutePath
+                    )
+                    ignoreExitValue = true
+                }
+
+                println("${GREEN}Архив создан: $teamDir/team-builds.zip${RESET}")
+            }
+
+        } finally {
+            println("${GREEN}Возвращаемся обратно на ${currentRef}${RESET}")
+
+            execOps.exec {
+                commandLine("git", "checkout", "-q", currentRef)
+                ignoreExitValue = true
             }
         }
     }
