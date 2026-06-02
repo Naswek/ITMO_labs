@@ -129,9 +129,9 @@
             ],
             "jars": [
                 "/home/naswek/.sbt/boot/scala-2.12.21/lib/scala-library.jar",
-                "/home/naswek/.sbt/boot/scala-2.12.21/lib/scala-xml_2.12-2.3.0.jar",
+                "/home/naswek/.sbt/boot/scala-2.12.21/lib/scala-compiler.jar",
                 "/home/naswek/.sbt/boot/scala-2.12.21/lib/scala-reflect.jar",
-                "/home/naswek/.sbt/boot/scala-2.12.21/lib/scala-compiler.jar"
+                "/home/naswek/.sbt/boot/scala-2.12.21/lib/scala-xml_2.12-2.3.0.jar"
             ],
             "setup": {
                 "order": "mixed",
@@ -220,7 +220,7 @@
         "platform": {
             "name": "jvm",
             "config": {
-                "home": "/usr/lib/jvm/java-21-openjdk-amd64",
+                "home": "/usr/lib/jvm/java-17-openjdk",
                 "options": [
                     "-Duser.dir=/home/naswek/scala_projects/lab2/backend/project"
                 ]
@@ -229,7 +229,7 @@
                 
             ],
             "runtimeConfig": {
-                "home": "/usr/lib/jvm/java-21-openjdk-amd64",
+                "home": "/usr/lib/jvm/java-17-openjdk",
                 "options": [
                     "-Duser.dir=/home/naswek/scala_projects/lab2/backend/project"
                 ]

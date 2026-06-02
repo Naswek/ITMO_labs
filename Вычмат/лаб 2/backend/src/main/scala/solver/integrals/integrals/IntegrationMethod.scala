@@ -44,7 +44,7 @@ trait IntegrationMethod {
          return IntegralsResult(0, 0, Message.IntegralDoesNotExist)
       }
       
-      val updatedResult = finalResult.copy(message = Message.IntervalWasChanged)
+      val updatedResult = finalResult.copy(message = Message.Success)
       
       return updatedResult
     } catch {

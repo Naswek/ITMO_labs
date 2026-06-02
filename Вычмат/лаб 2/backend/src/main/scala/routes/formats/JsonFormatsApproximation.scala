@@ -24,7 +24,7 @@ object JsonFormatsApproximation extends DefaultJsonProtocol {
     jsonFormat7(ApproximationResult)
       
   implicit val approximationRequestFormat: RootJsonFormat[ApproximationRequest] =
-    jsonFormat4(ApproximationRequest)
+    jsonFormat7(ApproximationRequest)
   
   implicit val approximationResponseFormat: RootJsonFormat[ApproximationResponse] =
     jsonFormat5(ApproximationResponse)

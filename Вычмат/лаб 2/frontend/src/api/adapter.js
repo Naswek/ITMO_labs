@@ -12,7 +12,9 @@ export function translateMessage(msg) {
     "IntervalWasChanged": "Границы интервала были незначитально изменены для обхода точки разрыва",
     "NotEnoughPoints" : "Не хватило точек для применения метода",
     "InvalidDataForModel" : "Невалидные данные для модели",
-    "SingularMatrix" : "Определитель матрицы равен нулю" 
+    "SingularMatrix" : "Определитель матрицы равен нулю",
+    "FunctionUndefined": "Функция не определена на заданном интервале",
+    "InvalidInterval": "Неверные параметры интервала (a должно быть <= b, h должно быть > 0)",
   };
   return dictionary[msg] || msg;
 }
@@ -26,7 +28,8 @@ export function adaptSamples(raw) {
       function: Array.isArray(raw?.methods?.function) ? raw.methods.function : [],
       system: Array.isArray(raw?.methods?.system) ? raw.methods.system : [],
       integrals: Array.isArray(raw?.methods) ? raw.methods : [],
-      approximators: Array.isArray(raw?.methods) ? raw.methods : []
+      approximators: Array.isArray(raw?.methods) ? raw.methods : [],
+      interpolators: Array.isArray(raw?.methods) ? raw.methods : []
     }
   };
 }
@@ -75,6 +78,24 @@ export function adaptApproximationResult(raw) {
       message: translateMessage(res.message),
       isSuccess: res.message === "Success",
       coefficients: res.coefficients ?? [],
+    })) : []
+  };
+}
+
+export function adaptInterpolationResult(raw) {
+  return {
+    success: raw?.success ?? false,
+    bestMethod: raw?.bestMethod ?? "",
+    globalMessage: translateMessage(raw?.message),
+    sourcePoints: Array.isArray(raw?.sourcePoints) ? raw.sourcePoints : [],
+    
+    results: Array.isArray(raw?.results) ? raw.results.map(res => ({
+      methodName: res.methodName,
+      value: typeof res.value === 'number' ? res.value : null,
+      differenceTable: Array.isArray(res.differenceTable) ? res.differenceTable : [],
+      message: translateMessage(res.message),
+      isSuccess: res.message === "Success",
+      isExtrapolated: res.isExtrapolated ?? false
     })) : []
   };
 }

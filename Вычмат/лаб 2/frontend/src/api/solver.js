@@ -1,4 +1,4 @@
-import { adaptSamples, adaptFunctionResult, adaptSystemResult, adaptIntegralResult, adaptApproximationResult } from "./adapter";
+import { translateMessage, adaptSamples, adaptFunctionResult, adaptSystemResult, adaptIntegralResult, adaptApproximationResult, adaptInterpolationResult } from "./adapter";
 
 const BASE_URL = "http://localhost:8080/api/v1"; 
 
@@ -9,7 +9,10 @@ async function readJson(res) {
 }
 
 function unwrapResponse(raw) {
-  if (raw?.success === false || raw?.error) throw new Error(raw?.error || "Unknown error");
+  if (raw?.success === false || raw?.error) {
+    const errorMsg = raw?.message || raw?.error || "Unknown error";
+    throw new Error(translateMessage(errorMsg));
+  }
   return raw;
 }
 
@@ -53,4 +56,13 @@ export async function solveApproximation(payload) {
     body: JSON.stringify(payload)
   });
   return adaptApproximationResult(unwrapResponse(await readJson(res)));
+}
+
+export async function solveInterpolation(payload) {
+  const res = await fetch(`${BASE_URL}/interpolation/function`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+  return adaptInterpolationResult(unwrapResponse(await readJson(res)));
 }

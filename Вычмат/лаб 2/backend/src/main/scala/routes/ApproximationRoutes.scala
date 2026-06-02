@@ -21,13 +21,20 @@ object ApproximationRoutes {
       path("function") {
         post {
           entity(as[ApproximationRequest]) { request =>
+            val points = if (!request.isGenerate) {
+              request.x.zip(request.y).map { case (xi, yi) => Point(xi, yi) }
+            } else {
+              Library.functions.get(request.functionId) match {
+                case Some(pack) => generatePoints(pack.f, request.a, request.b, request.h)
+                case None => Seq.empty
+              }
+            }
+            val finalPoints = points.distinctBy(_.x).sortBy(_.x)
             
             val response = Library.functions.get(request.functionId) match {
               case Some(functionPack) =>
                 println(Library.functions.get(request.functionId).toString)    
-                val points = generatePoints(functionPack.f, request.a, request.b, request.h)
-                val allResults = Library.approximationFunctions.values.map(solver => solver.solve(points)).toSeq
-                
+                val allResults = Library.approximationFunctions.values.map(solver => solver.solve(finalPoints)).toSeq
                 val successfulResults = allResults.filter(_.message == Message.Success)
                 val bestMethodName = if (successfulResults.nonEmpty) 
                                        successfulResults.minBy(_.mse).methodName else "Нет подходящего метода"

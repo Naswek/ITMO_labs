@@ -34,7 +34,8 @@ object Library {
       26 -> Integrals.i27,
       27 -> Integrals.i28,
       28 -> Integrals.i29,
-      29 -> Integrals.i30
+      29 -> Integrals.i30,
+      30 -> Integrals.i31
     )
 
 

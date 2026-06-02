@@ -1,10 +1,14 @@
 package solver.approximation.models
 
 case class ApproximationRequest(
+  isGenerate: Boolean,
   functionId: Int, 
   a: Double,
   b: Double,
-  h: Double
+  h: Double,
+  x: List[Double],
+  y: List[Double]
+  
 )
 
 case class SampleRequest (

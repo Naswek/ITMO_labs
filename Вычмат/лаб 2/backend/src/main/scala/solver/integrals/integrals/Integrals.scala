@@ -124,4 +124,8 @@ object Integrals {
   val i30: IntegralsPack = IntegralsPack(
     f = x => 1/(x*x)
   )
+
+  val i31: IntegralsPack = IntegralsPack(
+  f = x => x*x*x
+  )
 }

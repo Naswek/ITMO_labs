@@ -82,7 +82,7 @@ export default function ApproximationGraph({ originalFormula, result }) {
             color: isBest ? Desmos.Colors.BLUE : "#B0B0B0",
             lineWidth: isBest ? 4 : 2,
             lineStyle: isBest ? Desmos.Styles.SOLID : Desmos.Styles.DASHED,
-            hidden: !isBest 
+            //hidden: !isBest 
           });
         }
       });

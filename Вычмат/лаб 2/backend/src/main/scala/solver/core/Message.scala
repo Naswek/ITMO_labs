@@ -18,4 +18,7 @@ enum Message:
  
   case NotEnoughPoints
   case InvalidDataForModel
-  case SingularMatrix  
+  case SingularMatrix 
+  
+  case FunctionUndefined
+  case InvalidInterval
