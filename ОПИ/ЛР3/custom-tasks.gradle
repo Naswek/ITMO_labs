@@ -339,14 +339,14 @@ tasks.register("report") {
             commandLine("git", "add", reportDir.absolutePath)
         }
 
-        println("${GREEN}Отчёт добавлен в git")
+        println("${GREEN}Отчёт добавлен в git${RESET}")
 
         execOps.exec {
             commandLine("git", "commit", "-m", "add junit report")
             ignoreExitValue = true
         }
 
-        println("Коммит отчёта завершён${RESET}")
+        println("${GREEN}Коммит отчёта завершён${RESET}")
     }
 }
 
@@ -362,11 +362,12 @@ tasks.register("diff") {
 
         execOps.exec {
             commandLine(
-                "git",
-                "-c",
-                "core.quotepath=false",
-                "diff",
-                "--name-only"
+                    "git",
+                    "-c", "core.quotepath=false",
+                    "diff",
+                    "--name-only",
+                    "--",
+                    project.projectDir.absolutePath
             )
             standardOutput = changedFiles
         }
@@ -383,7 +384,7 @@ tasks.register("diff") {
         println("${YELLOW}Добавляем файлы в индекс...${RESET}")
 
         execOps.exec {
-            commandLine("git", "add", ".")
+            commandLine("git", "add", project.projectDir.absolutePath)
         }
 
         println("${YELLOW}Создаём коммит...${RESET}")
