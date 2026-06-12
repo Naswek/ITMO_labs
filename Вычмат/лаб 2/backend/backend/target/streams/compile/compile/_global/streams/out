@@ -1,5 +1,0 @@
-[error] -- [E040] Syntax Error: /home/naswek/scala_projects/lab2/backend/src/main/scala/solver/interpolation/models/InterpolationResult.scala:371:0 
-[error] 371 |
-[error]     |^
-[error]     |'}' expected, but eof found
-[error] one error found
