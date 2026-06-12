@@ -1,0 +1,14 @@
+[debug] Running TaskDef(solver.interpolation.InterpolationSpec, org.scalatest.tools.Framework$$anon$1@1891beea, false, [SuiteSelector])
+[info] InterpolationSpec:
+[info] - Stirling method with points generated from a=0, b=0, h=0.2
+[info] - Stirling method with points from a=0, b=2, h=0.2, targetX = 1.0 (exact match)
+[info] - Stirling method with points from a=0, b=2, h=0.2, targetX = 1.1 (non-exact match)
+[info] - Extrapolation detection logic check
+[info] - Undefined points detection check (e.g. ln(x) on [-1, 1])
+[info] Run completed in 318 milliseconds.
+[info] Total number of tests run: 5
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 5, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
+[debug] Passed tests:
+[debug] 	solver.interpolation.InterpolationSpec

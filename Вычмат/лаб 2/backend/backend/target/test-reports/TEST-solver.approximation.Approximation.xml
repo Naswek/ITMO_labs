@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuite hostname="kinder-pingui" name="solver.approximation.Approximation" tests="5" errors="0" failures="1" skipped="0" time="0.137" timestamp="2026-06-10T20:54:23">
+          <properties>
+      <property name="java.specification.version" value="17"/><property name="sun.jnu.encoding" value="UTF-8"/><property name="sun.arch.data.model" value="64"/><property name="java.vendor.url" value="https://openjdk.java.net/"/><property name="jline.terminal" value="none"/><property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk/lib"/><property name="sun.java.command" value="/usr/share/sbt/bin/sbt-launch.jar test"/><property name="jdk.debug" value="release"/><property name="sun.stderr.encoding" value="UTF-8"/><property name="java.specification.vendor" value="Oracle Corporation"/><property name="java.version.date" value="2026-04-21"/><property name="java.home" value="/usr/lib/jvm/java-17-openjdk"/><property name="file.separator" value="/"/><property name="java.vm.compressedOopsMode" value="32-bit"/><property name="line.separator" value="
+"/><property name="sun.stdout.encoding" value="UTF-8"/><property name="java.vm.specification.vendor" value="Oracle Corporation"/><property name="java.specification.name" value="Java Platform API Specification"/><property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/><property name="java.runtime.version" value="17.0.19+10"/><property name="user.name" value="naswek"/><property name="log4j.ignoreTCL" value="true"/><property name="file.encoding" value="UTF-8"/><property name="jnidispatch.path" value="/home/naswek/.cache/JNA/temp/jna1043909738065798752.tmp"/><property name="jna.loaded" value="true"/><property name="java.io.tmpdir" value="/tmp"/><property name="java.version" value="17.0.19"/><property name="java.vm.specification.name" value="Java Virtual Machine Specification"/><property name="native.encoding" value="UTF-8"/><property name="java.library.path" value=":/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/><property name="java.vendor" value="Arch Linux"/><property name="java.specification.maintenance.version" value="1"/><property name="scala.ext.dirs" value="/home/naswek/.sbt/1.0/java9-rt-ext-arch_linux_17_0_19"/><property name="sun.io.unicode.encoding" value="UnicodeLittle"/><property name="java.class.path" value="/usr/share/sbt/bin/sbt-launch.jar"/><property name="java.vm.vendor" value="Arch Linux"/><property name="jline.shutdownhook" value="false"/><property name="user.timezone" value="Europe/Moscow"/><property name="java.vm.specification.version" value="17"/><property name="os.name" value="Linux"/><property name="sun.java.launcher" value="SUN_STANDARD"/><property name="user.country" value="RU"/><property name="sun.cpu.endian" value="little"/><property name="user.home" value="/home/naswek"/><property name="user.language" value="ru"/><property name="sbt.script" value="/usr/bin/sbt"/><property name="sbt.ipcsocket.tmpdir" value="/run/user/1000/.sbt31f38d02/ipcsocket"/><property name="swoval.tmpdir" value="/run/user/1000/.sbt31f38d02/swoval"/><property name="jline.esc.timeout" value="0"/><property name="path.separator" value=":"/><property name="os.version" value="7.0.11-zen1-1-zen"/><property name="jna.nosys" value="true"/><property name="java.runtime.name" value="OpenJDK Runtime Environment"/><property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/><property name="jna.platform.library.path" value="/usr/lib64:/lib64:/usr/lib:/lib:/usr/lib32:/usr/lib/libfakeroot"/><property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/><property name="user.dir" value="/home/naswek/scala_projects/lab2/backend"/><property name="os.arch" value="amd64"/><property name="java.vm.info" value="mixed mode, sharing"/><property name="java.vm.version" value="17.0.19+10"/><property name="java.class.version" value="61.0"/>
+    </properties>
+          <testcase classname="solver.approximation.Approximation" name="Методы никогда не должны выбрасывать исключения" time="0.08">
+                      
+                    </testcase><testcase classname="solver.approximation.Approximation" name="MSE всегда неотрицательно" time="0.013">
+                      
+                    </testcase><testcase classname="solver.approximation.Approximation" name="Коэффициент детерминации R^2 не должен превышать 1" time="0.01">
+                      
+                    </testcase><testcase classname="solver.approximation.Approximation" name="Log и Grade должны корректно обрабатывать невалидные данные" time="0.002">
+                      
+                    </testcase><testcase classname="solver.approximation.Approximation" name="Методы должны возвращать ошибку, если данные вырожденные (все X одинаковы)" time="0.032">
+                      <failure message="GeneratorDrivenPropertyCheckFailedException was thrown during property evaluation.
+ (Approximation.scala:74)
+  Falsified after 5 successful property evaluations.
+  Location: (Approximation.scala:74)
+  Occurred when passed generated values (
+    arg0 = List(Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0)) // 1 shrink
+  )
+Init Seed: -3626821070675968475" type="org.scalatest.exceptions.GeneratorDrivenPropertyCheckFailedException">org.scalatest.exceptions.GeneratorDrivenPropertyCheckFailedException: GeneratorDrivenPropertyCheckFailedException was thrown during property evaluation.
+ (Approximation.scala:74)
+  Falsified after 5 successful property evaluations.
+  Location: (Approximation.scala:74)
+  Occurred when passed generated values (
+    arg0 = List(Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0), Point(8.516050622038968, 1.0)) // 1 shrink
+  )
+Init Seed: -3626821070675968475
+	at org.scalatestplus.scalacheck.CheckerAsserting$$anon$2.indicateFailure(CheckerAsserting.scala:255)
+	at org.scalatestplus.scalacheck.CheckerAsserting$$anon$2.indicateFailure(CheckerAsserting.scala:246)
+	at org.scalatestplus.scalacheck.UnitCheckerAsserting$CheckerAssertingImpl.check(CheckerAsserting.scala:141)
+	at org.scalatestplus.scalacheck.Checkers.check(Checkers.scala:371)
+	at org.scalatestplus.scalacheck.Checkers.check$(Checkers.scala:225)
+	at solver.approximation.Approximation.check(Approximation.scala:11)
+	at solver.approximation.Approximation.testFun$proxy5$1(Approximation.scala:74)
+	at solver.approximation.Approximation.$init$$$anonfun$6(Approximation.scala:65)
+	at org.scalatest.Transformer.apply$$anonfun$1(Transformer.scala:22)
+	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:31)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:21)
+	at org.scalatest.propspec.AnyPropSpecLike$$anon$1.apply(AnyPropSpecLike.scala:204)
+	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:138)
+	at org.scalatest.propspec.AnyPropSpec.withFixture(AnyPropSpec.scala:875)
+	at org.scalatest.propspec.AnyPropSpecLike.invokeWithFixture$1(AnyPropSpecLike.scala:210)
+	at org.scalatest.propspec.AnyPropSpecLike.runTest$$anonfun$1(AnyPropSpecLike.scala:214)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:306)
+	at org.scalatest.propspec.AnyPropSpecLike.runTest(AnyPropSpecLike.scala:214)
+	at org.scalatest.propspec.AnyPropSpecLike.runTest$(AnyPropSpecLike.scala:45)
+	at org.scalatest.propspec.AnyPropSpec.runTest(AnyPropSpec.scala:875)
+	at org.scalatest.propspec.AnyPropSpecLike.runTests$$anonfun$1(AnyPropSpecLike.scala:247)
+	at org.scalatest.SuperEngine.traverseSubNodes$1$$anonfun$1(Engine.scala:413)
+	at scala.runtime.function.JProcedure1.apply(JProcedure1.java:15)
+	at scala.runtime.function.JProcedure1.apply(JProcedure1.java:10)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:429)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:396)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:475)
+	at org.scalatest.propspec.AnyPropSpecLike.runTests(AnyPropSpecLike.scala:247)
+	at org.scalatest.propspec.AnyPropSpecLike.runTests$(AnyPropSpecLike.scala:45)
+	at org.scalatest.propspec.AnyPropSpec.runTests(AnyPropSpec.scala:875)
+	at org.scalatest.Suite.run(Suite.scala:1114)
+	at org.scalatest.Suite.run$(Suite.scala:564)
+	at org.scalatest.propspec.AnyPropSpec.org$scalatest$propspec$AnyPropSpecLike$$super$run(AnyPropSpec.scala:875)
+	at org.scalatest.propspec.AnyPropSpecLike.run$$anonfun$1(AnyPropSpecLike.scala:251)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:535)
+	at org.scalatest.propspec.AnyPropSpecLike.run(AnyPropSpecLike.scala:251)
+	at org.scalatest.propspec.AnyPropSpecLike.run$(AnyPropSpecLike.scala:45)
+	at org.scalatest.propspec.AnyPropSpec.run(AnyPropSpec.scala:875)
+	at org.scalatest.tools.Framework.org$scalatest$tools$Framework$$runSuite(Framework.scala:321)
+	at org.scalatest.tools.Framework$ScalaTestTask.execute(Framework.scala:517)
+	at sbt.TestRunner.runTest$1(TestFramework.scala:153)
+	at sbt.TestRunner.run(TestFramework.scala:168)
+	at sbt.TestFramework$$anon$3$$anonfun$$lessinit$greater$1.$anonfun$apply$1(TestFramework.scala:336)
+	at sbt.TestFramework$.sbt$TestFramework$$withContextLoader(TestFramework.scala:296)
+	at sbt.TestFramework$$anon$3$$anonfun$$lessinit$greater$1.apply(TestFramework.scala:336)
+	at sbt.TestFramework$$anon$3$$anonfun$$lessinit$greater$1.apply(TestFramework.scala:336)
+	at sbt.TestFunction.apply(TestFramework.scala:348)
+	at sbt.Tests$.$anonfun$toTask$1(Tests.scala:436)
+	at sbt.std.Transform$$anon$3.$anonfun$apply$2(Transform.scala:47)
+	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+	at sbt.Execute.work(Execute.scala:292)
+	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+</failure>
+                    </testcase>
+          <system-out><![CDATA[]]></system-out>
+          <system-err><![CDATA[]]></system-err>
+        </testsuite>

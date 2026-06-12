@@ -1,0 +1,10 @@
+[0m[[0m[33mwarn[0m] [0m[0msbt-bloop_2.12_1.0-2.0.19.jar no longer exists at /home/naswek/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/2.0.19/sbt-bloop_2.12_1.0-2.0.19.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mnot up to date. inChanged = false, force = false[0m
+[0m[[0m[0mdebug[0m] [0m[0mUpdating ProjectRef(uri("file:/home/naswek/scala_projects/lab2/backend/project/project/"), "backend-build-build")...[0m
+[0m[[0m[0minfo[0m] [0m[0mUpdating backend-build-build[0m
+[0m[[0m[0minfo[0m] [0m[0mResolved backend-build-build dependencies[0m
+[0m[[0m[0minfo[0m] [0m[0mUpdating backend-build-build[0m
+[0m[[0m[0minfo[0m] [0m[0mResolved backend-build-build dependencies[0m
+[0m[[0m[0minfo[0m] [0m[0mFetching artifacts of backend-build-build[0m
+[0m[[0m[0minfo[0m] [0m[0mFetched artifacts of backend-build-build[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone updating ProjectRef(uri("file:/home/naswek/scala_projects/lab2/backend/project/project/"), "backend-build-build")[0m
