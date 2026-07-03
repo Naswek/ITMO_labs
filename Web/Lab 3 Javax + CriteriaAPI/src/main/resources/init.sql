@@ -1,7 +1,0 @@
-CREATE TABLE results (
-   id BIGSERIAL PRIMARY KEY,
-   x_value NUMERIC(10,2) NOT NULL
-   y_value NUMERIC(10,2) NOT NULL,
-   r_value NUMERIC(10,2) NOT NULL,
-   hit BOOLEAN NOT NULL,
-);
