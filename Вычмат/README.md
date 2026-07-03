@@ -1,0 +1,1 @@
+все лабы находятся в [этом](https://github.com/Naswek/numerical-methods) репозитории 
