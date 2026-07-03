@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.mbean.MBeanMetricsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-06-11T00:18:17.435Z" hostname="kinder-pingui" time="0.006">
+  <properties/>
+  <testcase name="pointsCounterCountsTotalHitsAndOutOfBoundsNotifications()" classname="org.example.mbean.MBeanMetricsTest" time="0.004"/>
+  <testcase name="missPercentageUsesCurrentPointsCounterValues()" classname="org.example.mbean.MBeanMetricsTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
