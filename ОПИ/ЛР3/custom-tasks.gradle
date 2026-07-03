@@ -367,7 +367,7 @@ tasks.register("diff") {
                     "diff",
                     "--name-only",
                     "--",
-                    targetProject.absolutePath
+
             )
             standardOutput = changedFiles
         }
@@ -375,7 +375,8 @@ tasks.register("diff") {
         def changed = changedFiles.toString().trim()
 
         if (changed.isEmpty()) {
-            println("${YELLOW}Изменений не найдено${RESET}")
+        println(targetProject)
+        println("${YELLOW}Изменений не найдено${RESET}")
         } else {
             println("${CYAN}Найдены изменения:${RESET}")
             println(changed)

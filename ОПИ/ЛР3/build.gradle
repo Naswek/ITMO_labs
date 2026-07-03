@@ -37,7 +37,7 @@ sourceSets {
             srcDirs = [project.property('javaSourceDir')]
         }
         resources {
-            srcDirs = ['../Веб/Лаб 3 Javax + CriteriaAPI/src/main/resources']
+            srcDirs = ['../Web/Lab 3 Javax + CriteriaAPI/src/main/resources']
         }
     }
 }
