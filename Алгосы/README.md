@@ -1,0 +1,1 @@
+все ререшенные задачи находятся в [этом](https://github.com/Naswek/algoses/tree/main/contest/sample) репозитории (мб будут еще задачки с откуда-то...)
