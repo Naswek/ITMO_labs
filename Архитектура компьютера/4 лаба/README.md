@@ -1,1 +1,1 @@
-лаба находится в (этом)[https://github.com/Naswek/4-lab-csa] репозитории (но она плохая и её надо переделывать)
+лаба находится в [этом](https://github.com/Naswek/cpu-simulator) репозитории 
