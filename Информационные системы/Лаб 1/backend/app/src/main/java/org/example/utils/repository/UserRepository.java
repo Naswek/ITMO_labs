@@ -1,4 +1,4 @@
-package main.java.org.example.utils.repository;
+package org.example.utils.repository;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
@@ -12,7 +12,7 @@ import org.example.entity.UserEntity;
 @ApplicationScoped
 public class UserRepository {
 
-    @PersistenceContext
+    @PersistenceContext(unitName = "labworks")
     private EntityManager entityManager;
 
     @Transactional
