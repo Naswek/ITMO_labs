@@ -7,6 +7,7 @@ import jakarta.transaction.Transactional;
 import org.example.dto.AuthResultWithUser;
 import org.example.entity.UserEntity;
 import org.example.enums.AuthResult;
+import org.example.utils.cdi.validators.UserValidator;
 import org.example.utils.repository.UserRepository;
 import org.example.utils.security.PasswordEncoder;
 
@@ -19,9 +20,12 @@ public class UserService {
     @Inject
     private PasswordEncoder encoder;
 
+    @Inject
+    private UserValidator validator;
+
     public AuthResultWithUser checkUser(String login, String password) {
-        String normalizedLogin = validLogin(login);
-        validPassword(password);
+        String normalizedLogin = validator.normalizeLogin(login);
+        validator.validatePassword(password);
 
         UserEntity user = repository.findByLogin(normalizedLogin);
         if (user == null) {
@@ -35,8 +39,8 @@ public class UserService {
 
     @Transactional
     public UserEntity createUser(String login, String password) {
-        String normalizedLogin = validLogin(login);
-        validPassword(password);
+        String normalizedLogin = validator.normalizeLogin(login);
+        validator.validatePassword(password);
 
         if (repository.findByLogin(normalizedLogin) != null) {
             throw new IllegalArgumentException("Пользователь с таким логином уже существует");
@@ -56,20 +60,4 @@ public class UserService {
         return user;
     }
 
-    private static String validLogin(String login) {
-        if (login == null || login.isBlank()) {
-            throw new IllegalArgumentException("Логин не может быть пустым");
-        }
-        String normalized = login.trim();
-        if (normalized.length() > 100) {
-            throw new IllegalArgumentException("Логин не может быть длиннее 100 символов");
-        }
-        return normalized;
-    }
-
-    private static void validPassword(String password) {
-        if (password == null || password.isBlank()) {
-            throw new IllegalArgumentException("Пароль не может быть пустым");
-        }
-    }
 }
