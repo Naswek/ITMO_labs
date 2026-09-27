@@ -1,6 +1,5 @@
 package org.example.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,7 +19,7 @@ public class UserEntity {
     @Column(nullable = false, unique = true, length = 100)
     private String login;
 
-    @Column(nullable = false, length = 60)
+    @Column(name = "password_hash", nullable = false, length = 60)
     private String passwordHash;
 
     public UserEntity() {
@@ -42,7 +41,6 @@ public class UserEntity {
         this.login = login;
     }
 
-    @JsonIgnore
     @JsonbTransient
     public String getPasswordHash() {
         return passwordHash;
