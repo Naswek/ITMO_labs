@@ -1,5 +1,4 @@
-
-package org.example.security;
+package org.example.utils.security;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import org.mindrot.jbcrypt.BCrypt;
