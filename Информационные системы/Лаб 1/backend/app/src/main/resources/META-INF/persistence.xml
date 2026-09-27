@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.1">
+    <persistence-unit name="labworks" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>jdbc/labworks</jta-data-source>
+        <class>org.example.entity.LabWork</class>
+        <class>org.example.entity.Discipline</class>
+        <class>org.example.entity.Person</class>
+        <class>org.example.entity.UserEntity</class>
+        <properties>
+            <property name="eclipselink.target-database" value="PostgreSQL"/>
+            <property name="eclipselink.ddl-generation" value="none"/>
+        </properties>
+    </persistence-unit>
+</persistence>
