@@ -1,5 +1,6 @@
-package org.example.api;
+package org.example.resource;
 
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -19,9 +20,12 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
 import jakarta.ws.rs.sse.Sse;
 import jakarta.ws.rs.sse.SseEventSink;
+import org.example.api.ApiError;
+import org.example.api.ChangeStream;
 import org.example.entity.LabWork;
 import org.example.utils.cdi.LabWorkService;
 
+@RequestScoped
 @Path("/labworks")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)

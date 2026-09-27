@@ -1,5 +1,6 @@
-package org.example.api;
+package org.example.resource;
 
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -18,10 +19,12 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.UriInfo;
 import java.util.List;
+import org.example.api.ApiError;
 import org.example.entity.Discipline;
 import org.example.entity.Person;
 import org.example.utils.cdi.ReferenceService;
 
+@RequestScoped
 @Path("/references")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)

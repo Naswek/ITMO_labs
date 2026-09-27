@@ -1,5 +1,6 @@
-package org.example.api;
+package org.example.resource;
 
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -11,11 +12,13 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import org.example.api.ApiError;
 import org.example.dto.AuthResultWithUser;
 import org.example.entity.UserEntity;
 import org.example.enums.AuthResult;
 import org.example.utils.cdi.UserService;
 
+@RequestScoped
 @Path("/users")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
