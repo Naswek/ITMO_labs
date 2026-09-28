@@ -33,6 +33,7 @@ tasks.test {
 tasks.war {
     archiveFileName.set("labworks.war")
     from(file("../../frontend/dist"))
+    dependsOn("copyPostgresDriver", "copyEclipseLink")
 }
 
 tasks.register<Copy>("copyPostgresDriver") {
