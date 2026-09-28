@@ -2,6 +2,7 @@ package org.example.api;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.json.bind.JsonbException;
+import jakarta.json.stream.JsonParsingException;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.OptimisticLockException;
 import jakarta.validation.ConstraintViolationException;
@@ -10,12 +11,16 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import org.example.utils.repository.StaleObjectException;
 
 @ApplicationScoped
 @Provider
 public class ApiExceptionMapper implements ExceptionMapper<RuntimeException> {
+
+    private static final Logger LOGGER = Logger.getLogger(ApiExceptionMapper.class.getName());
 
     @Override
     public Response toResponse(RuntimeException exception) {
@@ -50,13 +55,14 @@ public class ApiExceptionMapper implements ExceptionMapper<RuntimeException> {
             message = violations.getConstraintViolations().stream()
                     .map(violation -> violation.getPropertyPath() + ": " + violation.getMessage())
                     .collect(Collectors.joining("; "));
-        } else if (exception instanceof IllegalArgumentException || exception instanceof JsonbException) {
+        } else if (exception instanceof IllegalArgumentException || isJsonInputError(exception)) {
             status = Response.Status.BAD_REQUEST;
             code = "INVALID_INPUT";
-            message = exception instanceof JsonbException
-                    ? "Проверьте формат полей запроса: числа в JSON записываются через точку, дата должна быть корректной"
+            message = isJsonInputError(exception)
+                    ? "Проверьте JSON и формат полей: числа записываются через точку, даты и значения перечислений должны быть корректными"
                     : exception.getMessage();
         } else {
+            LOGGER.log(Level.SEVERE, "Не удалось обработать запрос REST API", exception);
             status = Response.Status.INTERNAL_SERVER_ERROR;
             code = "INTERNAL_ERROR";
             message = "Внутренняя ошибка сервера";
@@ -71,6 +77,16 @@ public class ApiExceptionMapper implements ExceptionMapper<RuntimeException> {
     private static boolean isOptimisticConflict(Throwable error) {
         while (error != null) {
             if (error instanceof StaleObjectException || error instanceof OptimisticLockException) {
+                return true;
+            }
+            error = error.getCause();
+        }
+        return false;
+    }
+
+    private static boolean isJsonInputError(Throwable error) {
+        while (error != null) {
+            if (error instanceof JsonbException || error instanceof JsonParsingException) {
                 return true;
             }
             error = error.getCause();
