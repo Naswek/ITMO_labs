@@ -2,14 +2,16 @@
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.1">
     <persistence-unit name="labworks" transaction-type="JTA">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <jta-data-source>jdbc/labworks</jta-data-source>
+        <jta-data-source>java:jboss/datasources/LabworksDS</jta-data-source>
         <class>org.example.entity.LabWork</class>
         <class>org.example.entity.Discipline</class>
         <class>org.example.entity.Person</class>
         <class>org.example.entity.UserEntity</class>
         <properties>
             <property name="eclipselink.target-database" value="PostgreSQL"/>
+            <property name="eclipselink.target-server" value="org.eclipse.persistence.platform.server.wildfly.WildFlyPlatform"/>
             <property name="eclipselink.ddl-generation" value="none"/>
+            <property name="jboss.as.jpa.providerModule" value="org.eclipse.persistence"/>
         </properties>
     </persistence-unit>
 </persistence>
