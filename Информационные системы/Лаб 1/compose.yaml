@@ -1,0 +1,46 @@
+name: labworks
+
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: labworks
+      POSTGRES_USER: labworks
+      POSTGRES_PASSWORD: ${LABWORKS_DB_PASSWORD:-labworks_dev}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  migrate:
+    image: postgres:17-alpine
+    environment:
+      PGPASSWORD: ${LABWORKS_DB_PASSWORD:-labworks_dev}
+    volumes:
+      - ./backend/database/schema.sql:/schema.sql:ro
+    entrypoint: ["psql", "-h", "db", "-U", "labworks", "-d", "labworks", "-v", "ON_ERROR_STOP=1", "-f", "/schema.sql"]
+    depends_on:
+      db:
+        condition: service_healthy
+
+  app:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      DB_HOST: db
+      DB_NAME: labworks
+      DB_USER: labworks
+      DB_PASSWORD: ${LABWORKS_DB_PASSWORD:-labworks_dev}
+    ports:
+      - "127.0.0.1:${LABWORKS_PORT:-8080}:8080"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+
+volumes:
+  postgres_data:

@@ -1,0 +1,5 @@
+                <datasource jndi-name="java:jboss/datasources/LabworksDS" pool-name="LabworksDS" enabled="true" jta="true">
+                    <connection-url>jdbc:postgresql://${env.DB_HOST}:5432/${env.DB_NAME}</connection-url>
+                    <driver>postgresql.jar</driver>
+                    <security user-name="${env.DB_USER}" password="${env.DB_PASSWORD}"/>
+                </datasource>
