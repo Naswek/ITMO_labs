@@ -36,6 +36,14 @@ class LabWorkValidatorTest {
         LabWork invalidPoint = valid();
         invalidPoint.setMinimalPoint(0);
         assertThrows(IllegalArgumentException.class, () -> validator.validate(invalidPoint));
+
+        LabWork infinitePoint = valid();
+        infinitePoint.setMinimalPoint(Double.POSITIVE_INFINITY);
+        assertThrows(IllegalArgumentException.class, () -> validator.validate(infinitePoint));
+
+        LabWork infiniteCoordinate = valid();
+        infiniteCoordinate.getCoordinates().setX(Float.POSITIVE_INFINITY);
+        assertThrows(IllegalArgumentException.class, () -> validator.validate(infiniteCoordinate));
     }
 
     @Test
