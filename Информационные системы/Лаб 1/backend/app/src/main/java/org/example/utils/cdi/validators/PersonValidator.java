@@ -38,9 +38,17 @@ public class PersonValidator {
             throw new IllegalArgumentException("Вес должен быть больше нуля");
         }
         Location location = value.getLocation();
-        if (location == null || location.getX() == null || location.getY() == null
-                || location.getName() == null || location.getName().length() > 500) {
-            throw new IllegalArgumentException("Местоположение автора заполнено неверно");
+        if (location == null) {
+            throw new IllegalArgumentException("Укажите местоположение автора");
+        }
+        if (location.getX() == null) {
+            throw new IllegalArgumentException("Укажите координату X местоположения");
+        }
+        if (location.getY() == null || !Double.isFinite(location.getY())) {
+            throw new IllegalArgumentException("Координата Y местоположения должна быть конечным числом");
+        }
+        if (location.getName() == null || location.getName().length() > 500) {
+            throw new IllegalArgumentException("Название местоположения обязательно и не может быть длиннее 500 символов");
         }
     }
 }

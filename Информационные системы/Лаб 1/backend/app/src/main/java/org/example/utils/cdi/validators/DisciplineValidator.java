@@ -31,7 +31,7 @@ public class DisciplineValidator {
             throw new IllegalArgumentException("Название дисциплины не может быть длиннее 255 символов");
         }
         if (value.getPracticeHours() == null) {
-            throw new IllegalArgumentException("practiceHours обязателен");
+            throw new IllegalArgumentException("Укажите часы практики");
         }
     }
 }
