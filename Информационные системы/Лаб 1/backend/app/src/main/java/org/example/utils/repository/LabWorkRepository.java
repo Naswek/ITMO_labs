@@ -69,6 +69,9 @@ public class LabWorkRepository {
         if (current == null) {
             throw new EntityNotFoundException("Лабораторная работа с ID " + changes.getId() + " не найдена");
         }
+        if (!Objects.equals(current.getVersion(), changes.getVersion())) {
+            throw new StaleObjectException("Работа уже изменена другим пользователем. Загрузите актуальные данные перед сохранением");
+        }
 
         current.setName(changes.getName());
         current.setCoordinates(changes.getCoordinates());
@@ -82,7 +85,7 @@ public class LabWorkRepository {
     }
 
     @Transactional
-    public boolean deleteById(int id) {
+    public boolean deleteById(int id, long expectedVersion) {
         if (id <= 0) {
             throw new IllegalArgumentException("ID должен быть больше нуля");
         }
@@ -90,6 +93,9 @@ public class LabWorkRepository {
         LabWork labWork = entityManager.find(LabWork.class, id);
         if (labWork == null) {
             return false;
+        }
+        if (!Objects.equals(labWork.getVersion(), expectedVersion)) {
+            throw new StaleObjectException("Работа уже изменена другим пользователем. Загрузите актуальные данные перед удалением");
         }
 
         entityManager.remove(labWork);

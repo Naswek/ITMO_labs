@@ -94,8 +94,11 @@ public class LabWorkService {
     }
 
     @Transactional
-    public void delete(int id) {
-        if (!repository.deleteById(id)) {
+    public void delete(int id, Long expectedVersion) {
+        if (expectedVersion == null || expectedVersion < 0) {
+            throw new IllegalArgumentException("Для удаления укажите актуальную версию лабораторной работы");
+        }
+        if (!repository.deleteById(id, expectedVersion)) {
             throw new EntityNotFoundException("Лабораторная работа с ID " + id + " не найдена");
         }
         changes.fire(new CollectionChanged());

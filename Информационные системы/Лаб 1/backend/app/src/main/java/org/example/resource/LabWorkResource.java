@@ -119,9 +119,9 @@ public class LabWorkResource {
 
     @DELETE
     @Path("/{id}")
-    public Response delete(@PathParam("id") int id) {
+    public Response delete(@PathParam("id") int id, @QueryParam("version") Long version) {
         requireUser();
-        service.delete(id);
+        service.delete(id, version);
         return Response.noContent().build();
     }
 
