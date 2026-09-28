@@ -1,5 +1,6 @@
 package org.example.entity;
 
+import jakarta.json.bind.annotation.JsonbTypeAdapter;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -23,6 +24,7 @@ import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import java.util.Date;
 import org.example.enums.Difficulty;
+import org.example.utils.json.IsoDateAdapter;
 
 @Entity
 @Table(name = "lab_work")
@@ -47,6 +49,7 @@ public class LabWork {
     private Coordinates coordinates; //Поле не может быть null
    
     @NotNull
+    @JsonbTypeAdapter(IsoDateAdapter.class)
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "creation_date", nullable = false, updatable = false)
     private Date creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически

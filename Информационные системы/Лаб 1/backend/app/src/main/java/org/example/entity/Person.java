@@ -1,5 +1,6 @@
 package org.example.entity;
 
+import jakarta.json.bind.annotation.JsonbTypeAdapter;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -19,6 +20,7 @@ import jakarta.validation.constraints.Size;
 import java.util.Date;
 import org.example.enums.Color;
 import org.example.enums.Country;
+import org.example.utils.json.IsoDateAdapter;
 
 @Entity
 @Table(name = "person")
@@ -48,6 +50,7 @@ public class Person {
 
     private Location location; //Поле не может быть null
     @NotNull
+    @JsonbTypeAdapter(IsoDateAdapter.class)
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
 
