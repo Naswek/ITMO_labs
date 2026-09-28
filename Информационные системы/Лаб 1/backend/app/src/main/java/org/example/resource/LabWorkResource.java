@@ -17,6 +17,7 @@ import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriBuilder;
 import jakarta.ws.rs.core.UriInfo;
 import jakarta.ws.rs.sse.Sse;
 import jakarta.ws.rs.sse.SseEventSink;
@@ -104,8 +105,9 @@ public class LabWorkResource {
     @POST
     public Response add(LabWork labWork, @Context UriInfo uriInfo) {
         requireUser();
+        UriBuilder location = uriInfo.getAbsolutePathBuilder();
         LabWork created = service.add(labWork);
-        return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(created.getId())).build())
+        return Response.created(location.path(Integer.toString(created.getId())).build())
                 .entity(created)
                 .build();
     }

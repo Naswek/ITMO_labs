@@ -17,6 +17,7 @@ import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriBuilder;
 import jakarta.ws.rs.core.UriInfo;
 import java.util.List;
 import org.example.api.ApiError;
@@ -54,8 +55,9 @@ public class ReferenceResource {
     @Path("/disciplines")
     public Response addDiscipline(Discipline value, @Context UriInfo uriInfo) {
         requireUser();
+        UriBuilder location = uriInfo.getAbsolutePathBuilder();
         Discipline created = service.add(value);
-        return Response.created(uriInfo.getAbsolutePathBuilder().path(created.getId().toString()).build())
+        return Response.created(location.path(created.getId().toString()).build())
                 .entity(created).build();
     }
 
@@ -92,8 +94,9 @@ public class ReferenceResource {
     @Path("/people")
     public Response addPerson(Person value, @Context UriInfo uriInfo) {
         requireUser();
+        UriBuilder location = uriInfo.getAbsolutePathBuilder();
         Person created = service.add(value);
-        return Response.created(uriInfo.getAbsolutePathBuilder().path(created.getId().toString()).build())
+        return Response.created(location.path(created.getId().toString()).build())
                 .entity(created).build();
     }
 
