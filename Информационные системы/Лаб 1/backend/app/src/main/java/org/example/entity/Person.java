@@ -38,30 +38,29 @@ public class Person {
     @NotNull
     @Enumerated(EnumType.STRING)
     @Column(name = "eye_color", nullable = false)
-
     private Color eyeColor; //Поле не может быть null
+    
     @Enumerated(EnumType.STRING)
     @Column(name = "hair_color")
-
     private Color hairColor; //Поле может быть null
+
     @NotNull
     @Valid
     @Embedded
-
     private Location location; //Поле не может быть null
+
     @NotNull
     @JsonbTypeAdapter(IsoDateAdapter.class)
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
-
     private Date birthday; //Поле не может быть null
-    @Positive
 
+    @Positive
     private Long weight; //Поле может быть null, Значение поля должно быть больше 0
+
     @NotNull
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-
     private Country nationality; //Поле не может быть null
 
     public Person() {
