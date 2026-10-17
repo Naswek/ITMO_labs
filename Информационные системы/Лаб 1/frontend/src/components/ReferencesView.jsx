@@ -57,21 +57,21 @@ function ReferenceForm({ kind, item, onClose, onSaved }) {
     finally { setBusy(false) }
   }
   return <Modal title={`${item ? 'Изменить' : 'Добавить'} ${discipline ? 'дисциплину' : 'автора'}`} onClose={onClose}><form onSubmit={submit} noValidate><div className="form-grid">
-    <label className="wide">{discipline ? 'Название' : 'Имя'}<input name="name" required maxLength="255" defaultValue={item?.name || ''} /></label>
+    <label className="wide">{discipline ? 'Название' : 'Имя'} <small>Обязательно, не более 255 символов</small><input name="name" required maxLength="255" defaultValue={item?.name || ''} /></label>
     {discipline ? <>
-      <label>Часы практики<input name="practiceHours" type="text" inputMode="numeric" required defaultValue={item?.practiceHours ?? ''} /></label>
-      <label>Часы самостоятельной работы<input name="selfStudyHours" type="text" inputMode="numeric" required defaultValue={item?.selfStudyHours ?? ''} /></label>
-      <label>Количество лабораторных <small>необязательно</small><input name="labsCount" type="text" inputMode="numeric" defaultValue={item?.labsCount ?? ''} /></label>
+      <label>Часы практики <small>Обязательно, целое число</small><input name="practiceHours" type="text" inputMode="numeric" required defaultValue={item?.practiceHours ?? ''} /></label>
+      <label>Часы самостоятельной работы <small>Обязательно, целое число</small><input name="selfStudyHours" type="text" inputMode="numeric" required defaultValue={item?.selfStudyHours ?? ''} /></label>
+      <label>Количество лабораторных <small>Необязательно, целое число</small><input name="labsCount" type="text" inputMode="numeric" defaultValue={item?.labsCount ?? ''} /></label>
     </> : <>
-      <label>Цвет глаз<select name="eyeColor" required defaultValue={item?.eyeColor || 'GREEN'}>{colors.map((color) => <option key={color}>{color}</option>)}</select></label>
+      <label>Цвет глаз <small>Обязательно</small><select name="eyeColor" required defaultValue={item?.eyeColor || 'GREEN'}>{colors.map((color) => <option key={color}>{color}</option>)}</select></label>
       <label>Цвет волос <small>необязательно</small><select name="hairColor" defaultValue={item?.hairColor || ''}><option value="">Не указан</option>{colors.map((color) => <option key={color}>{color}</option>)}</select></label>
-      <label>Дата рождения<input name="birthday" type="date" required defaultValue={item?.birthday ? new Date(item.birthday).toISOString().slice(0, 10) : ''} /></label>
-      <label>Вес <small>больше 0, необязательно</small><input name="weight" type="text" inputMode="numeric" defaultValue={item?.weight ?? ''} /></label>
-      <label>Гражданство<select name="nationality" required defaultValue={item?.nationality || 'USA'}>{countries.map((country) => <option key={country}>{country}</option>)}</select></label>
-      <label>Местоположение: название<input name="locationName" maxLength="500" defaultValue={item?.location?.name || ''} /></label>
-      <label>Местоположение: X<input name="locationX" type="text" inputMode="numeric" required defaultValue={item?.location?.x ?? ''} /></label>
-      <label>Местоположение: Y <small>запятая или точка</small><input name="locationY" type="text" inputMode="decimal" required defaultValue={item?.location?.y ?? ''} /></label>
-      <label>Местоположение: Z<input name="locationZ" type="text" inputMode="numeric" required defaultValue={item?.location?.z ?? ''} /></label>
+      <label>Дата рождения <small>Обязательно, корректная дата</small><input name="birthday" type="date" required defaultValue={item?.birthday ? new Date(item.birthday).toISOString().slice(0, 10) : ''} /></label>
+      <label>Вес <small>Необязательно, целое число больше 0</small><input name="weight" type="text" inputMode="numeric" defaultValue={item?.weight ?? ''} /></label>
+      <label>Гражданство <small>Обязательно</small><select name="nationality" required defaultValue={item?.nationality || 'USA'}>{countries.map((country) => <option key={country}>{country}</option>)}</select></label>
+      <label>Местоположение: название <small>Не более 500 символов</small><input name="locationName" maxLength="500" defaultValue={item?.location?.name || ''} /></label>
+      <label>Местоположение: X <small>Обязательно, целое число</small><input name="locationX" type="text" inputMode="numeric" required defaultValue={item?.location?.x ?? ''} /></label>
+      <label>Местоположение: Y <small>Обязательно, число; запятая или точка</small><input name="locationY" type="text" inputMode="decimal" required defaultValue={item?.location?.y ?? ''} /></label>
+      <label>Местоположение: Z <small>Обязательно, целое число</small><input name="locationZ" type="text" inputMode="numeric" required defaultValue={item?.location?.z ?? ''} /></label>
     </>}
   </div><p className="error" role="alert">{error}</p><div className="actions"><button disabled={busy}>{busy ? 'Сохраняем…' : 'Сохранить'}</button><button type="button" className="secondary" onClick={onClose}>Отмена</button></div></form></Modal>
 }

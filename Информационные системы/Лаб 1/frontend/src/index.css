@@ -113,6 +113,7 @@ tbody tr:last-child td { border-bottom: 0; }
 .result-list { padding-left: 20px; margin: 0; }
 .result-row { margin: 7px 0; }
 .result-row span { margin-left: 10px; color: var(--muted); }
+.result-row small { display: block; margin-top: 4px; color: var(--muted); overflow-wrap: anywhere; }
 .result-error, .error { color: #a32d45; }
 .error { min-height: 1.2em; margin: 8px 0; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }

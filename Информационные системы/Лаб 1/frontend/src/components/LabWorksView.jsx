@@ -9,6 +9,7 @@ const textFields = [
   ['author.eyeColor', 'Цвет глаз'], ['author.hairColor', 'Цвет волос'],
   ['author.nationality', 'Страна'], ['author.location.name', 'Местоположение'],
 ]
+const PAGE_SIZE = 10
 
 const dateText = (date) => date ? new Date(date).toLocaleString('ru-RU') : '—'
 const display = (value) => value == null || value === '' ? '—' : String(value)
@@ -83,7 +84,7 @@ function WorkInfo({ work, onClose, onEdit }) {
 }
 
 export default function LabWorksView({ revision, onChanged, notify }) {
-  const [data, setData] = useState({ items: [], total: 0, page: 0, size: 10 })
+  const [works, setWorks] = useState([])
   const [page, setPage] = useState(0)
   const [filters, setFilters] = useState({ filterField: 'name', filterValue: '', sortField: '', direction: 'asc' })
   const [draft, setDraft] = useState(filters)
@@ -93,10 +94,15 @@ export default function LabWorksView({ revision, onChanged, notify }) {
 
   useEffect(() => {
     let active = true
-    const query = new URLSearchParams({ page, size: 10, ...filters })
-    api(`labworks?${query}`).then((result) => { if (active) { setData(result); setError(''); if (page > 0 && result.items.length === 0) setPage(page - 1) } }).catch((problem) => { if (active) setError(problem.message) })
+    const query = new URLSearchParams(filters)
+    api(`labworks?${query}`).then((result) => {
+      if (!active) return
+      setWorks(result)
+      setError('')
+      setPage((current) => Math.min(current, Math.max(0, Math.ceil(result.length / PAGE_SIZE) - 1)))
+    }).catch((problem) => { if (active) setError(problem.message) })
     return () => { active = false }
-  }, [page, filters, revision])
+  }, [filters, revision])
 
   useEffect(() => {
     let active = true
@@ -132,9 +138,10 @@ export default function LabWorksView({ revision, onChanged, notify }) {
     catch (problem) { setModal({ ...modal, error: problem.message }) }
   }
 
-  const pages = Math.max(1, Math.ceil(data.total / 10))
+  const pages = Math.max(1, Math.ceil(works.length / PAGE_SIZE))
+  const visibleWorks = works.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE)
   return <>
-    <div className="section-head"><div><h1>Лабораторные работы</h1><p>Всего: {data.total}</p></div><button onClick={createWork}>Добавить работу</button></div>
+    <div className="section-head"><div><h1>Лабораторные работы</h1><p>Всего: {works.length}</p></div><button onClick={createWork}>Добавить работу</button></div>
     <form className="controls" onSubmit={(event) => { event.preventDefault(); setPage(0); setFilters(draft) }}>
       <label>Фильтр по полю<select value={draft.filterField} onChange={(event) => setDraft({ ...draft, filterField: event.target.value })}>{textFields.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
       <label>Содержит<input value={draft.filterValue} onChange={(event) => setDraft({ ...draft, filterValue: event.target.value })} placeholder="Часть слова или имени" /></label>
@@ -142,8 +149,8 @@ export default function LabWorksView({ revision, onChanged, notify }) {
       <label>Порядок<select value={draft.direction} onChange={(event) => setDraft({ ...draft, direction: event.target.value })}><option value="asc">По возрастанию</option><option value="desc">По убыванию</option></select></label><button>Применить</button>
     </form>
     {error && <p className="error" role="alert">{error}</p>}
-    <div className="table-wrap"><table><thead><tr>{['ID', 'Название', 'X', 'Y', 'Создана', 'Описание', 'Сложность', 'Дисциплина', 'Мин. балл', 'Ср. балл', 'Автор', 'Действия'].map((label) => <th key={label}>{label}</th>)}</tr></thead><tbody>{data.items.length ? data.items.map((work) => <tr key={work.id}><td>{work.id}</td><td>{work.name}</td><td>{display(work.coordinates?.x)}</td><td>{display(work.coordinates?.y)}</td><td>{dateText(work.creationDate)}</td><td className="description-cell" title={work.description}>{display(work.description)}</td><td>{work.difficulty}</td><td>{display(work.discipline?.name)}</td><td>{work.minimalPoint}</td><td>{work.averagePoint}</td><td>{display(work.author?.name)}</td><td className="table-actions"><button className="small secondary" onClick={() => openWork(work.id, 'info')}>Инфо</button><button className="small secondary" onClick={() => openWork(work.id, 'form')}>Изменить</button><button className="small danger" onClick={() => setModal({ mode: 'delete', work })}>Удалить</button></td></tr>) : <tr><td className="empty-table" colSpan="12">Работ пока нет или фильтр ничего не нашёл.</td></tr>}</tbody></table></div>
-    <div className="pager"><button className="secondary small" disabled={page === 0} onClick={() => setPage(page - 1)}>← Назад</button><span>Страница {page + 1} из {pages} · всего {data.total}</span><button className="secondary small" disabled={page + 1 >= pages} onClick={() => setPage(page + 1)}>Далее →</button></div>
+    <div className="table-wrap"><table><thead><tr>{['ID', 'Название', 'X', 'Y', 'Создана', 'Описание', 'Сложность', 'Дисциплина', 'Мин. балл', 'Ср. балл', 'Автор', 'Действия'].map((label) => <th key={label}>{label}</th>)}</tr></thead><tbody>{visibleWorks.length ? visibleWorks.map((work) => <tr key={work.id}><td>{work.id}</td><td>{work.name}</td><td>{display(work.coordinates?.x)}</td><td>{display(work.coordinates?.y)}</td><td>{dateText(work.creationDate)}</td><td className="description-cell" title={work.description}>{display(work.description)}</td><td>{work.difficulty}</td><td>{display(work.discipline?.name)}</td><td>{work.minimalPoint}</td><td>{work.averagePoint}</td><td>{display(work.author?.name)}</td><td className="table-actions"><button className="small secondary" onClick={() => openWork(work.id, 'info')}>Инфо</button><button className="small secondary" onClick={() => openWork(work.id, 'form')}>Изменить</button><button className="small danger" onClick={() => setModal({ mode: 'delete', work })}>Удалить</button></td></tr>) : <tr><td className="empty-table" colSpan="12">Работ пока нет или фильтр ничего не нашёл.</td></tr>}</tbody></table></div>
+    <div className="pager"><button className="secondary small" disabled={page === 0} onClick={() => setPage(page - 1)}>← Назад</button><span>Страница {page + 1} из {pages} · всего {works.length}</span><button className="secondary small" disabled={page + 1 >= pages} onClick={() => setPage(page + 1)}>Далее →</button></div>
     {modal?.mode === 'form' && <WorkForm key={modal.work ? `${modal.work.id}-${modal.work.version}` : 'new'} work={modal.work} disciplines={refs.disciplines} people={refs.people} onClose={() => setModal(null)} onReload={() => openWork(modal.work.id, 'form')} onSaved={(message) => { setModal(null); onChanged(); notify(message) }} />}
     {modal?.mode === 'info' && <WorkInfo work={modal.work} onClose={() => setModal(null)} onEdit={() => openWork(modal.work.id, 'form')} />}
     {modal?.mode === 'delete' && <Modal title="Удалить работу" onClose={() => setModal(null)}><p>Удалить работу «{modal.work.name}»? Это действие нельзя отменить.</p><p className="error" role="alert">{modal.error}</p><div className="actions">{modal.conflict && <button className="secondary" onClick={reloadForDelete}>Загрузить актуальную версию</button>}<button className="danger" disabled={modal.conflict} onClick={remove}>Удалить</button><button className="secondary" onClick={() => setModal(null)}>Отмена</button></div></Modal>}
