@@ -38,26 +38,6 @@ public class LabWorkRepository {
                 .getResultList();
     }
 
-    public List<LabWork> findPage(int page, int size) {
-        if (page < 0 || size <= 0) {
-            throw new IllegalArgumentException("Номер страницы не может быть отрицательным, размер должен быть больше нуля");
-        }
-        if (page > Integer.MAX_VALUE / size) {
-            throw new IllegalArgumentException("Слишком большой номер страницы");
-        }
-
-        int offset = page * size;
-        return entityManager.createQuery("SELECT l FROM LabWork l ORDER BY l.id", LabWork.class)
-                .setFirstResult(offset)
-                .setMaxResults(size)
-                .getResultList();
-    }
-
-    public long count() {
-        return entityManager.createQuery("SELECT COUNT(l) FROM LabWork l", Long.class)
-                .getSingleResult();
-    }
-
     @Transactional
     public LabWork update(LabWork changes) {
         Objects.requireNonNull(changes, "changes");

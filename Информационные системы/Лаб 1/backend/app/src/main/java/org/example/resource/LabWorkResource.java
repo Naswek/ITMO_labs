@@ -21,9 +21,11 @@ import jakarta.ws.rs.core.UriBuilder;
 import jakarta.ws.rs.core.UriInfo;
 import jakarta.ws.rs.sse.Sse;
 import jakarta.ws.rs.sse.SseEventSink;
+import java.util.List;
 import org.example.api.ApiError;
 import org.example.api.ChangeStream;
 import org.example.entity.LabWork;
+import org.example.utils.cdi.LabWorkQueryService;
 import org.example.utils.cdi.LabWorkService;
 
 @RequestScoped
@@ -36,19 +38,19 @@ public class LabWorkResource {
     private LabWorkService service;
 
     @Inject
+    private LabWorkQueryService queryService;
+
+    @Inject
     private ChangeStream changeStream;
 
     @Context
     private HttpServletRequest request;
 
     @GET
-    public LabWorkService.Page list(@QueryParam("page") Integer page, @QueryParam("size") Integer size,
-            @QueryParam("filterField") String filterField, @QueryParam("filterValue") String filterValue,
+    public List<LabWork> list(@QueryParam("filterField") String filterField, @QueryParam("filterValue") String filterValue,
             @QueryParam("sortField") String sortField, @QueryParam("direction") String direction) {
         requireUser();
-        int pageNumber = page == null ? 0 : page;
-        int pageSize = size == null ? 20 : size;
-        return service.list(pageNumber, pageSize, filterField, filterValue, sortField, direction);
+        return queryService.list(filterField, filterValue, sortField, direction);
     }
 
     @GET

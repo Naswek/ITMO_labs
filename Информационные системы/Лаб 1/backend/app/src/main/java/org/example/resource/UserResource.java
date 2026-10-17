@@ -14,6 +14,8 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.example.api.ApiError;
 import org.example.dto.AuthResultWithUser;
+import org.example.dto.UserCredentials;
+import org.example.dto.UserView;
 import org.example.entity.UserEntity;
 import org.example.enums.AuthResult;
 import org.example.utils.cdi.UserService;
@@ -33,7 +35,7 @@ public class UserResource {
     private HttpServletRequest request;
 
     @POST
-    public Response register(Credentials credentials) {
+    public Response register(UserCredentials credentials) {
         requireCredentials(credentials);
         UserEntity user = service.createUser(credentials.getLogin(), credentials.getPassword());
         return Response.status(Response.Status.CREATED)
@@ -43,7 +45,7 @@ public class UserResource {
 
     @POST
     @Path("/login")
-    public Response login(Credentials credentials) {
+    public Response login(UserCredentials credentials) {
         requireCredentials(credentials);
         AuthResultWithUser result = service.checkUser(credentials.getLogin(), credentials.getPassword());
         if (result.authResult() != AuthResult.SUCCESS) {
@@ -82,36 +84,9 @@ public class UserResource {
         return Response.ok(new UserView(user.getId(), user.getLogin())).build();
     }
 
-    private static void requireCredentials(Credentials credentials) {
+    private static void requireCredentials(UserCredentials credentials) {
         if (credentials == null) {
             throw new IllegalArgumentException("Укажите логин и пароль");
-        }
-    }
-
-    public record UserView(Long id, String login) {
-    }
-
-    public static class Credentials {
-        private String login;
-        private String password;
-
-        public Credentials() {
-        }
-
-        public String getLogin() {
-            return login;
-        }
-
-        public void setLogin(String login) {
-            this.login = login;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
         }
     }
 }
