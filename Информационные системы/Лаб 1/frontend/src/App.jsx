@@ -4,6 +4,7 @@ import AuthView from './components/AuthView'
 import LabWorksView from './components/LabWorksView'
 import ReferencesView from './components/ReferencesView'
 import SpecialOperationsView from './components/SpecialOperationsView'
+import ImportsView from './components/ImportsView'
 
 const AUTH_EVENT_KEY = 'labworks:auth-change'
 
@@ -114,10 +115,10 @@ export default function App() {
   return <>
     <header className="topbar">
       <strong className="brand">LabWork</strong>
-      {user && <nav aria-label="Разделы"><button className={view === 'works' ? 'active' : ''} onClick={() => setView('works')}>Работы</button><button className={view === 'references' ? 'active' : ''} onClick={() => setView('references')}>Справочники</button><button className={view === 'special' ? 'active' : ''} onClick={() => setView('special')}>Операции</button></nav>}
-      {user && <div id="account"><span className="live-status">{online ? 'Связь есть' : 'Подключение…'}</span><span id="current-user">{user.login}</span><button className="secondary" onClick={logout}>Выйти</button></div>}
+      {user && <nav aria-label="Разделы"><button className={view === 'works' ? 'active' : ''} onClick={() => setView('works')}>Работы</button><button className={view === 'references' ? 'active' : ''} onClick={() => setView('references')}>Справочники</button><button className={view === 'special' ? 'active' : ''} onClick={() => setView('special')}>Операции</button><button className={view === 'imports' ? 'active' : ''} onClick={() => setView('imports')}>Импорт</button></nav>}
+      {user && <div id="account"><span className="live-status">{online ? 'Связь есть' : 'Подключение…'}</span><span id="current-user">{user.login} ({user.admin ? 'администратор' : 'пользователь'})</span><button className="secondary" onClick={logout}>Выйти</button></div>}
     </header>
-    <main>{checking ? <div className="panel loading">Проверяем сессию…</div> : !user ? <AuthView onLogin={loggedIn} /> : view === 'works' ? <LabWorksView revision={revision} onChanged={changed} notify={setToast} /> : view === 'references' ? <ReferencesView revision={revision} onChanged={changed} notify={setToast} /> : <SpecialOperationsView onChanged={changed} />}</main>
+    <main>{checking ? <div className="panel loading">Проверяем сессию…</div> : !user ? <AuthView onLogin={loggedIn} /> : view === 'works' ? <LabWorksView revision={revision} onChanged={changed} notify={setToast} /> : view === 'references' ? <ReferencesView revision={revision} onChanged={changed} notify={setToast} /> : view === 'imports' ? <ImportsView revision={revision} onChanged={changed} admin={user.admin} /> : <SpecialOperationsView onChanged={changed} />}</main>
     <div id="toast" className={toast ? 'visible' : ''} role="status" aria-live="polite">{toast}</div>
   </>
 }

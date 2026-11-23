@@ -57,7 +57,7 @@ function ReferenceForm({ kind, item, onClose, onSaved }) {
     finally { setBusy(false) }
   }
   return <Modal title={`${item ? 'Изменить' : 'Добавить'} ${discipline ? 'дисциплину' : 'автора'}`} onClose={onClose}><form onSubmit={submit} noValidate><div className="form-grid">
-    <label className="wide">{discipline ? 'Название' : 'Имя'} <small>Обязательно, не более 255 символов</small><input name="name" required maxLength="255" defaultValue={item?.name || ''} /></label>
+    <label className="wide">{discipline ? 'Название' : 'Имя'} <small>{discipline ? 'Уникально без учёта регистра и крайних пробелов' : 'Обязательно, не более 255 символов'}</small><input name="name" required maxLength="255" defaultValue={item?.name || ''} /></label>
     {discipline ? <>
       <label>Часы практики <small>Обязательно, целое число</small><input name="practiceHours" type="text" inputMode="numeric" required defaultValue={item?.practiceHours ?? ''} /></label>
       <label>Часы самостоятельной работы <small>Обязательно, целое число</small><input name="selfStudyHours" type="text" inputMode="numeric" required defaultValue={item?.selfStudyHours ?? ''} /></label>
