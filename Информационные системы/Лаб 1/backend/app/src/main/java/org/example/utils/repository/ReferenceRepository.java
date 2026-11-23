@@ -19,6 +19,14 @@ public class ReferenceRepository {
         return entityManager.createQuery("SELECT d FROM Discipline d ORDER BY d.id", Discipline.class).getResultList();
     }
 
+    public List<String> disciplineNamesExceptId(Long exceptId) {
+        String jpql = "SELECT d.name FROM Discipline d";
+        if (exceptId != null) jpql += " WHERE d.id <> :exceptId";
+        var query = entityManager.createQuery(jpql, String.class);
+        if (exceptId != null) query.setParameter("exceptId", exceptId);
+        return query.getResultList();
+    }
+
     public List<Person> people() {
         return entityManager.createQuery("SELECT p FROM Person p ORDER BY p.id", Person.class).getResultList();
     }

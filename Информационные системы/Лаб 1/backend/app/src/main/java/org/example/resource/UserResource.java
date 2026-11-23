@@ -39,7 +39,7 @@ public class UserResource {
         requireCredentials(credentials);
         UserEntity user = service.createUser(credentials.getLogin(), credentials.getPassword());
         return Response.status(Response.Status.CREATED)
-                .entity(new UserView(user.getId(), user.getLogin()))
+                .entity(new UserView(user.getId(), user.getLogin(), user.isAdmin()))
                 .build();
     }
 
@@ -57,7 +57,8 @@ public class UserResource {
         HttpSession session = request.getSession(true);
         request.changeSessionId();
         session.setAttribute(SESSION_USER_ID, result.userId());
-        return Response.ok(new UserView(result.userId(), result.login())).build();
+        UserEntity user = service.getUserById(result.userId());
+        return Response.ok(new UserView(user.getId(), user.getLogin(), user.isAdmin())).build();
     }
 
     @POST
@@ -81,7 +82,7 @@ public class UserResource {
         }
 
         UserEntity user = service.getUserById(userId);
-        return Response.ok(new UserView(user.getId(), user.getLogin())).build();
+        return Response.ok(new UserView(user.getId(), user.getLogin(), user.isAdmin())).build();
     }
 
     private static void requireCredentials(UserCredentials credentials) {

@@ -48,6 +48,7 @@ class LabWorkRepositoryVersionTest {
                 (proxy, method, arguments) -> switch (method.getName()) {
                     case "find" -> current;
                     case "remove" -> { removed.set(true); yield null; }
+                    case "flush" -> null;
                     default -> throw new UnsupportedOperationException(method.getName());
                 });
         LabWorkRepository repository = new LabWorkRepository();

@@ -5,6 +5,7 @@ import jakarta.inject.Inject;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -24,6 +25,7 @@ import jakarta.ws.rs.sse.SseEventSink;
 import java.util.List;
 import org.example.api.ApiError;
 import org.example.api.ChangeStream;
+import org.example.dto.LabWorkPage;
 import org.example.entity.LabWork;
 import org.example.utils.cdi.LabWorkQueryService;
 import org.example.utils.cdi.LabWorkService;
@@ -47,10 +49,12 @@ public class LabWorkResource {
     private HttpServletRequest request;
 
     @GET
-    public List<LabWork> list(@QueryParam("filterField") String filterField, @QueryParam("filterValue") String filterValue,
-            @QueryParam("sortField") String sortField, @QueryParam("direction") String direction) {
+    public LabWorkPage list(@QueryParam("filterField") String filterField,
+            @QueryParam("filterValue") String filterValue, @QueryParam("sortField") String sortField,
+            @QueryParam("direction") String direction, @QueryParam("page") @DefaultValue("0") int page,
+            @QueryParam("size") @DefaultValue("10") int size) {
         requireUser();
-        return queryService.list(filterField, filterValue, sortField, direction);
+        return queryService.list(filterField, filterValue, sortField, direction, page, size);
     }
 
     @GET

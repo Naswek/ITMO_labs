@@ -31,6 +31,18 @@ public class LabWorkValidator {
     }
 
     public void validate(LabWork labWork) {
+        validateFields(labWork);
+        validateReferenceIds(labWork);
+    }
+
+    public void validateForImport(LabWork labWork) {
+        validateFields(labWork);
+        if (labWork.getId() != 0 || labWork.getVersion() != null || labWork.getCreationDate() != null) {
+            throw new IllegalArgumentException("ID, версия и дата создания импортируемой работы назначаются сервером");
+        }
+    }
+
+    private void validateFields(LabWork labWork) {
         if (labWork == null) {
             throw new IllegalArgumentException("Лабораторная работа не задана");
         }
@@ -53,6 +65,9 @@ public class LabWorkValidator {
             throw new IllegalArgumentException("Средний балл должен быть целым числом больше нуля");
         }
 
+    }
+
+    private void validateReferenceIds(LabWork labWork) {
         if (labWork.getDiscipline() != null) {
             if (labWork.getDiscipline().getId() == null || labWork.getDiscipline().getId() <= 0) {
                 throw new IllegalArgumentException("Сначала создайте дисциплину и передайте её ID");

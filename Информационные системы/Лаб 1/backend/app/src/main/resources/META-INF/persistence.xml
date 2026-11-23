@@ -7,6 +7,7 @@
         <class>org.example.entity.Discipline</class>
         <class>org.example.entity.Person</class>
         <class>org.example.entity.UserEntity</class>
+        <class>org.example.entity.ImportOperation</class>
         <properties>
             <property name="eclipselink.target-database" value="PostgreSQL"/>
             <property name="eclipselink.target-server" value="org.eclipse.persistence.platform.server.wildfly.WildFlyPlatform"/>

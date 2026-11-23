@@ -2,6 +2,7 @@ package org.example.entity;
 
 import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Column;
+import jakarta.persistence.Cacheable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
+@Cacheable(false)
 @Table(name = "app_user")
 public class UserEntity {
 
@@ -21,6 +23,9 @@ public class UserEntity {
 
     @Column(name = "password_hash", nullable = false, length = 60)
     private String passwordHash;
+
+    @Column(name = "is_admin", nullable = false)
+    private boolean admin;
 
     public UserEntity() {
     }
@@ -48,5 +53,13 @@ public class UserEntity {
 
     public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 }

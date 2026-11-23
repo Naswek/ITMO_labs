@@ -15,15 +15,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import org.example.utils.repository.StaleObjectException;
+import org.example.utils.cdi.DuplicateLabWorkNameException;
+import org.example.utils.cdi.DuplicateValueException;
 
 @ApplicationScoped
 @Provider
-public class ApiExceptionMapper implements ExceptionMapper<RuntimeException> {
+public class ApiExceptionMapper implements ExceptionMapper<Exception> {
 
     private static final Logger LOGGER = Logger.getLogger(ApiExceptionMapper.class.getName());
 
     @Override
-    public Response toResponse(RuntimeException exception) {
+    public Response toResponse(Exception exception) {
         if (exception instanceof WebApplicationException webException) {
             Response response = webException.getResponse();
             if (response.hasEntity()) {
@@ -41,7 +43,15 @@ public class ApiExceptionMapper implements ExceptionMapper<RuntimeException> {
         Response.Status status;
         String code;
         String message;
-        if (isOptimisticConflict(exception)) {
+        if (exception instanceof DuplicateLabWorkNameException duplicate) {
+            status = Response.Status.CONFLICT;
+            code = "DUPLICATE_NAME";
+            message = duplicate.getMessage();
+        } else if (exception instanceof DuplicateValueException duplicate) {
+            status = Response.Status.CONFLICT;
+            code = "DUPLICATE_VALUE";
+            message = duplicate.getMessage();
+        } else if (isOptimisticConflict(exception)) {
             status = Response.Status.CONFLICT;
             code = "STALE_VERSION";
             message = "Работа уже изменена другим пользователем. Загрузите актуальные данные и повторите действие";
@@ -76,7 +86,8 @@ public class ApiExceptionMapper implements ExceptionMapper<RuntimeException> {
 
     private static boolean isOptimisticConflict(Throwable error) {
         while (error != null) {
-            if (error instanceof StaleObjectException || error instanceof OptimisticLockException) {
+            if (error instanceof StaleObjectException || error instanceof OptimisticLockException
+                    || error.getClass().getName().equals("org.eclipse.persistence.exceptions.OptimisticLockException")) {
                 return true;
             }
             error = error.getCause();

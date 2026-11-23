@@ -74,6 +74,16 @@ class LabWorkValidatorTest {
         assertThrows(IllegalArgumentException.class, () -> validator.validateForCreate(value));
     }
 
+    @Test
+    void importAcceptsInlineRelationAndRejectsClientGeneratedFields() {
+        LabWork value = valid();
+        value.setDiscipline(new Discipline());
+        assertDoesNotThrow(() -> validator.validateForImport(value));
+
+        value.setId(12);
+        assertThrows(IllegalArgumentException.class, () -> validator.validateForImport(value));
+    }
+
     private static LabWork valid() {
         Coordinates coordinates = new Coordinates();
         coordinates.setX(1);

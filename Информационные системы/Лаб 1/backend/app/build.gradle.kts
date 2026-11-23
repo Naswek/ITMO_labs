@@ -23,6 +23,7 @@ dependencies {
     implementation("org.mindrot:jbcrypt:0.4")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
+    testRuntimeOnly("org.eclipse:yasson:3.0.4")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
@@ -34,6 +35,19 @@ tasks.war {
     archiveFileName.set("labworks.war")
     from(file("../../frontend/dist"))
     dependsOn("copyPostgresDriver", "copyEclipseLink")
+}
+
+tasks.register<Zip>("glassfishWar") {
+    archiveFileName.set("labworks-glassfish.war")
+    destinationDirectory.set(layout.buildDirectory.dir("libs"))
+    dependsOn(tasks.war)
+    from(tasks.war.map { zipTree(it.archiveFile.get().asFile) }) {
+        exclude("WEB-INF/classes/META-INF/persistence.xml")
+        exclude("WEB-INF/lib/postgresql-*.jar")
+    }
+    from("src/glassfish/resources") {
+        into("WEB-INF/classes")
+    }
 }
 
 tasks.register<Copy>("copyPostgresDriver") {

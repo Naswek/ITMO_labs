@@ -5,6 +5,7 @@ import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 import java.util.Set;
 import org.example.resource.LabWorkResource;
+import org.example.resource.ImportResource;
 import org.example.resource.ReferenceResource;
 import org.example.resource.UserResource;
 
@@ -17,6 +18,7 @@ public class RestApplication extends Application {
         return Set.of(
                 ApiExceptionMapper.class,
                 LabWorkResource.class,
+                ImportResource.class,
                 UserResource.class,
                 ReferenceResource.class
         );

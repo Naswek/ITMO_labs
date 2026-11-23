@@ -30,10 +30,17 @@ public class LabWorkService {
     @Inject
     private Event<CollectionChanged> changes;
 
+    @Inject
+    private DomainUniquenessPolicy uniqueness;
+
     @Transactional
     public LabWork add(LabWork labWork) {
         validator.validateForCreate(labWork);
+        uniqueness.lockUntilTransactionEnds();
+        uniqueness.requireWorkNameAvailable(labWork.getName(), null);
+        uniqueness.requireCoordinatesAvailable(labWork.getCoordinates(), null);
         resolveReferences(labWork);
+        requireAuthorDisciplineAvailable(labWork, null);
         LabWork created = repository.create(labWork);
         changes.fire(new CollectionChanged());
         return created;
@@ -50,8 +57,12 @@ public class LabWorkService {
     @Transactional
     public LabWork update(int id, LabWork changes) {
         validator.validateForUpdate(id, changes);
+        uniqueness.lockUntilTransactionEnds();
+        uniqueness.requireWorkNameAvailable(changes.getName(), id);
+        uniqueness.requireCoordinatesAvailable(changes.getCoordinates(), id);
         changes.setId(id);
         resolveReferences(changes);
+        requireAuthorDisciplineAvailable(changes, id);
         LabWork updated = repository.update(changes);
         this.changes.fire(new CollectionChanged());
         return updated;
@@ -110,6 +121,13 @@ public class LabWorkService {
         }
         if (value.getAuthor() != null) {
             value.setAuthor(references.person(value.getAuthor().getId()));
+        }
+    }
+
+    private void requireAuthorDisciplineAvailable(LabWork value, Integer exceptId) {
+        if (value.getAuthor() != null && value.getDiscipline() != null) {
+            uniqueness.requireAuthorDisciplineAvailable(
+                    value.getAuthor().getId(), value.getDiscipline().getId(), exceptId);
         }
     }
 }
