@@ -1,0 +1,7 @@
+FROM ghcr.io/eclipse-ee4j/glassfish:7.1.0
+
+COPY --chown=glassfish:glassfish app/build/docker/postgresql.jar /opt/glassfish7/glassfish/domains/domain1/lib/postgresql.jar
+COPY --chown=glassfish:glassfish app/build/libs/labworks-glassfish.war /opt/glassfish7/labworks.war
+COPY --chown=glassfish:glassfish docker/glassfish-init.sh /opt/glassfish7/custom/init.sh
+
+EXPOSE 8080

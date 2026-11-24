@@ -7,7 +7,11 @@
 .env
 .env.*
 !.env.example
+glassfish-server.conf
+.labworks-admin.*
+.labworks-alias.*
 *.log
+tests/jmeter/*.jtl
 
 # Build output and dependencies
 build/
