@@ -1,0 +1,3 @@
+name;coordinates.x;coordinates.y;description;difficulty;minimalPoint;averagePoint;discipline.name;discipline.practiceHours;discipline.selfStudyHours;discipline.labsCount;author.name;author.eyeColor;author.hairColor;author.location.x;author.location.y;author.location.z;author.location.name;author.birthday;author.weight;author.nationality
+"CSV; вложенная 1";1,5;2;"Описание; с ""кавычками""";INSANE;2,5;3;Базы данных;24;48;6;Мария;GREEN;WHITE;10;2,5;3;Санкт-Петербург;2001-05-06;65;SPAIN
+валодлова

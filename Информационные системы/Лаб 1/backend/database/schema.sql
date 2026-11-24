@@ -1,8 +1,11 @@
 CREATE TABLE IF NOT EXISTS app_user (
     id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY CHECK (id > 0),
     login varchar(100) NOT NULL UNIQUE CHECK (btrim(login) <> ''),
-    password_hash varchar(60) NOT NULL
+    password_hash varchar(60) NOT NULL,
+    is_admin boolean NOT NULL DEFAULT false
 );
+
+ALTER TABLE app_user ADD COLUMN IF NOT EXISTS is_admin boolean NOT NULL DEFAULT false;
 
 CREATE TABLE IF NOT EXISTS discipline (
     id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY CHECK (id > 0),
@@ -46,3 +49,18 @@ ALTER TABLE lab_work ADD COLUMN IF NOT EXISTS version bigint NOT NULL DEFAULT 0;
 
 CREATE INDEX IF NOT EXISTS lab_work_discipline_idx ON lab_work(discipline_id);
 CREATE INDEX IF NOT EXISTS lab_work_author_idx ON lab_work(author_id);
+
+CREATE TABLE IF NOT EXISTS import_operation (
+    id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    user_id bigint NOT NULL REFERENCES app_user(id),
+    started_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    status varchar(16) NOT NULL CHECK (status IN ('SUCCESS', 'FAILED')),
+    added_count integer CHECK (added_count >= 0),
+    error_message varchar(500),
+    CONSTRAINT import_count_by_status CHECK (
+        (status = 'SUCCESS' AND added_count IS NOT NULL AND error_message IS NULL)
+        OR (status = 'FAILED' AND added_count IS NULL)
+    )
+);
+
+CREATE INDEX IF NOT EXISTS import_operation_user_idx ON import_operation(user_id);

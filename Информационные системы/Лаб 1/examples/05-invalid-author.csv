@@ -1,0 +1,2 @@
+name,coordinates.x,coordinates.y,description,difficulty,minimalPoint,averagePoint,discipline.name,discipline.practiceHours,discipline.selfStudyHours,discipline.labsCount,author.name,author.eyeColor,author.hairColor,author.location.x,author.location.y,author.location.z,author.location.name,author.birthday,author.weight,author.nationality
+CSV неверный автор,11,12,У автора не указан обязательный цвет глаз,HOPELESS,1,2,,,,,Алексей,,,1,2,3,Токио,1999-01-01,,JAPAN

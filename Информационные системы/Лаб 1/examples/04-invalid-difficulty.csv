@@ -1,0 +1,2 @@
+name,coordinates.x,coordinates.y,description,difficulty,minimalPoint,averagePoint,discipline.name,discipline.practiceHours,discipline.selfStudyHours,discipline.labsCount,author.name,author.eyeColor,author.hairColor,author.location.x,author.location.y,author.location.z,author.location.name,author.birthday,author.weight,author.nationality
+CSV неверная сложность,9,10,UNKNOWN отсутствует в Difficulty,UNKNOWN,1,2,,,,,,,,,,,,,,

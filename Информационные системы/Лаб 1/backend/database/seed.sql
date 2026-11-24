@@ -1,7 +1,7 @@
 -- Локальные демонстрационные данные. Удаляет также все аккаунты приложения.
 BEGIN;
 
-TRUNCATE TABLE lab_work, person, discipline, app_user RESTART IDENTITY;
+TRUNCATE TABLE import_operation, lab_work, person, discipline, app_user RESTART IDENTITY;
 
 INSERT INTO discipline (name, practice_hours, self_study_hours, labs_count) VALUES
     ('Программирование', 36, 72, 4),
@@ -25,7 +25,7 @@ INSERT INTO lab_work (
     ('Введение в Java', 10.5, 20, 'Классы, поля и методы.', 'EASY', 1, 20.0, 72, 1),
     ('Коллекции Java', -15.0, 34, 'Списки, множества и отображения.', 'INSANE', 1, 35.5, 68, 3),
     ('SQL-запросы', 4.0, -12, 'Выборка, соединения и группировка.', 'EASY', 2, 25.0, 81, 2),
-    ('Нормализация БД', 18.25, 7, 'Нормальные формы и зависимости.', 'IMPOSSIBLE', 2, 40.0, 75, 2),
+    ('Нормализация БД', 18.25, 7, 'Нормальные формы и зависимости.', 'IMPOSSIBLE', 2, 40.0, 75, 3),
     ('REST API', -30.0, 15, 'Маршруты и ответы HTTP.', 'INSANE', 3, 30.0, 77, 1),
     ('Клиент на React', 42.0, -8, 'Формы и работа с API.', 'HOPELESS', 3, 45.0, 69, 4),
     ('Численные методы', -100.5, 50, 'Приближенное решение уравнений.', 'IMPOSSIBLE', 4, 28.0, 73, 3),

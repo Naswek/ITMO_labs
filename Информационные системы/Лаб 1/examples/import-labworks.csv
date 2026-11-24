@@ -1,0 +1,3 @@
+name,coordinates.x,coordinates.y,description,difficulty,minimalPoint,averagePoint,discipline.name,discipline.practiceHours,discipline.selfStudyHours,discipline.labsCount,author.name,author.eyeColor,author.hairColor,author.location.x,author.location.y,author.location.z,author.location.name,author.birthday,author.weight,author.nationality
+Информационные системы — пример 1,"1,5",2,"Первая работа, ""CSV""",EASY,"1,5",2,Информационные системы,20,40,4,Иван,GREEN,WHITE,10,"2,5",3,Санкт-Петербург,2000-01-02,70,SPAIN
+Информационные системы — пример 2,3.5,4,Вторая работа из файла,INSANE,2.5,3,,,,,,,,,,,,,,

@@ -1,0 +1,3 @@
+name,coordinates.x,coordinates.y,description,difficulty,minimalPoint,averagePoint,discipline.name,discipline.practiceHours,discipline.selfStudyHours,discipline.labsCount,author.name,author.eyeColor,author.hairColor,author.location.x,author.location.y,author.location.z,author.location.name,author.birthday,author.weight,author.nationality
+CSV откат 1,5,6,Эта строка валидна,EASY,1,2,,,,,,,,,,,,,,
+CSV откат 2,7,8,Средний балл должен быть больше нуля,EASY,1,0,,,,,,,,,,,,,,
