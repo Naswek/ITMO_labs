@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Lab 2: parallel users" enabled="true">
+      <stringProp name="TestPlan.comments">Run from the project root: ./tests/jmeter/run.sh 5. Each sampler is one scenario phase.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"/>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Parallel users" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">stopthread</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(users,2)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">0</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"/>
+        <stringProp name="ThreadGroup.delay"/>
+      </ThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="1. Setup: HTTP helpers" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="filename">tests/jmeter/common.groovy</stringProp>
+          <stringProp name="parameters"/>
+          <stringProp name="cacheKey">lab2-common</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="2. Register, login, load shared work" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="filename">tests/jmeter/auth.groovy</stringProp>
+          <stringProp name="parameters"/>
+          <stringProp name="cacheKey">lab2-auth</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="3. Concurrent update: one 200, others 409" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="filename">tests/jmeter/update_race.groovy</stringProp>
+          <stringProp name="parameters"/>
+          <stringProp name="cacheKey">lab2-update</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="4. Concurrent delete: one 204, others 404 or 409" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="filename">tests/jmeter/delete_race.groovy</stringProp>
+          <stringProp name="parameters"/>
+          <stringProp name="cacheKey">lab2-delete</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="5. Create, edit, delete own work" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="filename">tests/jmeter/crud.groovy</stringProp>
+          <stringProp name="parameters"/>
+          <stringProp name="cacheKey">lab2-crud</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="6. CSV import: commit, rollback, history" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="filename">tests/jmeter/import.groovy</stringProp>
+          <stringProp name="parameters"/>
+          <stringProp name="cacheKey">lab2-import</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="7. Duplicate name: rename and concurrent create" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="filename">tests/jmeter/unique_race.groovy</stringProp>
+          <stringProp name="parameters"/>
+          <stringProp name="cacheKey">lab2-unique</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="8. Concurrent normalized names" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="filename">tests/jmeter/normalized_name_race.groovy</stringProp>
+          <stringProp name="parameters"/>
+          <stringProp name="cacheKey">lab2-normalized-name</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="9. Concurrent coordinates" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="filename">tests/jmeter/coordinates_race.groovy</stringProp>
+          <stringProp name="parameters"/>
+          <stringProp name="cacheKey">lab2-coordinates</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="10. Concurrent discipline names" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="filename">tests/jmeter/discipline_race.groovy</stringProp>
+          <stringProp name="parameters"/>
+          <stringProp name="cacheKey">lab2-discipline</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="11. Concurrent author and discipline pair" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="filename">tests/jmeter/author_discipline_race.groovy</stringProp>
+          <stringProp name="parameters"/>
+          <stringProp name="cacheKey">lab2-author-discipline</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="12. Duplicate CSV row: rollback" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="filename">tests/jmeter/duplicate_import.groovy</stringProp>
+          <stringProp name="parameters"/>
+          <stringProp name="cacheKey">lab2-duplicate-import</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="13. Cleanup imported works" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="filename">tests/jmeter/cleanup.groovy</stringProp>
+          <stringProp name="parameters"/>
+          <stringProp name="cacheKey">lab2-cleanup</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
