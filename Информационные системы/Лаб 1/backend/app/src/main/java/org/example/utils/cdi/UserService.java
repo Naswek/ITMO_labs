@@ -29,12 +29,12 @@ public class UserService {
 
         UserEntity user = repository.findByLogin(normalizedLogin);
         if (user == null) {
-            return new AuthResultWithUser(AuthResult.USER_NOT_FOUND, null, null);
+            return new AuthResultWithUser(AuthResult.USER_NOT_FOUND, null, null, false);
         }
         if (!encoder.matches(password, user.getPasswordHash())) {
-            return new AuthResultWithUser(AuthResult.WRONG_PASSWORD, null, null);
+            return new AuthResultWithUser(AuthResult.WRONG_PASSWORD, null, null, false);
         }
-        return new AuthResultWithUser(AuthResult.SUCCESS, user.getId(), user.getLogin());
+        return new AuthResultWithUser(AuthResult.SUCCESS, user.getId(), user.getLogin(), user.isAdmin());
     }
 
     @Transactional

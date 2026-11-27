@@ -57,8 +57,7 @@ public class UserResource {
         HttpSession session = request.getSession(true);
         request.changeSessionId();
         session.setAttribute(SESSION_USER_ID, result.userId());
-        UserEntity user = service.getUserById(result.userId());
-        return Response.ok(new UserView(user.getId(), user.getLogin(), user.isAdmin())).build();
+        return Response.ok(new UserView(result.userId(), result.login(), result.admin())).build();
     }
 
     @POST
