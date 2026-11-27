@@ -7,7 +7,7 @@ s.runStep(SampleResult, 'author and discipline pair') {
                  selfStudyHours: 20, labsCount: 2]), [201], 'create pair discipline'))
         def author = s.decode(s.expect(s.request('POST', 'references/people',
                 [name: "Pair author ${s.runId}", eyeColor: 'GREEN', nationality: 'SPAIN',
-                 birthday: '2000-01-02T00:00:00Z',
+                 birthday: '2000-01-02T00:00:00.000Z',
                  location: [x: 1, y: 2.5, z: 3, name: 'Madrid']]),
                 [201], 'create pair author'))
         props.put('lab2.pair.discipline.' + s.runId, discipline.id.toString())

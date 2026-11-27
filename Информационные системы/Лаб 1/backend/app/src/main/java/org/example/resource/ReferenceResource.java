@@ -21,6 +21,7 @@ import jakarta.ws.rs.core.UriBuilder;
 import jakarta.ws.rs.core.UriInfo;
 import java.util.List;
 import org.example.api.ApiError;
+import org.example.dto.PersonInput;
 import org.example.entity.Discipline;
 import org.example.entity.Person;
 import org.example.utils.cdi.ReferenceService;
@@ -92,19 +93,19 @@ public class ReferenceResource {
 
     @POST
     @Path("/people")
-    public Response addPerson(Person value, @Context UriInfo uriInfo) {
+    public Response addPerson(PersonInput value, @Context UriInfo uriInfo) {
         requireUser();
         UriBuilder location = uriInfo.getAbsolutePathBuilder();
-        Person created = service.add(value);
+        Person created = service.add(value == null ? null : value.toEntity());
         return Response.created(location.path(created.getId().toString()).build())
                 .entity(created).build();
     }
 
     @PUT
     @Path("/people/{id}")
-    public Person updatePerson(@PathParam("id") long id, Person value) {
+    public Person updatePerson(@PathParam("id") long id, PersonInput value) {
         requireUser();
-        return service.updatePerson(id, value);
+        return service.updatePerson(id, value == null ? null : value.toEntity());
     }
 
     @DELETE
