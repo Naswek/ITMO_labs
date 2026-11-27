@@ -8,7 +8,7 @@ import java.net.http.HttpRequest
 import java.net.http.HttpResponse
 import java.nio.charset.StandardCharsets
 import java.time.Duration
-import java.util.concurrent.CyclicBarrier
+import java.util.concurrent.Phaser
 import java.util.concurrent.TimeUnit
 
 def base = (props.getProperty('baseUrl', 'http://localhost:8080/labworks')).replaceAll('/+$', '')
@@ -17,9 +17,13 @@ if (users < 2) throw new IllegalArgumentException('At least two users are requir
 def runId = props.computeIfAbsent('lab2.runId') {
     Long.toString(System.currentTimeMillis(), 36) + UUID.randomUUID().toString().substring(0, 5)
 }
+def failureKey = 'lab2.failure.' + runId
+def barrierPrefix = 'lab2.barrier.' + runId + '.'
 def thread = ctx.getThreadNum()
+// The deployed GlassFish listener intermittently stalls the next request with the default protocol negotiation.
 def client = HttpClient.newBuilder()
         .cookieHandler(new CookieManager(null, CookiePolicy.ACCEPT_ALL))
+        .version(HttpClient.Version.HTTP_1_1)
         .connectTimeout(Duration.ofSeconds(10)).build()
 def json = new JsonSlurper()
 
@@ -47,16 +51,21 @@ def expect = { response, codes, label ->
 }
 def decode = { response -> json.parseText(response.body) }
 def barrier = { String phase ->
-    def key = 'lab2.barrier.' + runId + '.' + phase
-    CyclicBarrier value
+    def key = barrierPrefix + phase
+    Phaser value
     synchronized (props) {
-        value = props.get(key) as CyclicBarrier
+        value = props.get(key) as Phaser
         if (value == null) {
-            value = new CyclicBarrier(users)
+            value = new Phaser(users)
             props.put(key, value)
         }
+        if (props.get(failureKey) != null) value.forceTermination()
     }
-    value.await(90, TimeUnit.SECONDS)
+    int phaseNumber = value.arrive()
+    int nextPhase = value.awaitAdvanceInterruptibly(phaseNumber, 90, TimeUnit.SECONDS)
+    if (nextPhase < 0 || props.get(failureKey) != null) {
+        throw new IllegalStateException('Другой поток уже завершился с ошибкой: ' + props.get(failureKey))
+    }
 }
 def statuses = { String phase, int code ->
     def key = 'lab2.status.' + runId + '.' + phase
@@ -109,6 +118,14 @@ def runStep = { result, String label, Closure action ->
         action()
         result.setResponseMessage(label + ' passed')
     } catch (Throwable failure) {
+        synchronized (props) {
+            props.putIfAbsent(failureKey, failure.toString())
+            props.each { key, value ->
+                if (key.toString().startsWith(barrierPrefix) && value instanceof Phaser) {
+                    value.forceTermination()
+                }
+            }
+        }
         result.setSuccessful(false)
         result.setResponseMessage(failure.toString())
         log.error('Lab2 ' + label + ' failed', failure)
